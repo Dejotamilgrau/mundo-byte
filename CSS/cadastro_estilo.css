@@ -1,0 +1,92 @@
+/* Estilo da tela de cadastro (cadastro.html).
+ O cartão, os campos e o botão vêm do login_estilo.css, aqui fica só o que é novo */
+
+/* Campo de nome no mesmo cinza dos campos de e-mail e senha */
+#formulario-login input[type="text"] {
+    width: 100%;
+    padding: 7px;
+    box-sizing: border-box;
+    background-color: #D9D9D9;
+    border: 2px solid transparent;
+    border-radius: 4px;
+}
+
+/* ===== Escolha do tipo de conta ===== */
+
+#tipo-conta {
+    margin-top: 20px;
+    border: none;
+    padding: 0;
+}
+
+#tipo-conta > legend {
+    font-weight: bold;
+    color: #003F09;
+}
+
+/* Cada opção vira um quadrado clicável */
+.opcao-conta {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    margin-top: 10px;
+    padding: 10px;
+    border: 2px solid #D9D9D9;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: border-color 0.2s;
+}
+
+.opcao-conta:hover {
+    border-color: #8CC63C;
+}
+
+/* A opção marcada fica com a borda verde */
+.opcao-conta:has(input:checked) {
+    border-color: #369831;
+    background-color: #f3f9ec;
+}
+
+.opcao-conta input {
+    margin-top: 4px;
+    accent-color: #369831; /* bolinha verde no lugar do azul padrão */
+}
+
+/* Nome da opção em cima e explicação embaixo, menor e em cinza */
+.opcao-conta span,
+.opcao-conta strong {
+    line-height: 22px; /* menos espaço que os 30px do base_estilo, para o texto ficar junto */
+}
+
+.opcao-conta span {
+    font-size: 14px;
+    color: #666666;
+}
+
+.opcao-conta strong {
+    display: block;
+    font-size: 16px;
+    color: #333333;
+}
+
+/* ===== Aviso da conta de administrador ===== */
+
+/* Fica escondido até a opção "Administrador" ser marcada */
+#aviso-admin {
+    display: none;
+    margin-bottom: 0;
+    padding: 10px;
+    border-left: 4px solid #e0a800;
+    background-color: #fff8e1;
+    font-size: 14px;
+    text-align: left;
+}
+
+#aviso-admin,
+#aviso-admin strong {
+    line-height: 22px;
+}
+
+#formulario-login:has(#tipo-conta-admin:checked) #aviso-admin {
+    display: block;
+}

@@ -19,7 +19,7 @@ O objetivo é reunir os problemas, diagnósticos e soluções que a turma encont
   - disco ficando cheio sozinho;
   - arquivos ou pastas que não fecham ou não podem ser excluídos.
 - **Sobre nós** – quem somos, missão e visão da turma.
-- **Entrar** – tela de login (por enquanto só a interface; o site ainda não tem servidor, então o formulário não autentica).
+- **Entrar** e **Cadastro** – telas de login e de cadastro. No cadastro dá para escolher entre conta de usuário ou de administrador; a de administrador fica pendente até ser aprovada manualmente por um operador. Por enquanto é só a interface: o site ainda não tem servidor, então os formulários não enviam nada.
 
 ## Como rodar
 
@@ -43,7 +43,7 @@ Depois acesse <http://localhost:8000/HTML/index.html>. No VS Code, a extensão *
 ## Estrutura de pastas
 
 ```
-├── HTML/       # Página inicial (index.html), "Sobre nós" e login
+├── HTML/       # Página inicial (index.html), "Sobre nós", login e cadastro
 ├── HARDWARE/   # Páginas de hardware (visão interativa e computadores antigos)
 ├── SOFTWARE/   # Páginas de problemas e tutoriais de software
 ├── CSS/        # Folhas de estilo (reset, base, layout, cabeçalho, rodapé e estilos de cada página)
