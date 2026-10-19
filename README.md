@@ -19,6 +19,7 @@ O objetivo é reunir os problemas, diagnósticos e soluções que a turma encont
   - disco ficando cheio sozinho;
   - arquivos ou pastas que não fecham ou não podem ser excluídos.
 - **Sobre nós** – quem somos, missão e visão da turma.
+- **Entrar** – tela de login (por enquanto só a interface; o site ainda não tem servidor, então o formulário não autentica).
 
 ## Como rodar
 
@@ -42,7 +43,7 @@ Depois acesse <http://localhost:8000/HTML/index.html>. No VS Code, a extensão *
 ## Estrutura de pastas
 
 ```
-├── HTML/       # Página inicial (index.html) e "Sobre nós"
+├── HTML/       # Página inicial (index.html), "Sobre nós" e login
 ├── HARDWARE/   # Páginas de hardware (visão interativa e computadores antigos)
 ├── SOFTWARE/   # Páginas de problemas e tutoriais de software
 ├── CSS/        # Folhas de estilo (reset, base, layout, cabeçalho, rodapé e estilos de cada página)

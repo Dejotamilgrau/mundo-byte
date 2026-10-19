@@ -1,0 +1,105 @@
+/* Estilo da tela de login (login.html).
+ Usar junto com reset.css, base_estilo.css e layout_estilo.css */
+
+/* Centraliza a página de login no meio do conteúdo */
+main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Cartão branco do login, com a mesma sombra leve do cabeçalho */
+#container-login {
+    width: 100%;
+    max-width: 420px;
+    margin-left: 0;
+    padding: 30px;
+    box-sizing: border-box;
+    background-color: #fff;
+    border-top: 4px solid #369831;
+    border-radius: 6px;
+    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.15);
+}
+
+/* Título e texto de cima centralizados */
+#container-login > h1,
+#container-login > p {
+    text-align: center;
+}
+
+#container-login > p {
+    color: #666666;
+}
+
+/* Campos um embaixo do outro */
+#formulario-login {
+    display: flex;
+    flex-direction: column;
+}
+
+#formulario-login > label {
+    font-weight: bold;
+    color: #003F09;
+    margin-top: 10px;
+}
+
+/* Campos de e-mail e senha, no mesmo cinza da pesquisa da página inicial */
+#formulario-login input[type="email"],
+#formulario-login input[type="password"] {
+    width: 100%;
+    padding: 7px;
+    box-sizing: border-box;
+    background-color: #D9D9D9;
+    border: 2px solid transparent;
+    border-radius: 4px;
+}
+
+/* Borda verde no campo selecionado */
+#formulario-login input:focus {
+    outline: none;
+    border-color: #369831;
+    background-color: #fff;
+}
+
+/* "Lembrar de mim" de um lado e "Esqueci minha senha" do outro */
+#opcoes-login {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 5px;
+    margin-top: 15px;
+}
+
+#opcoes-login label,
+#opcoes-login a {
+    font-size: 14px;
+}
+
+/* Links da tela de login em verde, igual aos links do texto */
+#container-login a {
+    color: #369831;
+    font-weight: bold;
+}
+
+#container-login a:hover {
+    color: #003F09;
+}
+
+/* Botão de entrar no verde escuro do menu */
+#formulario-login > button {
+    margin-top: 25px;
+    padding: 10px;
+    border: none;
+    border-radius: 4px;
+    background-color: #013300;
+    color: #fff;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+#formulario-login > button:hover {
+    background-color: #369831;
+}

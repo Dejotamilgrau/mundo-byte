@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../CSS/reset.css">
+    <link rel="stylesheet" href="../CSS/base_estilo.css">
+    <link rel="stylesheet" href="../CSS/layout_estilo.css">
+    <link rel="stylesheet" href="../CSS/header_estilo.css">
+    <link rel="stylesheet" href="../CSS/footer_estilo.css">
+    <link rel="stylesheet" href="../CSS/login_estilo.css">
+    <link rel="icon" href="../IMG/favicon.ico">
+    <title>Mundo Byte</title>
+</head>
+
+<body>
+    <!-- Cabeçalho, GABRIELLI BANDOW -->
+    <header id="headerContainer">
+
+        <!-- linha de cima  -->
+        <div id="headerTop">
+            <span id="logoTurma"></span>
+            <span id="logoIf"></span>
+        </div>
+
+        <!-- Linha debaixo (menu) -->
+        <nav id="headerNav">
+            <a href="index.html" class="navItem">Home</a>
+            <a href="../HARDWARE/hardware.html" class="navItem">Visão do computador</a>
+            <a href="../HARDWARE/computadores_antigos.html" class="navItem">Problemas de Hardware</a>
+            <a href="../SOFTWARE/problemas_software.html" class="navItem">Problemas de Software</a>
+            <a href="login.html" class="navItem" aria-current="page">Entrar</a>
+        </nav>
+    </header>
+
+    <!-- Conteúdo: tela de login -->
+    <main>
+        <section id="container-login">
+            <h1>ENTRAR</h1>
+            <p>Acesse sua conta do Mundo Byte.</p>
+
+            <!-- Formulário de login (ainda sem servidor, então não faz a autenticação de verdade) -->
+            <form id="formulario-login" action="#" method="post">
+                <label for="login-email">E-mail</label>
+                <input id="login-email" type="email" name="email" placeholder="seuemail@exemplo.com"
+                    autocomplete="email" required>
+
+                <label for="login-senha">Senha</label>
+                <input id="login-senha" type="password" name="senha" placeholder="Digite sua senha"
+                    autocomplete="current-password" required>
+
+                <!-- Lembrar de mim e esqueci a senha na mesma linha -->
+                <div id="opcoes-login">
+                    <label><input type="checkbox" name="lembrar"> Lembrar de mim</label>
+                    <a href="#">Esqueci minha senha</a>
+                </div>
+
+                <button type="submit">Entrar</button>
+            </form>
+
+            <p id="cadastro-login">Ainda não tem conta? <a href="#">Cadastre-se</a></p>
+        </section>
+    </main>
+
+    <!-- Rodapé, GABRIELLI BANDOW -->
+    <footer id="footerContainer">
+        <div id="footerItem">
+
+            <!-- Logo e descrição do site -->
+            <div class="footerBloco" id="footerSobre">
+                <span id="footerLogo"></span>
+                <p>Site sobre montagem e manutenção de computadores, feito pela turma TINF4V.</p>
+                <p><a href="sobre.html">Sobre nós</a></p>
+            </div>
+
+            <!-- Autores -->
+            <div class="footerBloco">
+                <h3>Autores</h3>
+                <p>Alunos da TINF4V de 2026</p>
+                <p>Disciplina de Tópicos Especiais</p>
+            </div>
+
+            <!-- Contato -->
+            <div class="footerBloco">
+                <h3>Contato</h3>
+                <p>Instagram: <a href="https://www.instagram.com/tinf4ve?utm_source=ig_web_button_share_sheet&stkn=ZDNlZDc0MzIxNw==">@tinf4ve</a></p>
+                <p>E-mail: <a></a></p>
+            </div>
+        </div>
+
+        <!-- Linha final -->
+        <p id="footerCreditos">Instituto Federal Sul-rio-grandense · Câmpus Camaquã · 2026</p>
+    </footer>
+
+</body>
+
+</html>

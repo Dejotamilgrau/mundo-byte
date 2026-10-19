@@ -54,7 +54,7 @@
 
 /* Itens do Menu */
 .navItem {
-    flex: 1; /* tamanho igual nas 4 colunas */
+    flex: 1; /* tamanho igual nas 5 colunas */
     text-align: center;
     padding: 12px 10px;
     text-decoration: none; /* tira aquela linha de link debaixo das palavras */
@@ -86,7 +86,7 @@
 
 @media (max-width: 700px) {
 
-    /* Diminui o texto do menu para caber as 4 colunas */
+    /* Diminui o texto do menu para caber as 5 colunas */
     .navItem {
         font-size: 13px;
         padding: 10px 4px;
