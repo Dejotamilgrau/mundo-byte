@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Loop de reparo automático - MundoByte</title>
+    <link rel="stylesheet" href="../CSS/reset.css">
+    <link rel="stylesheet" href="../CSS/base_estilo.css">
+    <link rel="stylesheet" href="../CSS/layout_estilo.css">
+    <link rel="stylesheet" href="../CSS/header_estilo.css">
+    <link rel="stylesheet" href="../CSS/footer_estilo.css">
+    <link rel="stylesheet" href="../CSS/problema1.css">
+    <link rel="icon" href="../IMG/favicon.ico">
+</head>
+<body>
+
+    <header id="headerContainer">
+
+        <!-- linha de cima  -->
+        <div id="headerTop">
+            <span id="logoTurma"></span>
+            <span id="logoIf"></span>
+        </div>
+
+        <!-- Linha debaixo (menu) -->
+        <nav id="headerNav">
+            <a href="../HTML/index.html" class="navItem">Home</a>
+            <a href="../HARDWARE/hardware.html" class="navItem">Visão do computador</a>
+            <a href="../HARDWARE/computadores_antigos.html" class="navItem">Problemas de Hardware</a>
+            <a href="problemas_software.html" class="navItem" aria-current="page">Problemas de Software</a>
+        </nav>
+    </header>
+
+    <main>
+        <h1>Loop de reparo automático</h1>
+        <hr>
+        <section>
+            <p> Este problema ocorre quando o Windows tenta corrigir erros
+                de inicialização
+                de forma autônoma, falha e entra num ciclo infinito de
+                reinicializações.</p>
+        </section>
+        <hr>
+        <section>
+            <div>
+                <h2>Solução</h2>
+                <p>Para resolver esse problema, é necessário acessar o menu
+                    de Opções Avançadas. Caso a tela azul de reparo não
+                    apareça automaticamente, você pode forçar o acesso
+                    ligando o computador e, assim que o logotipo do
+                    fabricante surgir, mantendo o botão Power pressionado
+                    por 10 segundos para desligá-lo. Após repetir esse
+                    processo de duas a três vezes, o sistema carregará a
+                    tela de preparação do reparo. Nela, navegue em Opções
+                    Avançadas > Solução de problemas > Opções Avançadas.
+                </p>
+
+                <p>A primeira tentativa de solução deve ser a opção Reparo
+                    de Inicialização, em que o próprio sistema tenta
+                    identificar e corrigir os arquivos corrompidos. Se o
+                    Windows exibir a mensagem de que não pôde reparar o
+                    computador, o próximo passo é tentar a Restauração do
+                    Sistema, que não faz você perder arquivos pessoais. Ao
+                    selecionar essa opção, escolha sua conta de usuário,
+                    insira a senha e selecione um ponto de restauração
+                    criado antes do surgimento do problema para voltar o
+                    sistema a um estado funcional.</p>
+
+                <p> Caso os recursos automáticos falhem, é preciso
+                    reconstruir a estrutura de inicialização do disco
+                    manualmente utilizando o Prompt de Comando, localizado
+                    no mesmo menu de opções avançadas. Com o terminal
+                    aberto, execute a sequência de comandos digitando
+                    bootrec /fixmbr, bootrec /fixboot (caso ocorra erro de
+                    acesso negado, digite bootsect /nt60 sys antes de tentar
+                    novamente), bootrec /scanos e bootrec /rebuildbcd,
+                    pressionando Enter após cada um. Finalize digitando exit
+                    e clique em continuar para o Windows.</p>
+
+                <p>Se o registro do sistema estiver criticamente danificado
+                    e nenhuma das alternativas anteriores funcionar, o
+                    último recurso local é a restauração do sistema mantendo
+                    os dados. Em Solução de problemas, selecione Restaurar o
+                    PC e escolha a opção Manter meus arquivos. O Windows
+                    será reinstalado preservando seus documentos e dados
+                    pessoais, embora os programas precisem ser instalados
+                    novamente após a conclusão.
+                </p>
+
+                <p>Para melhor compreensão, acesse o tutorial oficial da
+                    Microsoft:<a
+                        href="https://support.microsoft.com/pt-br/windows/experience/startup-boot/startup-repair">
+                        Reparo de Inicialização do Windows 10 e Windows
+                        11</a>
+                    Ou assista a um dos tutoriais em vídeo abaixo:</p>
+
+                <ul class="lista-videos">
+                    <li><a
+                            href="https://www.youtube.com/watch?v=byWc-883FJ0">
+                            Como corrigir o loop de reparo automático no PC
+                            | 5 Métodos | 4DDiG
+                        </a>
+                    </li>
+                    <li><a
+                            href="https://www.youtube.com/watch?v=aSFfD0f5io4">
+                            Como Corrigir Erro do "REPARO AUTOMÁTICO" No
+                            Windows 11 (LOOP)
+                        </a>
+                    </li>
+                </ul>
+            </div>
+
+        </section>
+    </main>
+
+    <footer id="footerContainer">
+        <div id="footerItem">
+
+            <!-- Logo e descrição do site -->
+            <div class="footerBloco" id="footerSobre">
+                <span id="footerLogo"></span>
+                <p>Site sobre montagem e manutenção de computadores, feito pela turma TINF4V.</p>
+                <p><a href="../HTML/sobre.html">Sobre nós</a></p>
+            </div>
+
+            <!-- Autores -->
+            <div class="footerBloco">
+                <h3>Autores</h3>
+                <p>Alunos da TINF4V de 2026</p>
+                <p>Disciplina de Tópicos Especiais</p>
+            </div>
+
+            <!-- Contato -->
+            <div class="footerBloco">
+                <h3>Contato</h3>
+                <p>Instagram: <a href="https://www.instagram.com/tinf4ve?utm_source=ig_web_button_share_sheet&stkn=ZDNlZDc0MzIxNw==">@tinf4ve</a></p>
+                <p>E-mail: <a></a></p>
+            </div>
+        </div>
+
+        <!-- Linha final -->
+        <p id="footerCreditos">Instituto Federal Sul-rio-grandense · Câmpus Camaquã · 2026</p>
+    </footer>
+
+</body>
+</html>

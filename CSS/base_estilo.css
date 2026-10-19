@@ -1,0 +1,62 @@
+* {
+    /* Definição da família tipográfica de toda a página */
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    line-height: 30px;
+}
+
+/* Define um respiro de 10px para o conteúdo do HTML, assim não fica grudada as informações nas bordas */
+main {
+    margin-left: 7%;
+    margin-top: 5%;
+    margin-bottom: 5%;
+    margin-right: 7%;
+}
+
+/* Definição da cor de fundo da página */
+body {
+    background-color: rgb(252, 252, 252);
+}
+
+/* Definição de padrões dos parágrafos */
+p,
+h1 {
+    text-align: justify;
+    color: #333333;
+}
+
+/* Define um respiro de 50px à esquerda para todas as sessões, dando a impressão de aninhamento visual */
+section,
+hr {
+    margin-left: 50px;
+}
+
+/* Definição de cores de fonte e tamanho */
+
+p,
+a,
+li,
+label {
+    font-size: 16px;
+}
+
+h1 {
+    color: #8CC63C;
+}
+
+h2 {
+    color: #003F09;
+    font-size: 22px;
+}
+
+/* Divisórias de linhas e cor delas, aplicadas à página "sobre nós"*/
+hr {
+    height: 1px;
+    background-color: #8CC63C;
+}
+
+p,
+h1,
+hr{
+    margin-top: 20px;
+    margin-bottom: 20px;
+} 

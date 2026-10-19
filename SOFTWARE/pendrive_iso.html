@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Como Criar um Pen Drive de Boot Direto com a ISO - MundoByte</title>
+    <link rel="stylesheet" href="../CSS/reset.css">
+    <link rel="stylesheet" href="../CSS/base_estilo.css">
+    <link rel="stylesheet" href="../CSS/layout_estilo.css">
+    <link rel="stylesheet" href="../CSS/header_estilo.css">
+    <link rel="stylesheet" href="../CSS/footer_estilo.css">
+    <link rel="stylesheet" href="../CSS/problema1.css">
+    <link rel="icon" href="../IMG/favicon.ico">
+</head>
+<body>
+
+    <header id="headerContainer">
+
+        <!-- linha de cima  -->
+        <div id="headerTop">
+            <span id="logoTurma"></span>
+            <span id="logoIf"></span>
+        </div>
+
+        <!-- Linha debaixo (menu) -->
+        <nav id="headerNav">
+            <a href="../HTML/index.html" class="navItem">Home</a>
+            <a href="../HARDWARE/hardware.html" class="navItem">Visão do computador</a>
+            <a href="../HARDWARE/computadores_antigos.html" class="navItem">Problemas de Hardware</a>
+            <a href="problemas_software.html" class="navItem" aria-current="page">Problemas de Software</a>
+        </nav>
+    </header>
+
+    <main>
+        <h1>Como Criar um Pen Drive de Boot Direto com a ISO</h1>
+        <hr>
+        <section>
+            <p>Também é possível criar um pen drive de boot sem usar o Ventoy ou o Rufus, gravando a imagem ISO
+                diretamente com ferramentas que já vêm no sistema. No Linux isso é feito com o comando "dd" ou com o
+                programa "Discos", e no Windows, para instalar o Windows 10 ou 11, basta copiar os arquivos da ISO para
+                o pen drive. Essas formas são úteis quando não se tem internet para baixar outros programas, mas exigem
+                mais cuidado.
+            </p>
+        </section>
+        <hr>
+        <section>
+            <h2>No Linux, pelo terminal</h2>
+            <p>Primeiro, conecta-se o pen drive e usa-se o comando "lsblk" para descobrir o nome dele, que aparece
+                como "sdb", "sdc" ou parecido, conferindo pelo tamanho. Esse passo é muito importante, pois se o disco
+                errado for escolhido, o comando apaga o HD do computador.
+            </p>
+            <p>Depois, grava-se a ISO com o comando "sudo dd if=arquivo.iso of=/dev/sdX bs=4M status=progress
+                oflag=sync", trocando "arquivo.iso" pelo caminho da imagem e "sdX" pelo nome do pen drive. O nome deve
+                ser o do disco inteiro (por exemplo, /dev/sdb) e não o de uma partição (como /dev/sdb1). Quando o
+                comando terminar, o pen drive já está pronto.
+            </p>
+            <p>Esse método funciona bem com ISOs de Linux, como o Ubuntu. Com ISOs do Windows, o "dd" normalmente não
+                funciona, sendo melhor usar o Rufus ou o método explicado abaixo.
+            </p>
+        </section>
+        <hr>
+        <section>
+            <h2>No Linux, pelo programa Discos</h2>
+            <p>No Ubuntu, também é possível fazer a mesma coisa sem o terminal. Abre-se o programa "Discos",
+                seleciona-se o pen drive na lista da esquerda, clica-se no menu de três pontos e em "Restaurar imagem
+                de disco", escolhendo o arquivo ISO e clicando em "Iniciar restauração".
+            </p>
+        </section>
+        <hr>
+        <section>
+            <h2>No Windows, copiando os arquivos</h2>
+            <p>Para o Windows 10 e 11, o pen drive pode ser criado apenas copiando os arquivos da ISO. Primeiro,
+                formata-se o pen drive em FAT32. Depois, dá-se um duplo clique no arquivo ISO, que é aberto como se
+                fosse um DVD, e copia-se todo o seu conteúdo para o pen drive.
+            </p>
+            <p>Esse método tem duas limitações. Ele só funciona em computadores com UEFI, ou seja, não serve para
+                computadores antigos com BIOS Legacy. Além disso, o FAT32 não aceita arquivos maiores que 4 GB, e em
+                algumas ISOs o arquivo "sources/install.wim" passa desse tamanho, fazendo a cópia falhar. Nesses casos,
+                o mais simples é usar o <a href="pendrive_rufus.html">Rufus</a> ou o
+                <a href="pendrive_ventoy.html">Ventoy</a>.
+            </p>
+        </section>
+    </main>
+
+    <footer id="footerContainer">
+        <div id="footerItem">
+
+            <!-- Logo e descrição do site -->
+            <div class="footerBloco" id="footerSobre">
+                <span id="footerLogo"></span>
+                <p>Site sobre montagem e manutenção de computadores, feito pela turma TINF4V.</p>
+                <p><a href="../HTML/sobre.html">Sobre nós</a></p>
+            </div>
+
+            <!-- Autores -->
+            <div class="footerBloco">
+                <h3>Autores</h3>
+                <p>Alunos da TINF4V de 2026</p>
+                <p>Disciplina de Tópicos Especiais</p>
+            </div>
+
+            <!-- Contato -->
+            <div class="footerBloco">
+                <h3>Contato</h3>
+                <p>Instagram: <a href="https://www.instagram.com/tinf4ve?utm_source=ig_web_button_share_sheet&stkn=ZDNlZDc0MzIxNw==">@tinf4ve</a></p>
+                <p>E-mail: <a></a></p>
+            </div>
+        </div>
+
+        <!-- Linha final -->
+        <p id="footerCreditos">Instituto Federal Sul-rio-grandense · Câmpus Camaquã · 2026</p>
+    </footer>
+
+</body>
+</html>

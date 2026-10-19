@@ -1,0 +1,103 @@
+/* Será adicionado posteriormente uma imagem de 250px de altura, para auxiliar o usuário a utilizar nosso recurso*/
+#tutorial_de_uso {
+    height: 250px;
+    background-color: rgb(88, 78, 78);
+}
+
+#lista-resultados-pesquisa {
+    /* Define ocupação de toda a largura e altura pela lista não ordenada */
+    width: 100%;
+    height: 100%;
+
+    /* Faz com que os itens da lista fiquem bem espalhados visualmente, sem isso fica uma "sobrinha" no verde claro ao passar o mouse por cima do último resultado */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+
+.item-resultado {
+    /* Define tamanho e respiro de 20px entre o conteúdo da lista e a borda */
+    padding: 20px;
+    height: 20%;
+
+    /* Retira o sublinhado dos links de navegação e define cor para a fonte */
+    text-decoration: none;
+    color: #333333;
+}
+
+/* Adiciona cor diferente ao passar o mouse sobre os resultados sobre a pesquisa do problema*/
+#lista-resultados-pesquisa>li:hover {
+    background-color: #369831;
+}
+
+/* Define cor de fundo e respiro de 20px entre o conteúdo e a borda */
+#container-filtros {
+    background-color: #013300;
+    padding: 20px;
+}
+
+/* Define cor de fundo para o campo que mostra os resultados da pesquisa*/
+#container-lista-resultados {
+    background-color: #8CC63C;
+}
+
+/* Define cor da fonte e espessura, referente à escrita "Filtrar pelas categorias:" */
+#container-filtros>label {
+    font-weight: bold;
+    color: white;
+}
+
+/* Define cor da fonte para os itens da lista de filtros */
+.filtro {
+    color: #369831;
+}
+
+#digita-pesquisa {
+    /* Definições de largura, cor de fundo e respiro de 7px entre borda e conteúdo do campo de digitação para pesquisar */
+    width: 100%;
+    background-color: #D9D9D9;
+    padding: 7px;
+
+    /* Define para respeitar os limites do elemento pai */
+    box-sizing: border-box;
+}
+
+
+/* Define o container (section) que encapsula a parte de pesquisa como grid, tendo duas colunas e espaçamento entre as colunas de 10px, define margem superior de 20px */
+#container-pesquisa {
+    display: grid;
+    grid-template-columns: 30% auto;
+    grid-template-rows: 30px auto;
+    gap: 10px;
+    margin-bottom: 80px;
+}
+
+/* Define que o subtítulo ocupa 2 colunas */
+#container-pesquisa>h2 {
+    grid-column: span 2;
+}
+
+/* Define que a parte para digitar o problema está na segunda coluna*/
+#formulario-digitacao {
+    grid-column: 1/3;
+}
+
+#container-botoes-acao {
+    display: flex;
+    justify-content: space-evenly;
+    margin-top: 20px;
+}
+
+#container-botoes-acao>button{
+    background-color: #013300;
+    width:40%;
+}
+
+#container-botoes-acao>button>a{
+    text-decoration: none;
+    color: white;
+}
+
+#container-botoes-acao>button:hover{
+    background-color: #369831;
+}

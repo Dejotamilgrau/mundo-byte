@@ -1,0 +1,94 @@
+/* ==========================================================
+   CABEÇALHO (header) do site - feito pela Gabrielli
+   Usado em todas as páginas: <header id="headerContainer">
+   Partes: #headerTop (logos) e #headerNav (menu com .navItem)
+   ========================================================== */
+
+/* Container cabeçalho, fica preso no topo ao rolar a página e tem uma sombra leve embaixo */
+#headerContainer {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+
+    position: sticky;
+    top: 0;
+    z-index: 10;
+    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.2);
+}
+
+/* Logos, com um degradê do verde do IF para dar profundidade */
+#headerTop {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 30px;
+    background: linear-gradient(135deg, #369831, #00420c);
+}
+
+#logoTurma {
+    background-image: url(../IMG/logo-turma.png);
+    width: 120px;
+    height: 80px;
+    display: inline-block;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+#logoIf {
+    background-image: url(../IMG/logo-if.png);
+    width: 80px;
+    height: 80px;
+    display: inline-block;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+/* Menu de nav */
+#headerNav {
+    display: flex;
+    width: 100%;
+    background-color: #013300;
+}
+
+/* Itens do Menu */
+.navItem {
+    flex: 1; /* tamanho igual nas 4 colunas */
+    text-align: center;
+    padding: 12px 10px;
+    text-decoration: none; /* tira aquela linha de link debaixo das palavras */
+    color: #fff;
+
+    /* Linha verde embaixo do item, que aparece ao passar o mouse ou na página atual */
+    border-bottom: 3px solid transparent;
+    transition: background-color 0.2s, border-color 0.2s;
+}
+
+/* divisórias entre as colunas do menu (tipo do site do IF) */
+.navItem:not(:last-child) {
+    border-right: 1px solid rgba(255, 255, 255, 0.15);
+}
+
+/* Ao passar o mouse, o item clareia e ganha a linha verde embaixo */
+.navItem:hover {
+    background-color: rgba(255, 255, 255, 0.08);
+    border-bottom-color: #8CC63C;
+}
+
+/* Destaca no menu a página em que o usuário está */
+.navItem[aria-current="page"] {
+    font-weight: bold;
+    border-bottom-color: #8CC63C;
+}
+
+/* ===== Cabeçalho no celular ===== */
+
+@media (max-width: 700px) {
+
+    /* Diminui o texto do menu para caber as 4 colunas */
+    .navItem {
+        font-size: 13px;
+        padding: 10px 4px;
+    }
+}

@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Problemas em computadores antigos - MundoByte</title>
+    <link rel="stylesheet" href="../CSS/reset.css">
+    <link rel="stylesheet" href="../CSS/base_estilo.css">
+    <link rel="stylesheet" href="../CSS/layout_estilo.css">
+    <link rel="stylesheet" href="../CSS/header_estilo.css">
+    <link rel="stylesheet" href="../CSS/footer_estilo.css">
+    <link rel="stylesheet" href="../CSS/antigos_estilo.css">
+    <link rel="icon" href="../IMG/favicon.ico">
+</head>
+<body>
+
+    <header id="headerContainer">
+
+        <!-- linha de cima  -->
+        <div id="headerTop">
+            <span id="logoTurma"></span>
+            <span id="logoIf"></span>
+        </div>
+
+        <!-- Linha debaixo (menu) -->
+        <nav id="headerNav">
+            <a href="../HTML/index.html" class="navItem">Home</a>
+            <a href="../HARDWARE/hardware.html" class="navItem">Visão do computador</a>
+            <a href="computadores_antigos.html" class="navItem" aria-current="page">Problemas de Hardware</a>
+            <a href="../SOFTWARE/problemas_software.html" class="navItem">Problemas de Software</a>
+        </nav>
+    </header>
+
+    <main>
+        <h1>Problemas em computadores antigos</h1>
+        <p>Computadores com muitos anos de uso costumam apresentar os mesmos problemas: peças desgastadas, poeira, sistemas sem suporte e falta de drivers. Aqui estão os mais comuns, com os sintomas para ajudar a identificar cada um.</p>
+
+        <!-- Legenda das cores dos selos -->
+        <ul id="legenda">
+            <li><span class="selo critico">Crítico</span> pode impedir o uso ou causar perda de dados</li>
+            <li><span class="selo atencao">Atenção</span> atrapalha o uso e pode piorar</li>
+            <li><span class="selo normal">Normal</span> incomoda, mas tem solução simples</li>
+        </ul>
+
+        <section id="grade-problemas">
+
+            <article class="cartao">
+                <span class="selo critico">Crítico</span>
+                <h2>HD com setores defeituosos</h2>
+                <p>HDs mecânicos se desgastam com o tempo. Quando partes do disco estragam, arquivos ficam corrompidos e o computador fica cada vez mais lento.</p>
+                <h3>Sintomas:</h3>
+                <ul>
+                    <li>Barulho de "clique" vindo do gabinete</li>
+                    <li>Computador muito lento para abrir qualquer coisa</li>
+                    <li>Arquivos que somem ou não abrem</li>
+                    <li>Sistema travando durante a inicialização</li>
+                </ul>
+            </article>
+
+            <article class="cartao">
+                <span class="selo critico">Crítico</span>
+                <h2>Sistema Operacional Corrompido</h2>
+                <p>HD desgastado, quedas de energia e anos sem manutenção fazem os arquivos essenciais do Windows ou do Linux serem danificados.</p>
+                <h3>Sintomas:</h3>
+                <ul>
+                    <li>Não consegue inicializar o sistema</li>
+                    <li>Mensagem "Missing Operating System"</li>
+                    <li>Tela azul com código de erro</li>
+                    <li>Programas parando de funcionar</li>
+                </ul>
+                <a href="../SOFTWARE/so_corrompido.html" class="ver-solucao">Ver solução &rsaquo;</a>
+            </article>
+
+            <article class="cartao">
+                <span class="selo critico">Crítico</span>
+                <h2>Capacitores Estufados</h2>
+                <p>Os capacitores da placa-mãe e da fonte secam com o tempo e o calor. Quando estufam ou vazam, a energia chega instável nas peças.</p>
+                <h3>Sintomas:</h3>
+                <ul>
+                    <li>Computador reiniciando ou desligando sozinho</li>
+                    <li>Às vezes não liga, às vezes liga normal</li>
+                    <li>Capacitores com o topo inchado ou vazando</li>
+                    <li>Travamentos sem motivo aparente</li>
+                </ul>
+            </article>
+
+            <article class="cartao">
+                <span class="selo atencao">Atenção</span>
+                <h2>Superaquecimento</h2>
+                <p>Com os anos, a pasta térmica do processador seca e a poeira entope coolers e dissipadores, então o calor não sai do gabinete.</p>
+                <h3>Sintomas:</h3>
+                <ul>
+                    <li>Coolers fazendo muito barulho</li>
+                    <li>Computador desligando sozinho depois de um tempo de uso</li>
+                    <li>Lentidão ao abrir programas pesados</li>
+                    <li>Gabinete muito quente ao toque</li>
+                </ul>
+            </article>
+
+            <article class="cartao">
+                <span class="selo atencao">Atenção</span>
+                <h2>Drivers Desatualizados ou Corrompidos</h2>
+                <p>Depois de formatar, o sistema não traz os drivers de peças antigas, e muitos fabricantes não lançam mais drivers para sistemas novos.</p>
+                <h3>Sintomas:</h3>
+                <ul>
+                    <li>Dispositivos não reconhecidos</li>
+                    <li>Som, vídeo ou internet parou de funcionar</li>
+                    <li>Tela azul com erro de driver</li>
+                    <li>Dispositivo com ponto de exclamação no gerenciador</li>
+                </ul>
+                <a href="../SOFTWARE/drivers_desatualizados.html" class="ver-solucao">Ver solução &rsaquo;</a>
+            </article>
+
+            <article class="cartao">
+                <span class="selo atencao">Atenção</span>
+                <h2>Fonte de Alimentação Desgastada</h2>
+                <p>Fontes antigas, principalmente as genéricas, perdem potência com o tempo e deixam de entregar a energia que as peças precisam.</p>
+                <h3>Sintomas:</h3>
+                <ul>
+                    <li>Computador não liga ou liga e desliga logo depois</li>
+                    <li>Desliga ao abrir jogos ou programas pesados</li>
+                    <li>Cheiro de queimado ou chiado vindo da fonte</li>
+                    <li>Funciona normal ao trocar por outra fonte</li>
+                </ul>
+            </article>
+
+            <article class="cartao">
+                <span class="selo atencao">Atenção</span>
+                <h2>Memória RAM com Mau Contato</h2>
+                <p>A oxidação e a poeira nos contatos dos pentes de memória fazem a placa-mãe não reconhecer a RAM direito.</p>
+                <h3>Sintomas:</h3>
+                <ul>
+                    <li>Computador liga, mas não dá vídeo</li>
+                    <li>Bipes ao ligar o computador</li>
+                    <li>Travamento ao instalar o sistema operacional</li>
+                    <li>Tela azul com erros diferentes a cada vez</li>
+                </ul>
+            </article>
+
+            <article class="cartao">
+                <span class="selo normal">Normal</span>
+                <h2>Pilha da BIOS Fraca</h2>
+                <p>A pilha da placa-mãe (CR2032) guarda a data, a hora e as configurações da BIOS. Depois de alguns anos ela descarrega.</p>
+                <h3>Sintomas:</h3>
+                <ul>
+                    <li>Data e hora voltam ao padrão sempre que desliga</li>
+                    <li>Configurações da BIOS se perdem</li>
+                    <li>Mensagem "CMOS checksum error" ao ligar</li>
+                    <li>Sites dando erro de certificado por causa da data errada</li>
+                </ul>
+            </article>
+
+            <article class="cartao">
+                <span class="selo normal">Normal</span>
+                <h2>Incompatibilidade com Sistemas Novos</h2>
+                <p>Placas-mãe antigas usam BIOS antiga (Legacy), sem UEFI, e às vezes nem iniciam por pen drive. Sistemas antigos também não reconhecem peças novas.</p>
+                <h3>Sintomas:</h3>
+                <ul>
+                    <li>Pen drive de instalação não aparece no boot</li>
+                    <li>HD não reconhecido durante a instalação</li>
+                    <li>Windows XP não instala pelo Rufus ou Ventoy</li>
+                    <li>Sistema novo muito pesado para o computador</li>
+                </ul>
+                <a href="../SOFTWARE/problema1.html" class="ver-solucao">Ver solução &rsaquo;</a>
+            </article>
+
+        </section>
+    </main>
+
+    <footer id="footerContainer">
+        <div id="footerItem">
+
+            <!-- Logo e descrição do site -->
+            <div class="footerBloco" id="footerSobre">
+                <span id="footerLogo"></span>
+                <p>Site sobre montagem e manutenção de computadores, feito pela turma TINF4V.</p>
+                <p><a href="../HTML/sobre.html">Sobre nós</a></p>
+            </div>
+
+            <!-- Autores -->
+            <div class="footerBloco">
+                <h3>Autores</h3>
+                <p>Alunos da TINF4V de 2026</p>
+                <p>Disciplina de Tópicos Especiais</p>
+            </div>
+
+            <!-- Contato -->
+            <div class="footerBloco">
+                <h3>Contato</h3>
+                <p>Instagram: <a href="https://www.instagram.com/tinf4ve?utm_source=ig_web_button_share_sheet&stkn=ZDNlZDc0MzIxNw==">@tinf4ve</a></p>
+                <p>E-mail: <a></a></p>
+            </div>
+        </div>
+
+        <!-- Linha final -->
+        <p id="footerCreditos">Instituto Federal Sul-rio-grandense · Câmpus Camaquã · 2026</p>
+    </footer>
+
+</body>
+</html>

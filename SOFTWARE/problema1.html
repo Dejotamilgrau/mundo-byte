@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Erro de boot do Windows XP no Rufus e Ventoy - MundoByte</title>
+    <link rel="stylesheet" href="../CSS/reset.css">
+    <link rel="stylesheet" href="../CSS/base_estilo.css">
+    <link rel="stylesheet" href="../CSS/layout_estilo.css">
+    <link rel="stylesheet" href="../CSS/header_estilo.css">
+    <link rel="stylesheet" href="../CSS/footer_estilo.css">
+    <link rel="stylesheet" href="../CSS/problema1.css">
+    <link rel="icon" href="../IMG/favicon.ico">
+</head>
+<body>
+
+    <header id="headerContainer">
+
+        <!-- linha de cima  -->
+        <div id="headerTop">
+            <span id="logoTurma"></span>
+            <span id="logoIf"></span>
+        </div>
+
+        <!-- Linha debaixo (menu) -->
+        <nav id="headerNav">
+            <a href="../HTML/index.html" class="navItem">Home</a>
+            <a href="../HARDWARE/hardware.html" class="navItem">Visão do computador</a>
+            <a href="../HARDWARE/computadores_antigos.html" class="navItem">Problemas de Hardware</a>
+            <a href="problemas_software.html" class="navItem" aria-current="page">Problemas de Software</a>
+        </nav>
+    </header>
+
+    <main>
+        <h1>A Incompatibilidade da Instalação do Windows XP via USB e a Sua Solução</h1>
+        <hr>
+        <section>
+            <p>A principal causa de falhas ao instalar o Windows XP a partir de um pen drive é a incompatibilidade
+                nativa do
+                sistema com tecnologias modernas. Lançado em 2001 com foco em mídias de CD-ROM, o seu instalador
+                original
+                não possui drivers para ler barramentos USB na primeira fase de boot. Além disso, não reconhece discos
+                rígidos em modo SATA/AHCI nem esquemas de partição GPT/UEFI. Por essas limitações, ferramentas populares
+                como Rufus e Ventoy costumam falhar. Embora consigam carregar a etapa inicial em modo texto, o
+                computador
+                perde a referência da unidade USB ao reiniciar para a segunda fase (modo gráfico).
+                Essa interrupção gera erros de arquivos ausentes ou a tradicional tela azul.
+            </p>
+        </section>
+        <hr>
+        <section class="secao">
+            <div>
+                <h2>Solução</h2>
+                <p>Para contornar esse problema, utiliza-se o software WinSetupFromUSB em vez do Rufus ou Ventoy. Essa
+                    ferramenta faz com que o pen drive simule a estrutura de um disco óptico (CD/DVD),
+                    ultrapassando os limites de boot do sistema e permitindo concluir a instalação do Windows XP com
+                    sucesso.
+                </p>
+                <p>Para visualizar todo o processo de criação do pendrive de boot usando o WinSetupFromUSB,
+                    assista a um dos tutoriais em vídeo abaixo:
+                </p>
+                <ul class="lista-videos">
+                    <li><a href="https://www.youtube.com/watch?v=3TnIl9qkfE0">
+                            Boot de instalação do Windows XP pelo PENDRIVE BOOTÁVEL.
+                        </a>
+                    </li>
+                    <li><a href="https://www.youtube.com/watch?v=VvYlbkOYUsI">
+                            Install Windows XP from USB with WinSetupFromUSB (New and better method)
+                        </a>
+                    </li>
+                </ul>
+            </div>
+
+            <img id="fotoProblema1" src="../IMG/problema1.png" alt="Foto do problema 1">
+        </section>
+    </main>
+
+    <footer id="footerContainer">
+        <div id="footerItem">
+
+            <!-- Logo e descrição do site -->
+            <div class="footerBloco" id="footerSobre">
+                <span id="footerLogo"></span>
+                <p>Site sobre montagem e manutenção de computadores, feito pela turma TINF4V.</p>
+                <p><a href="../HTML/sobre.html">Sobre nós</a></p>
+            </div>
+
+            <!-- Autores -->
+            <div class="footerBloco">
+                <h3>Autores</h3>
+                <p>Alunos da TINF4V de 2026</p>
+                <p>Disciplina de Tópicos Especiais</p>
+            </div>
+
+            <!-- Contato -->
+            <div class="footerBloco">
+                <h3>Contato</h3>
+                <p>Instagram: <a href="https://www.instagram.com/tinf4ve?utm_source=ig_web_button_share_sheet&stkn=ZDNlZDc0MzIxNw==">@tinf4ve</a></p>
+                <p>E-mail: <a></a></p>
+            </div>
+        </div>
+
+        <!-- Linha final -->
+        <p id="footerCreditos">Instituto Federal Sul-rio-grandense · Câmpus Camaquã · 2026</p>
+    </footer>
+
+</body>
+</html>

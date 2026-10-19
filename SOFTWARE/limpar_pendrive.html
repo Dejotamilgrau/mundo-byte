@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Como Apagar o Boot do Pen Drive e Voltar ao Normal - MundoByte</title>
+    <link rel="stylesheet" href="../CSS/reset.css">
+    <link rel="stylesheet" href="../CSS/base_estilo.css">
+    <link rel="stylesheet" href="../CSS/layout_estilo.css">
+    <link rel="stylesheet" href="../CSS/header_estilo.css">
+    <link rel="stylesheet" href="../CSS/footer_estilo.css">
+    <link rel="stylesheet" href="../CSS/problema1.css">
+    <link rel="icon" href="../IMG/favicon.ico">
+</head>
+<body>
+
+    <header id="headerContainer">
+
+        <!-- linha de cima  -->
+        <div id="headerTop">
+            <span id="logoTurma"></span>
+            <span id="logoIf"></span>
+        </div>
+
+        <!-- Linha debaixo (menu) -->
+        <nav id="headerNav">
+            <a href="../HTML/index.html" class="navItem">Home</a>
+            <a href="../HARDWARE/hardware.html" class="navItem">Visão do computador</a>
+            <a href="../HARDWARE/computadores_antigos.html" class="navItem">Problemas de Hardware</a>
+            <a href="problemas_software.html" class="navItem" aria-current="page">Problemas de Software</a>
+        </nav>
+    </header>
+
+    <main>
+        <h1>Como Apagar o Boot do Pen Drive e Voltar ao Normal</h1>
+        <hr>
+        <section>
+            <p>Depois de usar um pen drive de boot, é comum ele não voltar a funcionar como antes. Muitas vezes ele
+                aparece com um tamanho bem menor do que o real, fica dividido em mais de uma partição ou o Windows nem
+                consegue formatá-lo pelo jeito normal. Isso acontece porque o Ventoy, o Rufus e o comando "dd" criam
+                partições especiais no pen drive. Para deixá-lo como novo, é preciso apagar todas essas partições e
+                criar uma nova, o que também apaga todos os arquivos que estiverem nele.
+            </p>
+        </section>
+        <hr>
+        <section>
+            <h2>No Windows, pelo DiskPart</h2>
+            <p>O DiskPart é uma ferramenta que já vem no Windows. Para usá-lo, abre-se o Prompt de Comando como
+                administrador e digita-se "diskpart". Em seguida, o comando "list disk" mostra todos os discos do
+                computador, e é preciso identificar o pen drive pelo tamanho. Esse passo exige atenção, pois escolher o
+                disco errado apaga o HD do computador.
+            </p>
+            <p>Depois, digita-se "select disk N", trocando N pelo número do pen drive, e "clean", que apaga todas as
+                partições. Para criar a partição nova, usa-se "create partition primary", depois "format fs=exfat
+                quick" para formatar e "assign" para o pen drive receber uma letra. Por fim, "exit" fecha o DiskPart e
+                o pen drive volta a aparecer com o tamanho completo. Se for preciso usar o pen drive em aparelhos
+                antigos, como som de carro ou TV, pode-se formatar em FAT32 pelo próprio Windows depois.
+            </p>
+        </section>
+        <hr>
+        <section>
+            <h2>No Windows, pelo Gerenciamento de Disco</h2>
+            <p>Também é possível fazer isso sem comandos. Clica-se com o botão direito no menu Iniciar e abre-se o
+                "Gerenciamento de Disco". Na parte de baixo da janela, localiza-se o pen drive, clica-se com o botão
+                direito em cada partição dele e escolhe-se "Excluir volume". Quando todo o espaço aparecer como "Não
+                alocado", clica-se com o botão direito nele, em "Novo volume simples", e segue-se o assistente até o
+                final.
+            </p>
+            <p>Outra opção é usar o próprio Rufus: em "Seleção de boot" escolhe-se "Não inicializável" e clica-se em
+                "INICIAR", e ele formata o pen drive como um pen drive comum.
+            </p>
+        </section>
+        <hr>
+        <section>
+            <h2>No Linux</h2>
+            <p>No Ubuntu, a forma mais simples é pelo programa "Discos". Seleciona-se o pen drive na lista da
+                esquerda, clica-se no menu de três pontos e em "Formatar disco", e depois no botão "+" para criar uma
+                nova partição ocupando todo o espaço.
+            </p>
+            <p>Pelo terminal, primeiro identifica-se o pen drive com "lsblk". Depois, o comando "sudo wipefs -a
+                /dev/sdX" apaga todas as partições, "sudo parted /dev/sdX mklabel msdos" cria uma nova tabela de
+                partições, "sudo parted /dev/sdX mkpart primary fat32 0% 100%" cria a partição e "sudo mkfs.vfat -F 32
+                /dev/sdX1" formata em FAT32, sempre trocando "sdX" pelo nome do pen drive.
+            </p>
+        </section>
+    </main>
+
+    <footer id="footerContainer">
+        <div id="footerItem">
+
+            <!-- Logo e descrição do site -->
+            <div class="footerBloco" id="footerSobre">
+                <span id="footerLogo"></span>
+                <p>Site sobre montagem e manutenção de computadores, feito pela turma TINF4V.</p>
+                <p><a href="../HTML/sobre.html">Sobre nós</a></p>
+            </div>
+
+            <!-- Autores -->
+            <div class="footerBloco">
+                <h3>Autores</h3>
+                <p>Alunos da TINF4V de 2026</p>
+                <p>Disciplina de Tópicos Especiais</p>
+            </div>
+
+            <!-- Contato -->
+            <div class="footerBloco">
+                <h3>Contato</h3>
+                <p>Instagram: <a href="https://www.instagram.com/tinf4ve?utm_source=ig_web_button_share_sheet&stkn=ZDNlZDc0MzIxNw==">@tinf4ve</a></p>
+                <p>E-mail: <a></a></p>
+            </div>
+        </div>
+
+        <!-- Linha final -->
+        <p id="footerCreditos">Instituto Federal Sul-rio-grandense · Câmpus Camaquã · 2026</p>
+    </footer>
+
+</body>
+</html>

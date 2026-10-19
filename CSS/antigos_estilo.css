@@ -1,0 +1,153 @@
+/* Estilo da página de problemas em computadores antigos (computadores_antigos.html).
+ Usar junto com reset.css, base_estilo.css e layout_estilo.css */
+
+/* ===== Selo de gravidade ===== */
+
+/* Etiqueta pequena com a gravidade do problema (crítico, atenção ou normal) */
+.selo {
+    display: inline-block;
+    padding: 0 10px;
+    border-radius: 4px;
+    font-size: 11px;
+    font-weight: bold;
+    letter-spacing: 1px;
+    line-height: 24px;
+    text-transform: uppercase;
+    color: white;
+}
+
+.selo.critico {
+    background-color: #c0392b;
+}
+
+.selo.atencao {
+    background-color: #d68910;
+}
+
+.selo.normal {
+    background-color: #369831;
+}
+
+/* ===== Legenda ===== */
+
+/* Legenda das cores, com os itens lado a lado */
+#legenda {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px 30px;
+    font-size: 14px;
+    color: #666666;
+    margin-bottom: 30px;
+}
+
+#legenda .selo {
+    margin-right: 6px;
+}
+
+/* ===== Grade de problemas ===== */
+
+/* Os cartões ficam em 3 colunas, com 25px de espaço entre eles */
+#grade-problemas {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 25px;
+    margin-left: 0;
+}
+
+/* Cartão branco com cantos arredondados e sombra suave */
+.cartao {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 20px;
+    background-color: white;
+    border: 1px solid #ececec;
+    border-radius: 14px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.06);
+    transition: transform 0.25s, box-shadow 0.25s, border-color 0.25s;
+}
+
+/* Ao passar o mouse, o cartão sobe um pouco e a sombra fica mais forte */
+.cartao:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 10px 25px rgba(0, 66, 12, 0.15);
+    border-color: #8CC63C;
+}
+
+/* Título do cartão com uma linha verde embaixo, igual ao modelo */
+.cartao h2 {
+    width: 100%;
+    font-size: 17px;
+    line-height: 24px;
+    margin-top: 12px;
+    padding-bottom: 10px;
+    border-bottom: 2px solid #369831;
+}
+
+/* Descrição do problema, alinhada à esquerda e sem os respiros grandes do base_estilo */
+.cartao p {
+    font-size: 14px;
+    line-height: 22px;
+    text-align: left;
+    margin-top: 12px;
+    margin-bottom: 12px;
+}
+
+/* Subtítulo "Sintomas:" */
+.cartao h3 {
+    font-size: 14px;
+    color: #003F09;
+}
+
+/* Lista de sintomas com bolinhas verdes (o reset.css tira as bolinhas, aqui elas voltam) */
+.cartao ul li {
+    list-style-type: disc;
+    margin-left: 18px;
+    font-size: 13px;
+    line-height: 22px;
+    color: #555555;
+    padding: 3px 0;
+}
+
+.cartao ul li::marker {
+    color: #369831;
+}
+
+/* "Ver solução" em formato de botão arredondado, sempre no fim do cartão */
+.ver-solucao {
+    margin-top: auto;
+    padding: 0 16px;
+    border-radius: 20px;
+    border: 2px solid #369831;
+    font-size: 13px;
+    font-weight: bold;
+    color: #369831;
+    text-decoration: none;
+    transition: background-color 0.2s, color 0.2s;
+}
+
+/* Espaço entre a lista e o botão */
+.cartao ul + .ver-solucao {
+    margin-top: 15px;
+}
+
+.ver-solucao:hover {
+    background-color: #369831;
+    color: white;
+}
+
+/* ===== Telas menores ===== */
+
+/* Em telas médias (tablet), 2 colunas */
+@media (max-width: 1000px) {
+    #grade-problemas {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+/* No celular, 1 coluna */
+@media (max-width: 650px) {
+    #grade-problemas {
+        grid-template-columns: 1fr;
+    }
+}

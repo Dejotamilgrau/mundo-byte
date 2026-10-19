@@ -1,0 +1,60 @@
+/* Estilo comum das páginas: título da página e links no texto.
+ O cabeçalho está em header_estilo.css e o rodapé em footer_estilo.css.
+ Usar junto com reset.css e base_estilo.css */
+
+/* ===== Página inteira ===== */
+
+/* Faz a página ocupar a tela toda, assim o rodapé fica sempre lá embaixo mesmo com pouco conteúdo */
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+main {
+    flex: 1;
+}
+
+/* ===== Título da página ===== */
+
+/* Alinha o título e os textos dos cartões à esquerda, pois o justificado do base_estilo
+ abre buracos entre as palavras em linhas curtas */
+main > h1,
+main > p,
+.texto-problema p {
+    text-align: left;
+}
+
+/* Pequena barra verde embaixo do título, para destacar */
+main > h1::after {
+    content: "";
+    display: block;
+    width: 70px;
+    height: 4px;
+    margin-top: 10px;
+    border-radius: 2px;
+    background-color: #369831;
+}
+
+/* Nas páginas que têm uma linha (hr) logo abaixo do título, a barrinha verde não aparece */
+main > h1:has(+ hr)::after {
+    display: none;
+}
+
+/* Texto de introdução em cinza, para diferenciar do conteúdo dos problemas */
+main > p {
+    color: #666666;
+    max-width: 800px;
+}
+
+/* ===== Links no meio do texto ===== */
+
+/* Links dentro dos parágrafos ficam verdes, no lugar do azul padrão */
+main section p a {
+    color: #369831;
+    font-weight: bold;
+}
+
+main section p a:hover {
+    color: #003F09;
+}

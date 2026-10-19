@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../CSS/reset.css">
+    <link rel="stylesheet" href="../CSS/base_estilo.css">
+    <link rel="stylesheet" href="../CSS/layout_estilo.css">
+    <link rel="stylesheet" href="../CSS/header_estilo.css">
+    <link rel="stylesheet" href="../CSS/footer_estilo.css">
+    <link rel="stylesheet" href="../CSS/index_estilo.css">
+    <link rel="icon" href="../IMG/favicon.ico">
+    <title>Mundo Byte</title>
+</head>
+
+<body>
+    <!-- Cabeçalho, GABRIELLI BANDOW -->
+    <header id="headerContainer">
+
+        <!-- linha de cima  -->
+        <div id="headerTop">
+            <span id="logoTurma"></span>
+            <span id="logoIf"></span>
+        </div>
+
+        <!-- Linha debaixo (menu) -->
+        <nav id="headerNav">
+            <a href="index.html" class="navItem" aria-current="page">Home</a>
+            <a href="../HARDWARE/hardware.html" class="navItem">Visão do computador</a>
+            <a href="../HARDWARE/computadores_antigos.html" class="navItem">Problemas de Hardware</a>
+            <a href="../SOFTWARE/problemas_software.html" class="navItem">Problemas de Software</a>
+        </nav>
+    </header>
+
+    <!-- Conteúdo, RAÍSSA MAGALHÃES-->
+
+    <main>
+        <!-- Apresentação do site -->
+        <h1>BEM-VINDO(A) AO MUNDO BYTE!</h1>
+        <p>Site dedicado à disseminação de conteúdos de informática, fornecendo diagnósticos e soluções de problemas
+            recorrentes com computadores.</p>
+
+        <!-- Parte do recurso de pesquisa -->
+        <section id="container-pesquisa">
+            <h2>QUAL PROBLEMA VOCÊ ESTÁ TENTANDO RESOLVER HOJE?</h2>
+
+            <!-- Campo de digitação do problema -->
+            <form id="formulario-digitacao" action="#" method="get">
+                <input id="digita-pesquisa" type="text" name="problema-pesquisa"
+                    placeholder="Digite seu problema aqui.">
+            </form>
+
+            <form>
+                <!-- Campo de filtrar por categoria (hardware, software, sistema operacional...) -->
+                <aside id="container-filtros">
+                    <label>Filtre pelas categorias:</label>
+                    <ul>
+                        <li class="filtro">
+                            <label><input type="checkbox" name="item-filtro1" value="hardware" /> Hardware</label>
+                        </li>
+                        <li class="filtro">
+                            <label><input type="checkbox" name="item-filtro2" value="software" /> Software</label>
+                        </li>
+                        <li class="filtro">
+                            <label><input type="checkbox" name="item-filtro3" value="sistema-operacional" /> Sistema
+                                operacional</label>
+                        </li>
+                    </ul>
+                </aside>
+            </form>
+            <!-- Campo de exibição de resultados da pesquisa -->
+            <div id="container-lista-resultados">
+                <ul id="lista-resultados-pesquisa">
+                    <li><a href="#" class="item-resultado">Resultado 1</a></li>
+                    <li><a href="#" class="item-resultado">Resultado 2</a></li>
+                    <li><a href="#" class="item-resultado">Resultado 3</a></li>
+                    <li><a href="#" class="item-resultado">Resultado 4</a></li>
+                    <li><a href="#" class="item-resultado">Resultado 5</a></li>
+                </ul>
+                <span id="container-botoes-acao">
+                    <button><a href="#">Voltar</a></button>
+                    <button><a href="#">Avançar</a></button>
+                </span>
+            </div>
+        </section>
+
+       <hr>
+
+        <!-- Mini tutorial de como usar o recurso -->
+        <section>
+            <h2>COMO PESQUISAR POR NOSSOS RECURSOS:</h2>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Alias officiis ipsam consectetur earum, ex
+                expedita magnam voluptatem quis velit voluptate asperiores nesciunt consequuntur nam aut, assumenda
+                mollitia! Aliquam, aperiam exercitationem.</p>
+            <div id="tutorial_de_uso"></div>
+        </section>
+    </main>
+
+    <!-- Rodapé, GABRIELLI BANDOW -->
+    <footer id="footerContainer">
+        <div id="footerItem">
+
+            <!-- Logo e descrição do site -->
+            <div class="footerBloco" id="footerSobre">
+                <span id="footerLogo"></span>
+                <p>Site sobre montagem e manutenção de computadores, feito pela turma TINF4V.</p>
+                <p><a href="sobre.html">Sobre nós</a></p>
+            </div>
+
+            <!-- Autores -->
+            <div class="footerBloco">
+                <h3>Autores</h3>
+                <p>Alunos da TINF4V de 2026</p>
+                <p>Disciplina de Tópicos Especiais</p>
+            </div>
+
+            <!-- Contato -->
+            <div class="footerBloco">
+                <h3>Contato</h3>
+                <p>Instagram: <a href="https://www.instagram.com/tinf4ve?utm_source=ig_web_button_share_sheet&stkn=ZDNlZDc0MzIxNw==">@tinf4ve</a></p>
+                <p>E-mail: <a></a></p>
+            </div>
+        </div>
+
+        <!-- Linha final -->
+        <p id="footerCreditos">Instituto Federal Sul-rio-grandense · Câmpus Camaquã · 2026</p>
+    </footer>
+
+</body>
+
+</html>

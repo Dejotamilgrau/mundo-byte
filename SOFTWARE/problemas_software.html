@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Problemas de software - MundoByte</title>
+    <link rel="stylesheet" href="../CSS/reset.css">
+    <link rel="stylesheet" href="../CSS/base_estilo.css">
+    <link rel="stylesheet" href="../CSS/layout_estilo.css">
+    <link rel="stylesheet" href="../CSS/header_estilo.css">
+    <link rel="stylesheet" href="../CSS/footer_estilo.css">
+    <link rel="stylesheet" href="../CSS/software_estilo.css">
+    <link rel="icon" href="../IMG/favicon.ico">
+</head>
+<body>
+
+    <header id="headerContainer">
+
+        <!-- linha de cima  -->
+        <div id="headerTop">
+            <span id="logoTurma"></span>
+            <span id="logoIf"></span>
+        </div>
+
+        <!-- Linha debaixo (menu) -->
+        <nav id="headerNav">
+            <a href="../HTML/index.html" class="navItem">Home</a>
+            <a href="../HARDWARE/hardware.html" class="navItem">Visão do computador</a>
+            <a href="../HARDWARE/computadores_antigos.html" class="navItem">Problemas de Hardware</a>
+            <a href="problemas_software.html" class="navItem" aria-current="page">Problemas de Software</a>
+        </nav>
+    </header>
+
+    <main>
+        <h1>Problemas de software</h1>
+        <p>Problemas de software que encontramos durante a montagem e manutenção dos computadores, com as causas e como resolvemos cada um.</p>
+
+        <section id="lista-problemas">
+            <a href="problema1.html" class="problema">
+                <img src="../IMG/rufus-ventoy.png" alt="Tela do WinSetupFromUSB">
+                <div class="texto-problema">
+                    <h2>Erro de Boot do Windows XP no Rufus e Ventoy</h2>
+                    <p>O Windows XP não instalava pelo Rufus nem pelo Ventoy. Resolvemos usando o WinSetupFromUSB, que faz o pen drive simular um disco.</p>
+                    <span class="ver-solucao">Ver solução &rsaquo;</span>
+                </div>
+            </a>
+
+            <a href="drivers_desatualizados.html" class="problema">
+                <img src="../IMG/internet.jpg" alt="Atualizar driver do 802.11 WLAN Adapter no Gerenciador de dispositivos">
+                <div class="texto-problema">
+                    <h2>Inacesso a internet</h2>
+                    <p>O computador não acessava a rede sem fio. Resolvemos instalando o driver da placa de rede Realtek pelo Gerenciador de dispositivos.</p>
+                    <span class="ver-solucao">Ver solução &rsaquo;</span>
+                </div>
+            </a>
+
+            <a href="#" class="problema">
+                <img src="../IMG/menu-boot.png" alt="Entrada do Windows 7 no GRUB editada no nano">
+                <div class="texto-problema">
+                    <h2>Menu de boot não aparece</h2>
+                    <p>O computador iniciava direto em um sistema, sem mostrar o menu de escolha. Resolvemos com o update-grub no Ubuntu e o EasyBCD no Windows.</p>
+                    <span class="ver-solucao">Ver solução &rsaquo;</span>
+                </div>
+            </a>
+
+            <a href="so_corrompido.html" class="problema">
+                <img src="../IMG/so-corrompido.png" alt="Tela Windows Error Recovery informando que o Windows não conseguiu iniciar">
+                <div class="texto-problema">
+                    <h2>Sistema operacional corrompido</h2>
+                    <p>Arquivos essenciais do sistema danificados por desligamento incorreto, vírus ou HD com defeito. O computador não inicia ou fica travando.</p>
+                    <span class="ver-solucao">Ver solução &rsaquo;</span>
+                </div>
+            </a>
+
+            <a href="drivers_desatualizados.html" class="problema">
+                <img src="../IMG/drivers.jpg" alt="Janela Atualizar Driver do 802.11 WLAN Adapter">
+                <div class="texto-problema">
+                    <h2>Drivers desatualizados ou corrompidos</h2>
+                    <p>Depois de formatar, peças antigas ficam sem driver e param de funcionar. Resolvemos baixando o driver certo no site do fabricante.</p>
+                    <span class="ver-solucao">Ver solução &rsaquo;</span>
+                </div>
+            </a>
+
+            <a href="windows_sem_som.html" class="problema">
+                <div class="texto-problema">
+                    <h2>Windows sem som</h2>
+                    <p>O som parava de sair, normalmente depois de conectar fone Bluetooth, monitor HDMI ou caixa de som. Resolvemos escolhendo a saída certa, reiniciando o serviço de áudio ou reinstalando o driver.</p>
+                    <span class="ver-solucao">Ver solução &rsaquo;</span>
+                </div>
+            </a>
+
+            <a href="disco_cheio.html" class="problema">
+                <div class="texto-problema">
+                    <h2>Espaço em disco ficando cheio sozinho</h2>
+                    <p>O disco C: enchia sem motivo por causa de arquivos temporários e pontos de restauração. Resolvemos com a Limpeza de Disco, limpando a pasta %temp% e ativando o Sensor de Armazenamento.</p>
+                    <span class="ver-solucao">Ver solução &rsaquo;</span>
+                </div>
+            </a>
+
+            <a href="loop_reparo.html" class="problema">
+                <div class="texto-problema">
+                    <h2>Loop de reparo automático</h2>
+                    <p>O Windows tentava se reparar sozinho, falhava e reiniciava sem parar. Resolvemos pelas Opções Avançadas, com Reparo de Inicialização, Restauração do Sistema ou os comandos bootrec.</p>
+                    <span class="ver-solucao">Ver solução &rsaquo;</span>
+                </div>
+            </a>
+
+            <a href="arquivos_bloqueados.html" class="problema">
+                <div class="texto-problema">
+                    <h2>Arquivos ou pastas que não podem ser excluídos</h2>
+                    <p>O arquivo continuava aberto por algum processo em segundo plano. Resolvemos finalizando a tarefa no Gerenciador de Tarefas (Ctrl + Shift + Esc).</p>
+                    <span class="ver-solucao">Ver solução &rsaquo;</span>
+                </div>
+            </a>
+        </section>
+
+        <h2 id="titulo-tutoriais">Tutoriais</h2>
+        <ul id="lista-tutoriais">
+            <li><a href="pendrive_ventoy.html">Como criar um pen drive de boot com o Ventoy</a></li>
+            <li><a href="pendrive_rufus.html">Como criar um pen drive de boot com o Rufus</a></li>
+            <li><a href="pendrive_iso.html">Como criar um pen drive de boot direto com a ISO</a></li>
+            <li><a href="limpar_pendrive.html">Como apagar o boot do pen drive e voltar ao normal</a></li>
+        </ul>
+
+        <h2 id="titulo-veja-tambem">Veja também</h2>
+        <ul id="lista-veja-tambem">
+            <li><a href="../HARDWARE/computadores_antigos.html">Problemas mais comuns em computadores antigos</a></li>
+        </ul>
+    </main>
+
+    <footer id="footerContainer">
+        <div id="footerItem">
+
+            <!-- Logo e descrição do site -->
+            <div class="footerBloco" id="footerSobre">
+                <span id="footerLogo"></span>
+                <p>Site sobre montagem e manutenção de computadores, feito pela turma TINF4V.</p>
+                <p><a href="../HTML/sobre.html">Sobre nós</a></p>
+            </div>
+
+            <!-- Autores -->
+            <div class="footerBloco">
+                <h3>Autores</h3>
+                <p>Alunos da TINF4V de 2026</p>
+                <p>Disciplina de Tópicos Especiais</p>
+            </div>
+
+            <!-- Contato -->
+            <div class="footerBloco">
+                <h3>Contato</h3>
+                <p>Instagram: <a href="https://www.instagram.com/tinf4ve?utm_source=ig_web_button_share_sheet&stkn=ZDNlZDc0MzIxNw==">@tinf4ve</a></p>
+                <p>E-mail: <a></a></p>
+            </div>
+        </div>
+
+        <!-- Linha final -->
+        <p id="footerCreditos">Instituto Federal Sul-rio-grandense · Câmpus Camaquã · 2026</p>
+    </footer>
+
+</body>
+</html>

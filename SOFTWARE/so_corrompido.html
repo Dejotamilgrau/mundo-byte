@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sistema operacional corrompido - MundoByte</title>
+    <link rel="stylesheet" href="../CSS/reset.css">
+    <link rel="stylesheet" href="../CSS/base_estilo.css">
+    <link rel="stylesheet" href="../CSS/layout_estilo.css">
+    <link rel="stylesheet" href="../CSS/header_estilo.css">
+    <link rel="stylesheet" href="../CSS/footer_estilo.css">
+    <link rel="stylesheet" href="../CSS/problema1.css">
+    <link rel="icon" href="../IMG/favicon.ico">
+</head>
+<body>
+
+    <header id="headerContainer">
+
+        <!-- linha de cima  -->
+        <div id="headerTop">
+            <span id="logoTurma"></span>
+            <span id="logoIf"></span>
+        </div>
+
+        <!-- Linha debaixo (menu) -->
+        <nav id="headerNav">
+            <a href="../HTML/index.html" class="navItem">Home</a>
+            <a href="../HARDWARE/hardware.html" class="navItem">Visão do computador</a>
+            <a href="../HARDWARE/computadores_antigos.html" class="navItem">Problemas de Hardware</a>
+            <a href="problemas_software.html" class="navItem" aria-current="page">Problemas de Software</a>
+        </nav>
+    </header>
+
+    <main>
+        <h1>A Corrupção do Sistema Operacional em Computadores Antigos e a Sua Solução</h1>
+        <hr>
+        <section>
+            <p>Um sistema operacional corrompido é aquele em que arquivos essenciais do Windows ou do Linux foram
+                danificados ou apagados, fazendo com que o computador não consiga iniciar ou funcione de forma
+                instável. Em computadores antigos esse problema é bem mais comum, pois o HD já está desgastado pelo
+                tempo de uso, a fonte de energia pode estar fraca e muitas vezes o sistema passou anos sem manutenção.
+                Os sintomas mais frequentes são mensagens como "Missing Operating System" ou "BOOTMGR is missing" ao
+                ligar, a tradicional tela azul, programas que param de funcionar e, no Linux, o computador parando no
+                terminal "initramfs".
+            </p>
+        </section>
+        <hr>
+        <section class="secao">
+            <div>
+                <h2>Possíveis causas</h2>
+                <p>As causas mais comuns são o desligamento incorreto do computador ou uma queda de energia enquanto
+                    arquivos estavam sendo gravados, atualizações do sistema interrompidas no meio, vírus e,
+                    principalmente em máquinas antigas, setores defeituosos no HD. Para saber se o problema está no
+                    HD, pode-se verificar a saúde do disco com o programa CrystalDiskInfo no Windows ou com o comando
+                    "sudo smartctl -a /dev/sda" no Linux. Barulhos de clique vindos do gabinete também indicam que o
+                    HD está falhando.
+                </p>
+            </div>
+        </section>
+        <hr>
+        <section class="secao">
+            <div>
+                <h2>Solução</h2>
+                <p>No Windows, o primeiro passo é iniciar pelo pen drive de instalação e utilizar a opção "Reparo de
+                    Inicialização". Caso não resolva, pelo Prompt de Comando das opções de recuperação, os comandos
+                    "bootrec /fixmbr", "bootrec /fixboot" e "bootrec /rebuildbcd" recuperam o boot do sistema. Com o
+                    Windows funcionando novamente, o comando "sfc /scannow" verifica e corrige os arquivos do sistema,
+                    e o "chkdsk C: /f /r" marca os setores defeituosos do HD para que não sejam mais usados. No Linux,
+                    utiliza-se o "fsck" na partição do sistema e, em seguida, "sudo dpkg --configure -a" para terminar
+                    a instalação de pacotes que ficaram pela metade.
+                </p>
+                <p>Se nada disso funcionar, a solução definitiva é salvar os arquivos importantes e reinstalar o
+                    sistema operacional. Antes disso, é importante verificar se o HD está saudável, pois se ele estiver
+                    com defeito o problema volta a acontecer, sendo necessário trocá-lo.
+                </p>
+            </div>
+
+            <img id="fotoProblema1" src="../IMG/so-corrompido.png" alt="Tela Windows Error Recovery">
+        </section>
+    </main>
+
+    <footer id="footerContainer">
+        <div id="footerItem">
+
+            <!-- Logo e descrição do site -->
+            <div class="footerBloco" id="footerSobre">
+                <span id="footerLogo"></span>
+                <p>Site sobre montagem e manutenção de computadores, feito pela turma TINF4V.</p>
+                <p><a href="../HTML/sobre.html">Sobre nós</a></p>
+            </div>
+
+            <!-- Autores -->
+            <div class="footerBloco">
+                <h3>Autores</h3>
+                <p>Alunos da TINF4V de 2026</p>
+                <p>Disciplina de Tópicos Especiais</p>
+            </div>
+
+            <!-- Contato -->
+            <div class="footerBloco">
+                <h3>Contato</h3>
+                <p>Instagram: <a href="https://www.instagram.com/tinf4ve?utm_source=ig_web_button_share_sheet&stkn=ZDNlZDc0MzIxNw==">@tinf4ve</a></p>
+                <p>E-mail: <a></a></p>
+            </div>
+        </div>
+
+        <!-- Linha final -->
+        <p id="footerCreditos">Instituto Federal Sul-rio-grandense · Câmpus Camaquã · 2026</p>
+    </footer>
+
+</body>
+</html>

@@ -1,0 +1,36 @@
+  /* Organização básica das seções, define que serão containers grid que terão verticalmente seus itens alinhados ao meio, terá 
+ duas colunas de mesmo tamanho e estarão 20 px espaçadas uma da outra*/
+  .secao {
+      display: grid;
+      /* Controla o tamanho das colunas: texto ocupa o espaço disponível e a imagem fica no tamanho ideal */
+      grid-template-columns: 1fr auto;
+      align-items: center;
+      gap: 200px;
+      /* Espaçamento adequado entre o texto e a imagem */
+  }
+
+
+  #fotoProblema1 {
+      width: 250px;
+      border-radius: 8px;
+      /* Ajuste a curvatura dos cantos */
+  }
+
+  /* Lista de vídeos no fim das soluções, com bolinhas verdes (o reset.css tira as bolinhas, aqui elas voltam) */
+  .lista-videos li {
+      list-style-type: disc;
+      margin-left: 40px;
+      text-align: left;
+  }
+
+  .lista-videos li::marker {
+      color: #369831;
+  }
+
+  .lista-videos a {
+      color: #003F09;
+  }
+
+  .lista-videos a:hover {
+      color: #369831;
+  }

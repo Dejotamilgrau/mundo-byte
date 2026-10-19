@@ -1,0 +1,149 @@
+
+/* =====================
+    Conteúdo principal
+========================*/
+
+/* banner */
+section {
+    height: 50%;
+}
+.container{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+
+main {
+    display: flex;
+    flex-direction: column;
+}
+
+.container{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+
+/* texto do lado da imagem (placa-mãe) */
+.textoPlacaMae{
+    max-width: 50%;
+    text-align:justify ;
+}
+
+/* Configurações base para o container e imagem */
+.imagem {
+    position: relative;
+    display: inline-block;
+}
+
+.placaMae {
+    display: block;
+    max-width: 85%;
+    height: auto;
+}
+
+/* Configuração geral de todas as áreas interativas */
+.interativa {
+    position: absolute;
+}
+
+/* POSICIONAMENTO ESPECÍFICO DE CADA PONTO */
+.po1 {
+    /* processador */
+    width: 40%;
+    height: 40%;
+    top: 15%;
+    left: 20%;
+}
+
+.po2 {
+    /* Sata */
+    width: 13%;
+    height: 10%;
+    top: 90%;
+    left: 70%;
+}
+
+.po3 {
+    /* Memória Ram */
+    width: 12%;
+    height: 57%;
+    top: 7%;
+    left: 63%;
+}
+
+.po4 {
+    /* Slots de Expansão */
+    width: 14%;
+    height: 23%;
+    top: 67%;
+    left: 19%;
+}
+
+.epx {
+    /* Slots de Expansão (para contornar certinho) */
+    width: 190%;
+    height: 24%;
+    top: 0%;
+    left: 100%;
+}
+
+.po5 {
+    /* Painel Traseiro */
+    width: 13%;
+    height: 70%;
+    top: 0%;
+    left: 0%;
+}
+
+.po6 {
+    /* Fonte de alimentação*/
+    width: 6%;
+    height: 27%;
+    top: 29%;
+    left: 76%;
+}
+
+.fnt {
+    /* mesma gambiarra dos slots de expansão */
+    width: 100%;
+    height: 23%;
+    right: 950%;
+    bottom: 160%;
+}
+
+.texto {
+    text-align: justify;
+    color: #003F09;
+    padding-left: 10px;
+}
+
+/* Configuração geral de todas as caixas ocultas */
+.caixaOculta {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    position: absolute;
+    top: 50%;
+    left: 110;
+    background-color: #cbfa8a;
+    color: #ffff;
+    padding: 12px;
+    border-radius: 6px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.15);
+    width: 500px;
+    border: 2px solid #003F09;
+
+    /* Esconde as caixas por padrão */
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease;
+}
+
+.interativa:hover .caixaOculta {
+    /*Quando coloca o mouse em cima ele mostra a telinha*/
+    opacity: 1;
+    visibility: visible;
+}

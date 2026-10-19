@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Espaço em disco ficando cheio - MundoByte</title>
+    <link rel="stylesheet" href="../CSS/reset.css">
+    <link rel="stylesheet" href="../CSS/base_estilo.css">
+    <link rel="stylesheet" href="../CSS/layout_estilo.css">
+    <link rel="stylesheet" href="../CSS/header_estilo.css">
+    <link rel="stylesheet" href="../CSS/footer_estilo.css">
+    <link rel="stylesheet" href="../CSS/problema1.css">
+    <link rel="icon" href="../IMG/favicon.ico">
+</head>
+<body>
+
+    <header id="headerContainer">
+
+        <!-- linha de cima  -->
+        <div id="headerTop">
+            <span id="logoTurma"></span>
+            <span id="logoIf"></span>
+        </div>
+
+        <!-- Linha debaixo (menu) -->
+        <nav id="headerNav">
+            <a href="../HTML/index.html" class="navItem">Home</a>
+            <a href="../HARDWARE/hardware.html" class="navItem">Visão do computador</a>
+            <a href="../HARDWARE/computadores_antigos.html" class="navItem">Problemas de Hardware</a>
+            <a href="problemas_software.html" class="navItem" aria-current="page">Problemas de Software</a>
+        </nav>
+    </header>
+
+    <main>
+        <h1> Espaço em disco ficando cheio sozinho no Windows</h1>
+        <hr>
+        <section>
+            <p>Este problema normalmente ocorre
+                porque o Windows e diversos aplicativos geram e acumulam
+                arquivos temporários continuamente em segundo plano. Entre
+                os principais vilões desse consumo estão os arquivos
+                temporários de instalações e navegação, os pontos de
+                restauração automática do sistema e os arquivos de paginação
+                e hibernação utilizados pela memória RAM.
+            </p>
+        </section>
+        <hr>
+        <section>
+            <div>
+                <h2>Solução</h2>
+                <p>Para resolver esse problema é possivel utilizar a
+                    ferramenta nativa Limpeza de Disco pressionando Win + R,
+                    digitando cleanmgr e selecionando a unidade C:. Ao
+                    clicar em Limpar arquivos do sistema, selecione e apague
+                    arquivos de atualizações antigas do
+                    Windows Update, pontos de restauração e itens da
+                    Lixeira.
+                </p>
+
+                <p>Além do utilitário, também é recomendado limpar as
+                    pastas de armazenamento temporário manualmente. Para
+                    isso, abra o menu Executar (Win + R), digite %temp% e
+                    apague todo o conteúdo da pasta, ignorando apenas os
+                    itens que o sistema informar estarem em uso no momento.
+                    Repita o mesmo procedimento digitando temp no
+                    Executar.</p>
+
+                <p> Para evitar que o problema volte a acontecer, é possivel
+                    ativar o Sensor de Armazenamento em Configurações >
+                    Sistema > Armazenamento, permitindo que o Windows faça
+                    essa eliminação de arquivos desnecessários de forma
+                    automática. Ao final, abra o "Este Computador" para
+                    verificar se a barra da unidade C: voltou a indicar um
+                    aumento significativo de espaço livre.</p>
+
+                <p>Para melhor compreensão, acesse os materiais da
+                    Microsoft:<a
+                        href="https://support.microsoft.com/pt-br/windows/experience/storage-filemanagement/manage-drive-space-with-storage-sense">
+                        Guia da Microsoft sobre como gerenciar espaço em
+                        disco com o Sensor de Armazenamento,</a> <a
+                        href="https://support.microsoft.com/pt-br/windows/experience/storage-filemanagement/free-up-drive-space-in-windows">
+                        Libere espaço em disco no Windows.</a>
+                    Ou assista a um dos tutoriais em vídeo abaixo:</p>
+
+                <ul class="lista-videos">
+                    <li><a
+                            href="https://www.youtube.com/watch?v=LW41hu1MpdM">
+                            Como Limpar Arquivos Temporários no Windows e
+                            Deixar o PC Mais Rápido
+                        </a>
+                    </li>
+                    <li><a
+                            href="https://www.youtube.com/watch?v=aSFfD0f5io4">
+                            Como ativar o Sensor de Armazenamento do Windows
+                            10
+                        </a>
+                    </li>
+                </ul>
+            </div>
+
+        </section>
+    </main>
+
+    <footer id="footerContainer">
+        <div id="footerItem">
+
+            <!-- Logo e descrição do site -->
+            <div class="footerBloco" id="footerSobre">
+                <span id="footerLogo"></span>
+                <p>Site sobre montagem e manutenção de computadores, feito pela turma TINF4V.</p>
+                <p><a href="../HTML/sobre.html">Sobre nós</a></p>
+            </div>
+
+            <!-- Autores -->
+            <div class="footerBloco">
+                <h3>Autores</h3>
+                <p>Alunos da TINF4V de 2026</p>
+                <p>Disciplina de Tópicos Especiais</p>
+            </div>
+
+            <!-- Contato -->
+            <div class="footerBloco">
+                <h3>Contato</h3>
+                <p>Instagram: <a href="https://www.instagram.com/tinf4ve?utm_source=ig_web_button_share_sheet&stkn=ZDNlZDc0MzIxNw==">@tinf4ve</a></p>
+                <p>E-mail: <a></a></p>
+            </div>
+        </div>
+
+        <!-- Linha final -->
+        <p id="footerCreditos">Instituto Federal Sul-rio-grandense · Câmpus Camaquã · 2026</p>
+    </footer>
+
+</body>
+</html>

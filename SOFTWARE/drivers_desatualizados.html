@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Drivers desatualizados ou corrompidos - MundoByte</title>
+    <link rel="stylesheet" href="../CSS/reset.css">
+    <link rel="stylesheet" href="../CSS/base_estilo.css">
+    <link rel="stylesheet" href="../CSS/layout_estilo.css">
+    <link rel="stylesheet" href="../CSS/header_estilo.css">
+    <link rel="stylesheet" href="../CSS/footer_estilo.css">
+    <link rel="stylesheet" href="../CSS/problema1.css">
+    <link rel="icon" href="../IMG/favicon.ico">
+</head>
+<body>
+
+    <header id="headerContainer">
+
+        <!-- linha de cima  -->
+        <div id="headerTop">
+            <span id="logoTurma"></span>
+            <span id="logoIf"></span>
+        </div>
+
+        <!-- Linha debaixo (menu) -->
+        <nav id="headerNav">
+            <a href="../HTML/index.html" class="navItem">Home</a>
+            <a href="../HARDWARE/hardware.html" class="navItem">Visão do computador</a>
+            <a href="../HARDWARE/computadores_antigos.html" class="navItem">Problemas de Hardware</a>
+            <a href="problemas_software.html" class="navItem" aria-current="page">Problemas de Software</a>
+        </nav>
+    </header>
+
+    <main>
+        <h1>Drivers Desatualizados ou Corrompidos e a Sua Solução</h1>
+        <hr>
+        <section>
+            <p>Drivers são os programas que permitem que o sistema operacional se comunique com as peças do
+                computador, como a placa de rede, a placa de vídeo e o som. Quando um driver está faltando,
+                desatualizado ou corrompido, o dispositivo deixa de funcionar ou causa travamentos e telas azuis. Em
+                computadores antigos isso acontece com frequência, pois após formatar o computador o sistema não
+                traz os drivers de peças antigas, e muitos fabricantes não lançam mais drivers para as versões novas
+                do Windows. Durante o nosso trabalho no laboratório, passamos por esse problema com a placa de rede
+                sem fio, que aparecia no Gerenciador de Dispositivos como "802.11 WLAN Adapter" com um ponto de
+                exclamação amarelo.
+            </p>
+        </section>
+        <hr>
+        <section class="secao">
+            <div>
+                <h2>Possíveis causas</h2>
+                <p>As principais causas são a falta do driver após uma formatação, um driver corrompido por uma
+                    atualização malsucedida ou por vírus, e a instalação de um driver incompatível com o sistema, seja
+                    por ser de outra versão do Windows ou de outra arquitetura (32 ou 64 bits). Para identificar o
+                    problema, basta abrir o Gerenciador de Dispositivos e procurar dispositivos com ponto de exclamação
+                    ou que aparecem em "Outros dispositivos". No Linux, o comando "lspci -k" mostra as peças do
+                    computador e qual driver cada uma está usando.
+                </p>
+            </div>
+        </section>
+        <hr>
+        <section class="secao">
+            <div>
+                <h2>Solução</h2>
+                <p>Para resolver, primeiro é preciso descobrir qual é a peça. Nas propriedades do dispositivo, na aba
+                    "Detalhes", a opção "IDs de hardware" mostra os códigos do fabricante e do modelo, que podem ser
+                    pesquisados na internet. Depois, em outro computador, baixa-se o driver no site do fabricante na
+                    versão correta do sistema e passa-se o arquivo por pen drive. No Gerenciador de Dispositivos,
+                    clica-se com o botão direito sobre o dispositivo, em "Atualizar driver" e em "Procurar software de
+                    driver no computador", selecionando a pasta do driver. Foi assim que resolvemos o problema da
+                    placa de rede sem fio, usando o driver da Realtek para Windows 7 de 32 bits.
+                </p>
+                <p>Se o driver estiver corrompido, a opção "Reverter driver" volta para a versão anterior, ou então
+                    pode-se desinstalar o dispositivo e instalar o driver novamente. No Ubuntu, a ferramenta "Drivers
+                    adicionais" procura e instala os drivers que estão faltando.
+                </p>
+            </div>
+
+            <img id="fotoProblema1" src="../IMG/drivers.jpg" alt="Atualizar Driver do 802.11 WLAN Adapter">
+        </section>
+    </main>
+
+    <footer id="footerContainer">
+        <div id="footerItem">
+
+            <!-- Logo e descrição do site -->
+            <div class="footerBloco" id="footerSobre">
+                <span id="footerLogo"></span>
+                <p>Site sobre montagem e manutenção de computadores, feito pela turma TINF4V.</p>
+                <p><a href="../HTML/sobre.html">Sobre nós</a></p>
+            </div>
+
+            <!-- Autores -->
+            <div class="footerBloco">
+                <h3>Autores</h3>
+                <p>Alunos da TINF4V de 2026</p>
+                <p>Disciplina de Tópicos Especiais</p>
+            </div>
+
+            <!-- Contato -->
+            <div class="footerBloco">
+                <h3>Contato</h3>
+                <p>Instagram: <a href="https://www.instagram.com/tinf4ve?utm_source=ig_web_button_share_sheet&stkn=ZDNlZDc0MzIxNw==">@tinf4ve</a></p>
+                <p>E-mail: <a></a></p>
+            </div>
+        </div>
+
+        <!-- Linha final -->
+        <p id="footerCreditos">Instituto Federal Sul-rio-grandense · Câmpus Camaquã · 2026</p>
+    </footer>
+
+</body>
+</html>

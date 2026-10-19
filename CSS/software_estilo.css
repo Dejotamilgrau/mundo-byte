@@ -1,0 +1,136 @@
+/* ===== Problemas de software ===== */
+
+/* Lista dos problemas, com espaço de 25px entre um e outro */
+#lista-problemas {
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+    margin-top: 30px;
+}
+
+.problema {
+    /* Organização básica dos problemas: imagem à esquerda e texto ao lado, alinhados ao meio */
+    display: grid;
+    grid-template-columns: auto 1fr;
+    align-items: center;
+    gap: 30px;
+
+    /* Cartão branco com cantos arredondados e sombra suave */
+    padding: 20px;
+    background-color: white;
+    border-radius: 14px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.06);
+    border: 1px solid #ececec;
+
+    /* Retira o sublinhado dos links e define cor para a fonte */
+    text-decoration: none;
+    color: #333333;
+
+    transition: transform 0.25s, box-shadow 0.25s, border-color 0.25s;
+}
+
+/* Cartões que ainda não têm foto: o texto ocupa a largura toda */
+.problema:not(:has(img)) {
+    grid-template-columns: 1fr;
+}
+
+/* Ao passar o mouse, o cartão sobe um pouco e a sombra fica mais forte */
+.problema:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 10px 25px rgba(0, 66, 12, 0.15);
+    border-color: #8CC63C;
+}
+
+/* Moldura da foto, esconde o que passar dela quando a foto der zoom */
+.problema img {
+    width: 250px;
+    height: 160px;
+    object-fit: cover;
+    border-radius: 10px;
+    transition: transform 0.3s;
+}
+
+/* Zoom leve na foto ao passar o mouse */
+.problema:hover img {
+    transform: scale(1.03);
+}
+
+/* Tira os respiros grandes do base_estilo dentro do cartão */
+.texto-problema h2 {
+    margin-bottom: 5px;
+}
+
+.texto-problema p {
+    margin-top: 0;
+    margin-bottom: 12px;
+}
+
+/* "Ver solução" em formato de botão arredondado */
+.ver-solucao {
+    display: inline-block;
+    padding: 0 18px;
+    border-radius: 20px;
+    font-size: 14px;
+    font-weight: bold;
+    color: #369831;
+    border: 2px solid #369831;
+    transition: background-color 0.2s, color 0.2s;
+}
+
+/* Ao passar o mouse no problema, o botão fica preenchido de verde */
+.problema:hover .ver-solucao {
+    background-color: #369831;
+    color: white;
+}
+
+/* ===== Tutoriais ===== */
+
+/* Título da lista de tutoriais, com espaço em cima para separar dos problemas */
+#titulo-tutoriais,
+#titulo-veja-tambem {
+    margin-top: 50px;
+    margin-bottom: 10px;
+}
+
+/* Lista de tutoriais com bolinhas verdes (o reset.css tira as bolinhas, aqui elas voltam) */
+#lista-tutoriais li,
+#lista-veja-tambem li {
+    list-style-type: disc;
+    margin-left: 70px;
+}
+
+#lista-tutoriais li::marker,
+#lista-veja-tambem li::marker {
+    color: #369831;
+}
+
+#lista-tutoriais a,
+#lista-veja-tambem a {
+    color: #003F09;
+    text-decoration: none;
+}
+
+#lista-tutoriais a:hover,
+#lista-veja-tambem a:hover {
+    color: #369831;
+    text-decoration: underline;
+}
+
+/* ===== Celular ===== */
+
+/* Em telas pequenas, a foto fica em cima do texto e ocupa toda a largura do cartão */
+@media (max-width: 700px) {
+    .problema {
+        grid-template-columns: 1fr;
+        gap: 15px;
+    }
+
+    .problema img {
+        width: 100%;
+        height: 180px;
+    }
+
+    #lista-problemas {
+        margin-left: 0;
+    }
+}

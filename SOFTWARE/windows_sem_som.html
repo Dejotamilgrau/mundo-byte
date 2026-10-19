@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Windows sem som - MundoByte</title>
+    <link rel="stylesheet" href="../CSS/reset.css">
+    <link rel="stylesheet" href="../CSS/base_estilo.css">
+    <link rel="stylesheet" href="../CSS/layout_estilo.css">
+    <link rel="stylesheet" href="../CSS/header_estilo.css">
+    <link rel="stylesheet" href="../CSS/footer_estilo.css">
+    <link rel="stylesheet" href="../CSS/problema1.css">
+    <link rel="icon" href="../IMG/favicon.ico">
+</head>
+<body>
+
+    <header id="headerContainer">
+
+        <!-- linha de cima  -->
+        <div id="headerTop">
+            <span id="logoTurma"></span>
+            <span id="logoIf"></span>
+        </div>
+
+        <!-- Linha debaixo (menu) -->
+        <nav id="headerNav">
+            <a href="../HTML/index.html" class="navItem">Home</a>
+            <a href="../HARDWARE/hardware.html" class="navItem">Visão do computador</a>
+            <a href="../HARDWARE/computadores_antigos.html" class="navItem">Problemas de Hardware</a>
+            <a href="problemas_software.html" class="navItem" aria-current="page">Problemas de Software</a>
+        </nav>
+    </header>
+
+    <main>
+        <h1>Windows sem som</h1>
+        <hr>
+        <section>
+            <p>Problemas de som no computador costumam ser provocados por
+                falhas simples de configuração ou por drivers incompatíveis
+                e desatualizados. A causa mais comum é a seleção incorreta
+                do dispositivo de saída, algo muito frequente após conectar
+                fones Bluetooth, monitores HDMI ou caixas de som externas.
+
+            </p>
+        </section>
+        <hr>
+        <section>
+            <div>
+                <h2>Solução</h2>
+                <p>Para resolver este problema basta clicar no ícone de
+                    alto-falante na barra de tarefas, expandir a lista de
+                    dispositivos e selecionar manualmente a saída correta,
+                    garantindo também que o volume não esteja no mudo.</p>
+
+                <p>Se a troca do dispositivo não surtir efeito, o próprio
+                    Windows oferece ferramentas nativas para corrigir o
+                    problema. É possivel executar a Solução de Problemas de
+                    Áudio nas configurações do sistema ou reiniciar os
+                    serviços responsáveis pelo som digitando services.msc no
+                    menu Executar (Win + R), localizando o serviço Áudio do
+                    Windows e clicando em reiniciar. Isso costuma destravar
+                    o áudio sem a necessidade de reiniciar a máquina. </p>
+
+                <p>Por fim, quando o problema é causado por falhas no
+                    software do componente, a solução definitiva passa pela
+                    atualização ou reinstalação do driver. Acessando o
+                    Gerenciador de Dispositivos, você deve expandir a aba de
+                    controladores de som, clicar com o botão direito sobre o
+                    dispositivo e selecionar a opção de atualizar o driver.
+                    Caso o erro persista, desinstalar o dispositivo e
+                    reiniciar o computador fará com que o sistema
+                    operacional reconheça a placa de som e reinstale o
+                    driver padrão automaticamente, restabelecendo o
+                    áudio.</p>
+
+                <p>Para melhor compreensão, acesse o <a
+                        href="https://support.microsoft.com/pt-br/windows/hardware/audio/fix-sound-or-audio-problems-in-windows">
+                        Guia da Microsoft sobre problemas de som</a>
+                    ou assista a um dos tutoriais em vídeo abaixo:</p>
+
+                <ul class="lista-videos">
+                    <li><a
+                            href="https://www.youtube.com/watch?v=MXgCNKZ_BZY">
+                            Como CORRIGIR Windows 10/11 SEM SOM? É FÁCIL!
+                        </a>
+                    </li>
+                    <li><a
+                            href="https://www.youtube.com/watch?v=nlvychiaF9k">
+                            Corrigir Problemas Audio Windows - Atualizado
+                        </a>
+                    </li>
+                </ul>
+            </div>
+
+        </section>
+    </main>
+
+    <footer id="footerContainer">
+        <div id="footerItem">
+
+            <!-- Logo e descrição do site -->
+            <div class="footerBloco" id="footerSobre">
+                <span id="footerLogo"></span>
+                <p>Site sobre montagem e manutenção de computadores, feito pela turma TINF4V.</p>
+                <p><a href="../HTML/sobre.html">Sobre nós</a></p>
+            </div>
+
+            <!-- Autores -->
+            <div class="footerBloco">
+                <h3>Autores</h3>
+                <p>Alunos da TINF4V de 2026</p>
+                <p>Disciplina de Tópicos Especiais</p>
+            </div>
+
+            <!-- Contato -->
+            <div class="footerBloco">
+                <h3>Contato</h3>
+                <p>Instagram: <a href="https://www.instagram.com/tinf4ve?utm_source=ig_web_button_share_sheet&stkn=ZDNlZDc0MzIxNw==">@tinf4ve</a></p>
+                <p>E-mail: <a></a></p>
+            </div>
+        </div>
+
+        <!-- Linha final -->
+        <p id="footerCreditos">Instituto Federal Sul-rio-grandense · Câmpus Camaquã · 2026</p>
+    </footer>
+
+</body>
+</html>

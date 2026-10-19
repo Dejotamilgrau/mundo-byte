@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Como Criar um Pen Drive de Boot com o Ventoy - MundoByte</title>
+    <link rel="stylesheet" href="../CSS/reset.css">
+    <link rel="stylesheet" href="../CSS/base_estilo.css">
+    <link rel="stylesheet" href="../CSS/layout_estilo.css">
+    <link rel="stylesheet" href="../CSS/header_estilo.css">
+    <link rel="stylesheet" href="../CSS/footer_estilo.css">
+    <link rel="stylesheet" href="../CSS/problema1.css">
+    <link rel="icon" href="../IMG/favicon.ico">
+</head>
+<body>
+
+    <header id="headerContainer">
+
+        <!-- linha de cima  -->
+        <div id="headerTop">
+            <span id="logoTurma"></span>
+            <span id="logoIf"></span>
+        </div>
+
+        <!-- Linha debaixo (menu) -->
+        <nav id="headerNav">
+            <a href="../HTML/index.html" class="navItem">Home</a>
+            <a href="../HARDWARE/hardware.html" class="navItem">Visão do computador</a>
+            <a href="../HARDWARE/computadores_antigos.html" class="navItem">Problemas de Hardware</a>
+            <a href="problemas_software.html" class="navItem" aria-current="page">Problemas de Software</a>
+        </nav>
+    </header>
+
+    <main>
+        <h1>Como Criar um Pen Drive de Boot com o Ventoy</h1>
+        <hr>
+        <section>
+            <p>O Ventoy é um programa gratuito que transforma o pen drive em um disco de boot capaz de guardar várias
+                imagens ISO ao mesmo tempo. Diferente de outros programas, ele não grava a ISO no pen drive: depois de
+                instalado, basta copiar os arquivos .iso para dentro dele, como se fosse um pen drive comum, e na hora
+                de ligar o computador aparece um menu para escolher qual sistema iniciar. Isso é muito útil no
+                laboratório, pois um único pen drive pode ter o Windows 7, o Windows 10 e o Ubuntu juntos.
+            </p>
+        </section>
+        <hr>
+        <section>
+            <h2>O que é necessário</h2>
+            <p>Um pen drive de pelo menos 8 GB, o arquivo ISO do sistema que se deseja instalar e o Ventoy, que pode
+                ser baixado no site oficial ventoy.net. É importante lembrar que a instalação do Ventoy apaga tudo o
+                que estiver no pen drive, então os arquivos importantes devem ser salvos antes.
+            </p>
+        </section>
+        <hr>
+        <section>
+            <h2>Passo a passo no Windows</h2>
+            <p>Primeiro, extrai-se o arquivo .zip baixado do site e abre-se o programa "Ventoy2Disk.exe". Na janela
+                do programa, em "Dispositivo", seleciona-se o pen drive, conferindo pelo nome e pelo tamanho para não
+                escolher o disco errado.
+            </p>
+            <p>Antes de instalar, no menu "Opção" &gt; "Estilo de Partição", escolhe-se MBR para computadores antigos,
+                que usam BIOS Legacy, ou GPT para computadores mais novos com UEFI. Depois, clica-se em "Instalar" e
+                confirma-se os dois avisos de que os dados serão apagados. Ao terminar, o pen drive aparece no
+                computador com o nome "Ventoy".
+            </p>
+            <p>Com o Ventoy instalado, basta copiar os arquivos .iso para dentro do pen drive. Não é preciso extrair
+                a ISO, ela deve ser copiada inteira.
+            </p>
+        </section>
+        <hr>
+        <section>
+            <h2>Passo a passo no Linux</h2>
+            <p>No Linux, depois de extrair o arquivo .tar.gz, pode-se usar a interface gráfica "VentoyGUI" ou o
+                terminal. Pelo terminal, primeiro identifica-se o pen drive com o comando "lsblk" e depois, dentro da
+                pasta do Ventoy, executa-se "sudo sh Ventoy2Disk.sh -i /dev/sdX", trocando "sdX" pelo nome do pen
+                drive (por exemplo, sdb). Para usar GPT no lugar de MBR, adiciona-se a opção "-g" ao comando.
+            </p>
+        </section>
+        <hr>
+        <section>
+            <h2>Como iniciar pelo pen drive</h2>
+            <p>Com o pen drive conectado, liga-se o computador e aperta-se a tecla do menu de boot, que muda conforme
+                o fabricante da placa-mãe (geralmente F12, F11, F8 ou Esc). Escolhendo o pen drive, aparece o menu do
+                Ventoy com a lista das ISOs copiadas, e basta selecionar o sistema desejado.
+            </p>
+            <p>Durante o nosso trabalho, o Ventoy funcionou bem com sistemas mais novos, mas não conseguiu instalar o
+                Windows XP. Para esse caso, foi utilizado o WinSetupFromUSB, como explicado na página
+                <a href="problema1.html">do problema com o Windows XP</a>.
+            </p>
+        </section>
+    </main>
+
+    <footer id="footerContainer">
+        <div id="footerItem">
+
+            <!-- Logo e descrição do site -->
+            <div class="footerBloco" id="footerSobre">
+                <span id="footerLogo"></span>
+                <p>Site sobre montagem e manutenção de computadores, feito pela turma TINF4V.</p>
+                <p><a href="../HTML/sobre.html">Sobre nós</a></p>
+            </div>
+
+            <!-- Autores -->
+            <div class="footerBloco">
+                <h3>Autores</h3>
+                <p>Alunos da TINF4V de 2026</p>
+                <p>Disciplina de Tópicos Especiais</p>
+            </div>
+
+            <!-- Contato -->
+            <div class="footerBloco">
+                <h3>Contato</h3>
+                <p>Instagram: <a href="https://www.instagram.com/tinf4ve?utm_source=ig_web_button_share_sheet&stkn=ZDNlZDc0MzIxNw==">@tinf4ve</a></p>
+                <p>E-mail: <a></a></p>
+            </div>
+        </div>
+
+        <!-- Linha final -->
+        <p id="footerCreditos">Instituto Federal Sul-rio-grandense · Câmpus Camaquã · 2026</p>
+    </footer>
+
+</body>
+</html>
