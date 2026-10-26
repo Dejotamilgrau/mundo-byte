@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Impressora não imprime - MundoByte</title>
+    <link rel="stylesheet" href="../CSS/reset.css">
+    <link rel="stylesheet" href="../CSS/base_estilo.css">
+    <link rel="stylesheet" href="../CSS/layout_estilo.css">
+    <link rel="stylesheet" href="../CSS/header_estilo.css">
+    <link rel="stylesheet" href="../CSS/footer_estilo.css">
+    <link rel="stylesheet" href="../CSS/problema1.css">
+    <link rel="icon" href="../IMG/favicon.ico">
+</head>
+<body>
+
+    <header id="headerContainer">
+
+        <!-- linha de cima  -->
+        <div id="headerTop">
+            <span id="logoTurma"></span>
+            <span id="logoIf"></span>
+        </div>
+
+        <!-- Linha debaixo (menu) -->
+        <nav id="headerNav">
+            <a href="../HTML/index.html" class="navItem">Home</a>
+            <a href="../HARDWARE/hardware.html" class="navItem">Visão do computador</a>
+            <a href="../HARDWARE/computadores_antigos.html" class="navItem">Problemas de Hardware</a>
+            <a href="problemas_software.html" class="navItem" aria-current="page">Problemas de Software</a>
+            <a href="../HTML/login.html" class="navItem">Entrar</a>
+        </nav>
+    </header>
+
+    <main>
+        <h1>Impressora não imprime</h1>
+        <hr>
+        <section>
+            <p>É comum mandar um documento para a impressora e nada
+                acontecer: o arquivo fica parado na fila de impressão ou a
+                impressora aparece como offline, mesmo estando ligada.
+                Normalmente a causa é um documento travado na fila, uma falha
+                de conexão ou o serviço de impressão do Windows parado.
+            </p>
+        </section>
+        <hr>
+        <section>
+            <div>
+                <h2>Solução</h2>
+                <p>Confira primeiro se a impressora está ligada, com papel e
+                    sem mensagem de erro no visor, e se o cabo USB está bem
+                    conectado. Se ela for de rede, precisa estar conectada ao
+                    mesmo Wi-Fi do computador. Depois, em Configurações &gt;
+                    Bluetooth e dispositivos &gt; Impressoras e scanners,
+                    abra a fila de impressão da impressora e, no menu
+                    Impressora, desmarque a opção Usar impressora offline
+                    caso ela esteja marcada.</p>
+
+                <p>Se a fila estiver travada, cancele todos os documentos
+                    dela. Quando eles não somem, é preciso reiniciar o
+                    serviço de impressão: digite services.msc no menu
+                    Executar (Win + R), localize o serviço Spooler de
+                    Impressão e clique em Parar. Em seguida, apague os
+                    arquivos da pasta C:\Windows\System32\spool\PRINTERS,
+                    volte ao serviço e clique em Iniciar. Isso limpa a fila
+                    por completo.</p>
+
+                <p>Se mesmo assim a impressora não funcionar, remova ela da
+                    lista de Impressoras e scanners e adicione novamente,
+                    instalando o driver mais recente disponível no site do
+                    fabricante.</p>
+            </div>
+
+        </section>
+    </main>
+
+    <!-- Rodapé, GABRIELLI BANDOW -->
+
+    <footer id="footerContainer">
+        <p class="tituloRodape">Autores:</p>
+        <p class="tituloRodape">Contato:</p>
+        <p>Alunos do Curso Técnico em Informática, do ano de 2026. <a href="../HTML/sobre.html">(Acesse sobre nós)</a>
+            
+            <br> Estudamos no Instituto Federal de Educação,
+            Ciência e Tecnologia Sul-rio-grandense (IFSul), campus Camaquã. <br> A disciplina deste trabalho é a de
+            Tópicos Especiais, que uniu Programação para a Web e a turma toda para que ele acontecesse.</p>
+        <div id="containerContatos">
+            <p>Instagram: <a
+                    href="https://www.instagram.com/tinf4ve?utm_source=ig_web_button_share_sheet&stkn=ZDNlZDc0MzIxNw==">Tinf4ve!</a>
+            </p>
+            <p>E-mail: <a href="#"></a></p>
+        </div>
+    </footer>
+
+</body>
+</html>

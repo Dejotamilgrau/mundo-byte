@@ -17,7 +17,12 @@ O objetivo é reunir os problemas, diagnósticos e soluções que a turma encont
   - drivers desatualizados ou corrompidos;
   - Windows sem som;
   - disco ficando cheio sozinho;
-  - arquivos ou pastas que não fecham ou não podem ser excluídos.
+  - arquivos ou pastas que não fecham ou não podem ser excluídos;
+  - mouse ou teclado não funciona;
+  - impressora não imprime;
+  - programa não abre ou fecha sozinho;
+  - ícones da área de trabalho sumidos ou desorganizados;
+  - volume baixo ou microfone sem funcionar.
 - **Sobre nós** – quem somos, missão e visão da turma.
 - **Entrar** e **Cadastro** – telas de login e de cadastro. No cadastro dá para escolher entre conta de usuário ou de administrador; a de administrador fica pendente até ser aprovada manualmente por um operador. Por enquanto é só a interface: o site ainda não tem servidor, então os formulários não enviam nada.
 
