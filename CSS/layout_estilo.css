@@ -42,10 +42,12 @@ main > h1:has(+ hr)::after {
 }
 
 /* Texto de introdução em cinza, para diferenciar do conteúdo dos problemas */
+
+/*COMENTADO TEMPORARIAMENTE, SUGESTÃO DE RAÍSSA MAGALHÃES
 main > p {
     color: #666666;
     max-width: 800px;
-}
+} */
 
 /* ===== Links no meio do texto ===== */
 

@@ -8,13 +8,13 @@
  }
 
  /* Define respiro de 20px para a parte de cima das seções */
- #quem-somos,
+ #quemSomos,
  .secao {
      margin-bottom: 20px;
  }
 
  /* Define a secao quem somos como flexível, permitindo que os conteúdos fiquem lado a lado e centralizados */
- #quem-somos {
+ #quemSomos {
      display: flex;
      justify-content: center;
      align-items: center;
@@ -23,7 +23,7 @@
  }
 
  /* Definição do tamanho da foto da turma, abaixo da descrição da seção "Quem somos?" */
- #foto-turma {
+ #fotoTurma {
      width: 700px;
  }
 
