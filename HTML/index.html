@@ -69,18 +69,12 @@
                     </ul>
                 </aside>
             </form>
-            <!-- Campo de exibição de resultados da pesquisa -->
+            <!-- Campo de exibição de resultados da pesquisa, preenchido pelo JS/pesquisa.js -->
             <div id="containerListaResultados">
-                <ul id="listaResultadosPesquisa">
-                    <li><a href="#" class="itemResultado">Resultado 1</a></li>
-                    <li><a href="#" class="itemResultado">Resultado 2</a></li>
-                    <li><a href="#" class="itemResultado">Resultado 3</a></li>
-                    <li><a href="#" class="itemResultado">Resultado 4</a></li>
-                    <li><a href="#" class="itemResultado">Resultado 5</a></li>
-                </ul>
+                <ul id="listaResultadosPesquisa"></ul>
                 <span id="containerBotoesAcao">
-                    <button><a href="#">Voltar</a></button>
-                    <button><a href="#">Avançar</a></button>
+                    <button type="button" id="botaoVoltar">Voltar</button>
+                    <button type="button" id="botaoAvancar">Avançar</button>
                 </span>
             </div>
         </section>
@@ -114,6 +108,7 @@
             <p>E-mail: <a href="#"></a></p>
         </div>
     </footer>
+    <script src="../JS/pesquisa.js"></script>
 </body>
 
 </html>

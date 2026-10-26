@@ -1,50 +1,99 @@
+/* Na home as seções ficam alinhadas com o título, sem o recuo de 50px do base_estilo */
+main > section,
+main > hr {
+    margin-left: 0;
+}
+
 /* Será adicionado posteriormente uma imagem de 250px de altura, para auxiliar o usuário a utilizar nosso recurso*/
 #tutorialDeUso {
     height: 250px;
+    margin-top: 20px;
     background-color: rgb(88, 78, 78);
 }
 
-#listaResultadosPesquisa {
-    /* Define ocupação de toda a largura e altura pela lista não ordenada */
+/* Define o container (section) que encapsula a parte de pesquisa como grid, tendo duas colunas e espaçamento entre as colunas de 10px */
+#containerPesquisa {
+    display: grid;
+    grid-template-columns: 30% auto;
+    gap: 10px;
+    margin-top: 30px;
+    margin-bottom: 50px;
+}
+
+/* Define que o subtítulo ocupa 2 colunas */
+#containerPesquisa>h2 {
+    grid-column: span 2;
+}
+
+/* Define que a parte para digitar o problema ocupa as 2 colunas */
+#formularioDigitacao {
+    grid-column: 1/3;
+}
+
+/* Fonte de terminal usada nos detalhes da pesquisa */
+#containerPesquisa {
+    --fonteTerminal: Consolas, "Courier New", monospace;
+}
+
+/* O campo de pesquisa imita um terminal, com um ">" antes do texto */
+#formularioDigitacao {
+    position: relative;
+}
+
+#formularioDigitacao::before {
+    content: ">";
+    position: absolute;
+    left: 16px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-family: var(--fonteTerminal);
+    font-size: 20px;
+    font-weight: bold;
+    color: #8CC63C;
+}
+
+#digitaPesquisa {
+    /* Campo escuro com letra verde, como uma tela de terminal */
     width: 100%;
-    height: 100%;
+    padding: 14px 15px 14px 40px;
+    font-family: var(--fonteTerminal);
+    font-size: 17px;
+    color: #E3F1D0;
+    caret-color: #8CC63C;
+    border: 2px solid #0E260E;
+    border-radius: 4px;
+    background-color: #0E260E;
+    transition: border-color 0.2s;
 
-    /* Faz com que os itens da lista fiquem bem espalhados visualmente, sem isso fica uma "sobrinha" no verde claro ao passar o mouse por cima do último resultado */
-    display: flex;
-    flex-direction: column;
-    justify-content: space-around;
+    /* Define para respeitar os limites do elemento pai */
+    box-sizing: border-box;
 }
 
-.itemResultado {
-    /* Define tamanho e respiro de 20px entre o conteúdo da lista e a borda */
-    padding: 20px;
-    height: 20%;
-
-    /* Retira o sublinhado dos links de navegação e define cor para a fonte */
-    text-decoration: none;
-    color: #333333;
+#digitaPesquisa::placeholder {
+    color: #6A8F5A;
 }
 
-/* Adiciona cor diferente ao passar o mouse sobre os resultados sobre a pesquisa do problema*/
-#listaResultadosPesquisa>li:hover {
-    background-color: #369831;
+/* Ao clicar no campo, a borda acende em verde claro */
+#digitaPesquisa:focus {
+    outline: none;
+    border-color: #8CC63C;
 }
 
 /* Define cor de fundo e respiro de 20px entre o conteúdo e a borda */
 #containerFiltros {
     background-color: #1c531b;
     padding: 20px;
+    border-radius: 4px;
     box-sizing: border-box;
-    height:100%;
+    height: 100%;
 }
 
-/* Define cor de fundo para o campo que mostra os resultados da pesquisa*/
-#containerListaResultados {
-    background-color: #8CC63C;
-}
-
-/* Define cor da fonte e espessura, referente à escrita "Filtrar pelas categorias:" */
+/* Define cor da fonte e espessura, referente à escrita "Filtrar pelas categorias:", com uma linha embaixo */
 #containerFiltros>label {
+    display: block;
+    padding-bottom: 8px;
+    margin-bottom: 10px;
+    border-bottom: 1px solid #369831;
     font-weight: bold;
     color: white;
 }
@@ -54,52 +103,154 @@
     color: white;
 }
 
-#digitaPesquisa {
-    /* Definições de largura, cor de fundo e respiro de 7px entre borda e conteúdo do campo de digitação para pesquisar */
+.filtro label {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+}
+
+/* Caixinha de marcar quadrada, que fica preenchida de verde quando marcada */
+.filtro input {
+    appearance: none;
+    width: 16px;
+    height: 16px;
+    margin-right: 10px;
+    border: 2px solid #8CC63C;
+    cursor: pointer;
+    transition: background-color 0.15s;
+}
+
+.filtro input:checked {
+    background-color: #8CC63C;
+    box-shadow: inset 0 0 0 2px #1c531b;
+}
+
+/* Define o campo que mostra os resultados da pesquisa, com fundo branco e borda verde clara */
+#containerListaResultados {
+    display: flex;
+    flex-direction: column;
+    border: 2px solid #8CC63C;
+    border-radius: 4px;
+    background-color: white;
+}
+
+#listaResultadosPesquisa {
+    /* Define ocupação de toda a largura pela lista não ordenada */
     width: 100%;
-    background-color: #D9D9D9;
-    padding: 7px;
-
-    /* Define para respeitar os limites do elemento pai */
-    box-sizing: border-box;
+    flex: 1;
+    counter-reset: resultado;
 }
 
-
-/* Define o container (section) que encapsula a parte de pesquisa como grid, tendo duas colunas e espaçamento entre as colunas de 10px, define margem superior de 20px */
-#containerPesquisa {
-    display: grid;
-    grid-template-columns: 30% auto;
-    grid-template-rows: 30px auto;
-    gap: 10px;
-    margin-bottom: 80px;
+/* Linha fina separando cada resultado */
+#listaResultadosPesquisa>li {
+    border-bottom: 1px solid #E5E5E5;
 }
 
-/* Define que o subtítulo ocupa 2 colunas */
-#containerPesquisa>h2 {
-    grid-column: span 2;
+.itemResultado {
+    /* Faz o link ocupar a linha toda: número, título e a categoria do lado direito */
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    padding: 6px 20px;
+    transition: background-color 0.2s;
+
+    /* Retira o sublinhado dos links de navegação e define cor para a fonte */
+    text-decoration: none;
+    color: #333333;
 }
 
-/* Define que a parte para digitar o problema está na segunda coluna*/
-#formularioDigitacao {
-    grid-column: 1/3;
+/* Número do resultado (01, 02, 03...) */
+.itemResultado::before {
+    counter-increment: resultado;
+    content: counter(resultado, decimal-leading-zero);
+    font-family: var(--fonteTerminal);
+    font-size: 14px;
+    color: #8CC63C;
+    transition: color 0.2s;
+}
+
+/* Categoria do resultado, escrita como no terminal: #hardware */
+.categoriaResultado {
+    margin-left: auto;
+    font-family: var(--fonteTerminal);
+    font-size: 13px;
+    color: #999999;
+}
+
+.categoriaResultado::before {
+    content: "#";
+}
+
+/* Seta que aparece ao passar o mouse */
+.itemResultado::after {
+    content: "→";
+    width: 0;
+    overflow: hidden;
+    color: #369831;
+    transition: width 0.2s;
+}
+
+/* Ao passar o mouse, o resultado fica verde claro e a seta aparece */
+.itemResultado:hover {
+    background-color: #F1F8E8;
+    color: #1c531b;
+}
+
+.itemResultado:hover::before {
+    color: #1c531b;
+}
+
+.itemResultado:hover::after {
+    width: 18px;
 }
 
 #containerBotoesAcao {
     display: flex;
-    justify-content: space-evenly;
-    margin-top: 20px;
+    justify-content: flex-end;
+    gap: 10px;
+    padding: 12px 20px;
 }
 
-#containerBotoesAcao>button{
-    background-color: #1c531b;
-    width:40%;
-}
-
-#containerBotoesAcao>button>a{
-    text-decoration: none;
+#containerBotoesAcao>button {
+    padding: 4px 18px;
+    font-size: 15px;
     color: white;
+    border: none;
+    border-radius: 4px;
+    background-color: #1c531b;
+    cursor: pointer;
+    transition: background-color 0.2s;
 }
 
-#containerBotoesAcao>button:hover{
+#containerBotoesAcao>button:hover:enabled {
     background-color: #369831;
+}
+
+/* Botão apagado quando não tem para onde voltar ou avançar */
+#containerBotoesAcao>button:disabled {
+    opacity: 0.35;
+    cursor: default;
+}
+
+/* Aviso quando a pesquisa não encontra nada */
+#listaResultadosPesquisa>.semResultado {
+    padding: 6px 20px;
+    font-family: var(--fonteTerminal);
+    font-size: 15px;
+    color: #666666;
+}
+
+/* ===== Home no celular ===== */
+
+@media (max-width: 700px) {
+
+    /* No celular os filtros ficam em cima dos resultados */
+    #containerPesquisa {
+        grid-template-columns: 1fr;
+    }
+
+    #containerPesquisa>h2,
+    #formularioDigitacao {
+        grid-column: auto;
+    }
 }

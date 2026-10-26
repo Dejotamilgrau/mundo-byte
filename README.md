@@ -51,6 +51,7 @@ Depois acesse <http://localhost:8000/HTML/index.html>. No VS Code, a extensão *
 ├── HTML/       # Página inicial (index.html), "Sobre nós", login e cadastro
 ├── HARDWARE/   # Páginas de hardware (visão interativa e computadores antigos)
 ├── SOFTWARE/   # Páginas de problemas e tutoriais de software
+├── JS/         # Script da pesquisa da página inicial
 ├── CSS/        # Folhas de estilo (reset, base, layout, cabeçalho, rodapé e estilos de cada página)
 └── IMG/        # Imagens, logos e ícones (IMG/INTERATIVO tem as peças da página interativa)
 ```
@@ -60,7 +61,9 @@ Depois acesse <http://localhost:8000/HTML/index.html>. No VS Code, a extensão *
 - **HTML5** – estrutura e conteúdo das páginas.
 - **CSS3** – estilização, com estilos separados por função (reset, base, layout, cabeçalho, rodapé) e por página.
 
-Não usa JavaScript, frameworks nem bibliotecas externas.
+- **JavaScript** – só na pesquisa da página inicial (`JS/pesquisa.js`), que roda no navegador. Ao criar uma página nova, adicione ela na lista `paginas` desse arquivo para que apareça na pesquisa.
+
+Não usa frameworks nem bibliotecas externas.
 
 ## Autores
 
