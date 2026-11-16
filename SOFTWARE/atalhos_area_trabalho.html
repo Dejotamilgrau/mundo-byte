@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Atalhos da área de trabalho não funcionam - MundoByte</title>
+    <link rel="stylesheet" href="../CSS/reset.css">
+    <link rel="stylesheet" href="CSS/base_estilo.css">
+    <link rel="stylesheet" href="CSS/layout_estilo.css">
+    <link rel="stylesheet" href="../CSS/header_estilo.css">
+    <link rel="stylesheet" href="../CSS/footer_estilo.css">
+    <link rel="stylesheet" href="CSS/problema1.css">
+    <link rel="icon" href="../IMG/favicon.ico">
+</head>
+<body>
+
+    <header id="headerContainer">
+
+        <!-- linha de cima  -->
+        <div id="headerTop">
+            <span id="logoTurma"></span>
+            <span id="logoIf"></span>
+        </div>
+
+        <!-- Linha debaixo (menu) -->
+        <nav id="headerNav">
+            <a href="../HTML/index.html" class="navItem">Home</a>
+            <a href="../HARDWARE/hardware.html" class="navItem">Visão do computador</a>
+            <a href="../HARDWARE/computadores_antigos.html" class="navItem">Problemas de Hardware</a>
+            <a href="problemas_software.html" class="navItem" aria-current="page">Problemas de Software</a>
+            <a href="../HTML/convite_paraninfo.html" class="navItem">Soares</a>
+            <a href="../HTML/login.html" class="navItem">Entrar</a>
+        </nav>
+    </header>
+
+    <!-- Conteúdo, AMANDA -->
+
+    <main>
+        <h1>Atalhos de aplicativos na área de trabalho não funcionam</h1>
+        <hr>
+        <section>
+            <p>Este problema acontece quando, ao dar dois cliques em um
+                atalho da área de trabalho, nada acontece, aparece a
+                mensagem "O item ao qual este atalho se refere foi alterado
+                ou movido", o Windows pergunta com qual programa abrir o
+                arquivo ou o ícone fica em branco. As causas mais comuns são
+                o programa ter sido movido, atualizado para outra pasta ou
+                desinstalado, a associação dos arquivos de atalho (.lnk)
+                corrompida, o cache de ícones danificado ou um antivírus
+                bloqueando o programa.
+            </p>
+        </section>
+        <hr>
+        <section>
+            <div>
+                <h2>Solução</h2>
+                <p>O primeiro passo é verificar para onde o atalho aponta.
+                    Clique com o botão direito no atalho, escolha
+                    Propriedades e confira o campo Destino. Clique em Abrir
+                    local do arquivo: se o Windows avisar que o item não
+                    existe mais, o programa foi movido ou desinstalado. Nesse
+                    caso, apague o atalho e, se o programa ainda estiver
+                    instalado, crie um novo: procure o programa no menu
+                    Iniciar, clique com o botão direito e escolha Abrir local
+                    do arquivo, depois clique com o botão direito no
+                    programa e selecione Mostrar mais opções &gt; Enviar
+                    para &gt; Área de trabalho (criar atalho). Se o programa
+                    não aparecer no menu Iniciar, reinstale-o.
+                </p>
+
+                <p>Se o atalho aponta para o lugar certo, mas o programa
+                    não abre, tente executá-lo direto pela pasta de
+                    instalação ou clicando com o botão direito e escolhendo
+                    Executar como administrador. Verifique também o
+                    histórico de proteção da Segurança do Windows (ou do
+                    seu antivírus), pois o programa pode ter sido colocado
+                    em quarentena. Se mesmo assim não abrir, o problema é
+                    no próprio aplicativo, e a solução é desinstalá-lo e
+                    instalá-lo novamente.</p>
+
+                <p>Se todos os atalhos pararem de funcionar ao mesmo tempo
+                    ou passarem a abrir com o mesmo programa (como o Bloco
+                    de Notas), a associação dos arquivos .lnk foi
+                    corrompida, geralmente por vírus ou por uma escolha
+                    errada em "Abrir com". Abra o Prompt de Comando como
+                    administrador e execute <code>sfc /scannow</code> e, em
+                    seguida,
+                    <code>DISM /Online /Cleanup-Image /RestoreHealth</code>,
+                    reiniciando o computador ao final. Faça também uma
+                    verificação completa com a Segurança do Windows. Se o
+                    problema começou há pouco tempo, a Restauração do
+                    Sistema para uma data anterior também resolve.</p>
+
+                <p>Se os atalhos funcionam, mas os ícones aparecem em
+                    branco ou errados, o problema é o cache de ícones.
+                    Abra o Gerenciador de Tarefas (Ctrl + Shift + Esc),
+                    clique com o botão direito no Windows Explorer e
+                    escolha Reiniciar. Se não resolver, pressione Win + R,
+                    digite <code>ie4uinit.exe -show</code> e pressione
+                    Enter para recriar o cache de ícones. Se o problema for
+                    com atalhos do teclado, veja a página
+                    <a href="atalhos_teclado.html">Atalhos do teclado não
+                    funcionam</a>.</p>
+
+                <p>Para melhor compreensão, pesquise um dos tutoriais em
+                    vídeo abaixo:</p>
+
+                <ul class="lista-videos">
+                    <li><a
+                            href="https://www.youtube.com/results?search_query=atalhos+da+%C3%A1rea+de+trabalho+n%C3%A3o+abrem+windows">
+                            Atalhos da área de trabalho não abrem no Windows
+                        </a>
+                    </li>
+                    <li><a
+                            href="https://www.youtube.com/results?search_query=como+corrigir+%C3%ADcones+em+branco+na+%C3%A1rea+de+trabalho+windows">
+                            Como corrigir ícones em branco na área de
+                            trabalho
+                        </a>
+                    </li>
+                </ul>
+            </div>
+
+        </section>
+    </main>
+
+    <!-- Rodapé, GABRIELLI BANDOW -->
+
+    <footer id="footerContainer">
+        <p class="tituloRodape">Autores:</p>
+        <p class="tituloRodape">Contato:</p>
+        <p>Alunos do Curso Técnico em Informática, do ano de 2026. <a href="../HTML/sobre.html">(Acesse sobre nós)</a>
+
+            <br> Estudamos no Instituto Federal de Educação,
+            Ciência e Tecnologia Sul-rio-grandense (IFSul), campus Camaquã. <br> A disciplina deste trabalho é a de
+            Tópicos Especiais, que uniu Programação para a Web e a turma toda para que ele acontecesse.</p>
+        <div id="containerContatos">
+            <p>Instagram: <a
+                    href="https://www.instagram.com/tinf4ve?utm_source=ig_web_button_share_sheet&stkn=ZDNlZDc0MzIxNw==">Tinf4ve!</a>
+            </p>
+            <p>E-mail: <a href="#"></a></p>
+        </div>
+    </footer>
+
+</body>
+</html>

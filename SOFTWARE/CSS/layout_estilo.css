@@ -1,0 +1,38 @@
+/* Estilo comum das páginas: página inteira e links no texto.
+ O cabeçalho está em header_estilo.css e o rodapé em footer_estilo.css.
+ Usar junto com reset.css e base_estilo.css */
+
+/* ===== Página inteira ===== */
+
+/* Faz a página ocupar a tela toda, assim o rodapé fica sempre lá embaixo mesmo com pouco conteúdo */
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+main {
+    flex: 1;
+}
+
+/* Texto de introdução em cinza, para diferenciar do conteúdo dos problemas */
+
+/*COMENTADO TEMPORARIAMENTE, SUGESTÃO DE RAÍSSA MAGALHÃES
+main > p {
+    color: #666666;
+    max-width: 800px;
+} */
+
+/* ===== Links no meio do texto ===== */
+
+/* Links dentro do texto em verde e sublinhados, para ficar claro que dá para clicar */
+main p a {
+    color: var(--verdeIf);
+    font-weight: 700;
+    text-decoration-thickness: 2px;
+    text-underline-offset: 3px;
+}
+
+main p a:hover {
+    color: var(--verdePlaca);
+}

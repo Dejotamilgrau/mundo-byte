@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Relógio do sistema incorreto - MundoByte</title>
+    <link rel="stylesheet" href="../CSS/reset.css">
+    <link rel="stylesheet" href="CSS/base_estilo.css">
+    <link rel="stylesheet" href="CSS/layout_estilo.css">
+    <link rel="stylesheet" href="../CSS/header_estilo.css">
+    <link rel="stylesheet" href="../CSS/footer_estilo.css">
+    <link rel="stylesheet" href="CSS/problema1.css">
+    <link rel="icon" href="../IMG/favicon.ico">
+</head>
+<body>
+
+    <header id="headerContainer">
+
+        <!-- linha de cima  -->
+        <div id="headerTop">
+            <span id="logoTurma"></span>
+            <span id="logoIf"></span>
+        </div>
+
+        <!-- Linha debaixo (menu) -->
+        <nav id="headerNav">
+            <a href="../HTML/index.html" class="navItem">Home</a>
+            <a href="../HARDWARE/hardware.html" class="navItem">Visão do computador</a>
+            <a href="../HARDWARE/computadores_antigos.html" class="navItem">Problemas de Hardware</a>
+            <a href="problemas_software.html" class="navItem" aria-current="page">Problemas de Software</a>
+            <a href="../HTML/convite_paraninfo.html" class="navItem">Soares</a>
+            <a href="../HTML/login.html" class="navItem">Entrar</a>
+        </nav>
+    </header>
+
+    <!-- Conteúdo, AMANDA -->
+
+    <main>
+        <h1>Relógio do sistema incorreto</h1>
+        <hr>
+        <section>
+            <p>Este problema acontece quando a data ou a hora do Windows
+                aparecem erradas, atrasadas, adiantadas ou voltando para
+                uma data antiga toda vez que o computador é ligado. Além de
+                confundir, o relógio errado faz sites mostrarem erro de
+                certificado ("Sua conexão não é particular"), impede o
+                Windows Update de funcionar e atrapalha programas que
+                dependem da data. As causas mais comuns são o fuso horário
+                configurado errado, a sincronização automática desativada,
+                a bateria da placa-mãe (CMOS) gasta e computadores com
+                dual boot entre Windows e Linux.
+            </p>
+        </section>
+        <hr>
+        <section>
+            <div>
+                <h2>Solução</h2>
+                <p>O primeiro passo é conferir as configurações de data e
+                    hora. Abra Configurações &gt; Hora e idioma &gt; Data e
+                    hora, ative as opções Definir horário automaticamente e
+                    Definir fuso horário automaticamente (ou escolha
+                    manualmente o fuso correto, como "(UTC-03:00) Brasília")
+                    e clique em Sincronizar agora. Se a hora estiver certa,
+                    mas com exatamente algumas horas de diferença, o
+                    problema quase sempre é o fuso horário.
+                </p>
+
+                <p>Se a sincronização falhar, o serviço de horário do
+                    Windows pode estar parado. Abra o Prompt de Comando
+                    como administrador e execute, um de cada vez,
+                    <code>net stop w32time</code>,
+                    <code>net start w32time</code> e
+                    <code>w32tm /resync</code>. Também é possível pressionar
+                    Win + R, digitar services.msc, localizar o serviço
+                    Horário do Windows e definir o Tipo de inicialização
+                    como Automático.</p>
+
+                <p>Se a data volta para um dia antigo (por exemplo, 2010 ou
+                    a data de fabricação da placa) sempre que o computador é
+                    desligado da tomada, o problema é a bateria da
+                    placa-mãe. Essa pequena bateria redonda, normalmente do
+                    modelo CR2032, mantém o relógio funcionando com o PC
+                    desligado e costuma se esgotar em computadores antigos.
+                    Com o computador desligado e fora da tomada, abra o
+                    gabinete, retire a bateria com cuidado e coloque uma
+                    nova do mesmo modelo. Depois, entre na BIOS e ajuste a
+                    data e a hora. Para mais detalhes, veja
+                    <a href="../HARDWARE/computadores_antigos.html">Problemas
+                    mais comuns em computadores antigos</a>.</p>
+
+                <p>Em computadores com dual boot entre Windows e Linux, a
+                    hora fica errada no Windows toda vez que se usa o Linux,
+                    porque o Linux grava o relógio da placa-mãe em UTC e o
+                    Windows o lê como horário local. Para resolver, inicie
+                    o Linux, abra o terminal e execute
+                    <code>timedatectl set-local-rtc 1 --adjust-system-clock</code>,
+                    fazendo com que os dois sistemas usem o mesmo padrão.
+                    Depois, volte ao Windows e sincronize o horário
+                    novamente.</p>
+
+                <p>Para melhor compreensão, pesquise um dos tutoriais em
+                    vídeo abaixo:</p>
+
+                <ul class="lista-videos">
+                    <li><a
+                            href="https://www.youtube.com/results?search_query=hora+do+windows+errada+como+resolver">
+                            Hora do Windows errada: como resolver
+                        </a>
+                    </li>
+                    <li><a
+                            href="https://www.youtube.com/results?search_query=como+trocar+bateria+da+placa+m%C3%A3e+cr2032">
+                            Como trocar a bateria da placa-mãe (CR2032)
+                        </a>
+                    </li>
+                </ul>
+            </div>
+
+        </section>
+    </main>
+
+    <!-- Rodapé, GABRIELLI BANDOW -->
+
+    <footer id="footerContainer">
+        <p class="tituloRodape">Autores:</p>
+        <p class="tituloRodape">Contato:</p>
+        <p>Alunos do Curso Técnico em Informática, do ano de 2026. <a href="../HTML/sobre.html">(Acesse sobre nós)</a>
+
+            <br> Estudamos no Instituto Federal de Educação,
+            Ciência e Tecnologia Sul-rio-grandense (IFSul), campus Camaquã. <br> A disciplina deste trabalho é a de
+            Tópicos Especiais, que uniu Programação para a Web e a turma toda para que ele acontecesse.</p>
+        <div id="containerContatos">
+            <p>Instagram: <a
+                    href="https://www.instagram.com/tinf4ve?utm_source=ig_web_button_share_sheet&stkn=ZDNlZDc0MzIxNw==">Tinf4ve!</a>
+            </p>
+            <p>E-mail: <a href="#"></a></p>
+        </div>
+    </footer>
+
+</body>
+</html>

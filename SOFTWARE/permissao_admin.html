@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Erro de permissão de administrador - MundoByte</title>
+    <link rel="stylesheet" href="../CSS/reset.css">
+    <link rel="stylesheet" href="CSS/base_estilo.css">
+    <link rel="stylesheet" href="CSS/layout_estilo.css">
+    <link rel="stylesheet" href="../CSS/header_estilo.css">
+    <link rel="stylesheet" href="../CSS/footer_estilo.css">
+    <link rel="stylesheet" href="CSS/problema1.css">
+    <link rel="icon" href="../IMG/favicon.ico">
+</head>
+<body>
+
+    <header id="headerContainer">
+
+        <!-- linha de cima  -->
+        <div id="headerTop">
+            <span id="logoTurma"></span>
+            <span id="logoIf"></span>
+        </div>
+
+        <!-- Linha debaixo (menu) -->
+        <nav id="headerNav">
+            <a href="../HTML/index.html" class="navItem">Home</a>
+            <a href="../HARDWARE/hardware.html" class="navItem">Visão do computador</a>
+            <a href="../HARDWARE/computadores_antigos.html" class="navItem">Problemas de Hardware</a>
+            <a href="problemas_software.html" class="navItem" aria-current="page">Problemas de Software</a>
+            <a href="../HTML/convite_paraninfo.html" class="navItem">Soares</a>
+            <a href="../HTML/login.html" class="navItem">Entrar</a>
+        </nav>
+    </header>
+
+    <!-- Conteúdo, CHRISTOPHER JACOBSEN -->
+
+    <main>
+        <h1>Erro de permissão de administrador</h1>
+        <hr>
+        <section>
+            <p>Ao instalar um programa, apagar ou alterar um arquivo, ou
+                mudar uma configuração, o Windows mostra mensagens como "Você
+                precisa de permissão para executar esta ação", "Acesso
+                negado" ou "A operação solicitada requer elevação". Isso
+                acontece quando a sua conta não é de administrador, quando o
+                programa precisa ser aberto como administrador, quando o
+                arquivo pertence a outro usuário ou ao sistema, ou quando o
+                computador é da escola ou de uma empresa e foi bloqueado de
+                propósito.
+            </p>
+        </section>
+        <hr>
+        <section>
+            <div>
+                <h2>Solução</h2>
+                <p>Veja primeiro qual é o tipo da sua conta, em
+                    Configurações &gt; Contas &gt; Suas informações: abaixo do
+                    nome aparece Administrador ou Conta padrão. Uma conta
+                    padrão precisa da senha de um administrador para instalar
+                    programas. Em computadores da escola ou do trabalho, esse
+                    bloqueio é proposital: peça ajuda ao responsável em vez de
+                    tentar burlar.</p>
+
+                <p>Para programas e comandos que pedem permissão, clique com
+                    o botão direito no programa e escolha Executar como
+                    administrador. Comandos como <code>sfc /scannow</code>
+                    também só funcionam no Prompt de Comando aberto como
+                    administrador: procure por cmd no menu Iniciar e use essa
+                    mesma opção.</p>
+
+                <p>Se o erro for de acesso negado em um arquivo ou pasta sua,
+                    clique com o botão direito nela, vá em Propriedades &gt;
+                    Segurança &gt; Avançado, clique em Alterar ao lado de
+                    Proprietário, digite o nome do seu usuário e confirme.
+                    Depois dê Controle total para o seu usuário na aba
+                    Segurança. Não mude as permissões de pastas do sistema,
+                    como C:\Windows. Se o arquivo não apaga porque está aberto
+                    em algum programa, veja a página
+                    <a href="arquivos_bloqueados.html">Arquivos ou pastas que
+                    não podem ser excluídos</a>.</p>
+
+                <p>Para melhor compreensão, pesquise um dos tutoriais em
+                    vídeo abaixo:</p>
+
+                <ul class="lista-videos">
+                    <li><a
+                            href="https://www.youtube.com/results?search_query=voc%C3%AA+precisa+de+permiss%C3%A3o+para+executar+esta+a%C3%A7%C3%A3o+windows+como+resolver">
+                            Você precisa de permissão para executar esta ação windows como resolver
+                        </a>
+                    </li>
+                    <li><a
+                            href="https://www.youtube.com/results?search_query=como+tomar+posse+de+pasta+windows+acesso+negado">
+                            Como tomar posse de pasta windows acesso negado
+                        </a>
+                    </li>
+                </ul>
+            </div>
+
+        </section>
+    </main>
+
+    <!-- Rodapé, GABRIELLI BANDOW -->
+
+    <footer id="footerContainer">
+        <p class="tituloRodape">Autores:</p>
+        <p class="tituloRodape">Contato:</p>
+        <p>Alunos do Curso Técnico em Informática, do ano de 2026. <a href="../HTML/sobre.html">(Acesse sobre nós)</a>
+            
+            <br> Estudamos no Instituto Federal de Educação,
+            Ciência e Tecnologia Sul-rio-grandense (IFSul), campus Camaquã. <br> A disciplina deste trabalho é a de
+            Tópicos Especiais, que uniu Programação para a Web e a turma toda para que ele acontecesse.</p>
+        <div id="containerContatos">
+            <p>Instagram: <a
+                    href="https://www.instagram.com/tinf4ve?utm_source=ig_web_button_share_sheet&stkn=ZDNlZDc0MzIxNw==">Tinf4ve!</a>
+            </p>
+            <p>E-mail: <a href="#"></a></p>
+        </div>
+    </footer>
+
+</body>
+</html>

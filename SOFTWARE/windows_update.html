@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Erro no Windows Update - MundoByte</title>
+    <link rel="stylesheet" href="../CSS/reset.css">
+    <link rel="stylesheet" href="CSS/base_estilo.css">
+    <link rel="stylesheet" href="CSS/layout_estilo.css">
+    <link rel="stylesheet" href="../CSS/header_estilo.css">
+    <link rel="stylesheet" href="../CSS/footer_estilo.css">
+    <link rel="stylesheet" href="CSS/problema1.css">
+    <link rel="icon" href="../IMG/favicon.ico">
+</head>
+<body>
+
+    <header id="headerContainer">
+
+        <!-- linha de cima  -->
+        <div id="headerTop">
+            <span id="logoTurma"></span>
+            <span id="logoIf"></span>
+        </div>
+
+        <!-- Linha debaixo (menu) -->
+        <nav id="headerNav">
+            <a href="../HTML/index.html" class="navItem">Home</a>
+            <a href="../HARDWARE/hardware.html" class="navItem">Visão do computador</a>
+            <a href="../HARDWARE/computadores_antigos.html" class="navItem">Problemas de Hardware</a>
+            <a href="problemas_software.html" class="navItem" aria-current="page">Problemas de Software</a>
+            <a href="../HTML/convite_paraninfo.html" class="navItem">Soares</a>
+            <a href="../HTML/login.html" class="navItem">Entrar</a>
+        </nav>
+    </header>
+
+    <!-- Conteúdo, CHRISTOPHER JACOBSEN -->
+
+    <main>
+        <h1>Erro no Windows Update</h1>
+        <hr>
+        <section>
+            <p>O Windows Update não consegue instalar as atualizações:
+                fica parado na mesma porcentagem, mostra "Não foi possível
+                instalar esta atualização" ou um código de erro começando com
+                0x8. As causas mais comuns são pouco espaço no disco, internet
+                instável, arquivos de atualização corrompidos, serviços do
+                Windows parados, a data do computador errada ou um antivírus
+                bloqueando a instalação.
+            </p>
+        </section>
+        <hr>
+        <section>
+            <div>
+                <h2>Solução</h2>
+                <p>Comece pelo básico: reinicie o computador e tente de
+                    novo. Confira se o disco C: tem pelo menos uns 15 GB
+                    livres (veja <a href="disco_cheio.html">Espaço em disco
+                    ficando cheio sozinho</a>) e se a data e a hora estão
+                    certas (veja <a href="relogio_incorreto.html">Relógio do
+                    sistema incorreto</a>). Depois rode o solucionador do
+                    próprio Windows, em Configurações &gt; Sistema &gt; Solução
+                    de problemas &gt; Outras soluções de problemas &gt; Windows
+                    Update.</p>
+
+                <p>Se continuar falhando, limpe os arquivos de atualização
+                    baixados. Abra o Prompt de Comando como administrador e
+                    execute, um de cada vez, <code>net stop wuauserv</code> e
+                    <code>net stop bits</code>. Depois execute
+                    <code>ren C:\Windows\SoftwareDistribution SoftwareDistribution.old</code>
+                    e, por fim, <code>net start wuauserv</code> e
+                    <code>net start bits</code>. O Windows vai baixar as
+                    atualizações de novo do zero.</p>
+
+                <p>Se o erro persistir, verifique os arquivos do sistema
+                    com <code>sfc /scannow</code> e depois
+                    <code>DISM /Online /Cleanup-Image /RestoreHealth</code>.
+                    Quando uma atualização específica sempre falha, anote o
+                    código dela (começa com KB), procure esse código no
+                    Catálogo do Microsoft Update e instale a atualização
+                    manualmente.</p>
+
+                <p>Para melhor compreensão, pesquise um dos tutoriais em
+                    vídeo abaixo:</p>
+
+                <ul class="lista-videos">
+                    <li><a
+                            href="https://www.youtube.com/results?search_query=erro+windows+update+n%C3%A3o+instala+atualiza%C3%A7%C3%A3o+como+resolver">
+                            Erro windows update não instala atualização como resolver
+                        </a>
+                    </li>
+                    <li><a
+                            href="https://www.youtube.com/results?search_query=como+limpar+pasta+softwaredistribution+windows+update">
+                            Como limpar pasta softwaredistribution windows update
+                        </a>
+                    </li>
+                </ul>
+            </div>
+
+        </section>
+    </main>
+
+    <!-- Rodapé, GABRIELLI BANDOW -->
+
+    <footer id="footerContainer">
+        <p class="tituloRodape">Autores:</p>
+        <p class="tituloRodape">Contato:</p>
+        <p>Alunos do Curso Técnico em Informática, do ano de 2026. <a href="../HTML/sobre.html">(Acesse sobre nós)</a>
+            
+            <br> Estudamos no Instituto Federal de Educação,
+            Ciência e Tecnologia Sul-rio-grandense (IFSul), campus Camaquã. <br> A disciplina deste trabalho é a de
+            Tópicos Especiais, que uniu Programação para a Web e a turma toda para que ele acontecesse.</p>
+        <div id="containerContatos">
+            <p>Instagram: <a
+                    href="https://www.instagram.com/tinf4ve?utm_source=ig_web_button_share_sheet&stkn=ZDNlZDc0MzIxNw==">Tinf4ve!</a>
+            </p>
+            <p>E-mail: <a href="#"></a></p>
+        </div>
+    </footer>
+
+</body>
+</html>

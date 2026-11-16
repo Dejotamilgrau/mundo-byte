@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tela preta após o login - MundoByte</title>
+    <link rel="stylesheet" href="../CSS/reset.css">
+    <link rel="stylesheet" href="CSS/base_estilo.css">
+    <link rel="stylesheet" href="CSS/layout_estilo.css">
+    <link rel="stylesheet" href="../CSS/header_estilo.css">
+    <link rel="stylesheet" href="../CSS/footer_estilo.css">
+    <link rel="stylesheet" href="CSS/problema1.css">
+    <link rel="icon" href="../IMG/favicon.ico">
+</head>
+<body>
+
+    <header id="headerContainer">
+
+        <!-- linha de cima  -->
+        <div id="headerTop">
+            <span id="logoTurma"></span>
+            <span id="logoIf"></span>
+        </div>
+
+        <!-- Linha debaixo (menu) -->
+        <nav id="headerNav">
+            <a href="../HTML/index.html" class="navItem">Home</a>
+            <a href="../HARDWARE/hardware.html" class="navItem">Visão do computador</a>
+            <a href="../HARDWARE/computadores_antigos.html" class="navItem">Problemas de Hardware</a>
+            <a href="problemas_software.html" class="navItem" aria-current="page">Problemas de Software</a>
+            <a href="../HTML/convite_paraninfo.html" class="navItem">Soares</a>
+            <a href="../HTML/login.html" class="navItem">Entrar</a>
+        </nav>
+    </header>
+
+    <!-- Conteúdo, CARLA -->
+
+    <main>
+        <h1>Tela preta após o login</h1>
+        <hr>
+        <section>
+            <p>O computador liga, mostra a tela de boas-vindas, mas depois
+                a área de trabalho fica totalmente preta, só com o cursor do
+                mouse. Quase sempre o culpado é o Windows Explorer
+                (explorer.exe), o processo que desenha a área de trabalho, a
+                barra de tarefas e o menu Iniciar: ele não abriu ou travou.
+                Isso pode vir de uma atualização mal instalada, de arquivos do
+                sistema corrompidos, do driver de vídeo ou de um vírus.
+            </p>
+        </section>
+        <hr>
+        <section>
+            <div>
+                <h2>Solução</h2>
+                <p>Mesmo com a tela preta, o Gerenciador de Tarefas
+                    funciona. Aperte Ctrl + Shift + Esc, vá em Arquivo &gt;
+                    Executar nova tarefa, digite <code>explorer.exe</code> e
+                    clique em OK. Se a área de trabalho aparecer, o problema
+                    era só o Explorer que não abriu. Reinicie o computador
+                    para ver se volta a acontecer.</p>
+
+                <p>Se a tela continuar preta, o problema pode ser o vídeo.
+                    Aperte Win + Ctrl + Shift + B para reiniciar o driver de
+                    vídeo e Win + P para conferir se a imagem não está indo
+                    para um segundo monitor desligado. Se começou depois de
+                    instalar um driver novo, abra o Gerenciador de
+                    Dispositivos, expanda Adaptadores de vídeo, entre em
+                    Propriedades &gt; Driver e clique em Reverter driver.</p>
+
+                <p>Se o problema se repete toda vez, verifique os arquivos
+                    do sistema. No Gerenciador de Tarefas, em Executar nova
+                    tarefa, digite <code>cmd</code>, marque Criar esta tarefa
+                    com privilégios administrativos e execute
+                    <code>sfc /scannow</code> e depois
+                    <code>DISM /Online /Cleanup-Image /RestoreHealth</code>.
+                    Se tudo começou depois de uma atualização, desinstale-a em
+                    Configurações &gt; Windows Update &gt; Histórico de
+                    atualizações &gt; Desinstalar atualizações. Também vale
+                    passar o antivírus, porque alguns vírus impedem o Explorer
+                    de abrir. Se nada resolver, veja a página
+                    <a href="so_corrompido.html">Sistema operacional
+                    corrompido</a>.</p>
+
+                <p>Para melhor compreensão, pesquise um dos tutoriais em
+                    vídeo abaixo:</p>
+
+                <ul class="lista-videos">
+                    <li><a
+                            href="https://www.youtube.com/results?search_query=tela+preta+depois+do+login+windows+s%C3%B3+cursor+do+mouse">
+                            Tela preta depois do login windows só cursor do mouse
+                        </a>
+                    </li>
+                    <li><a
+                            href="https://www.youtube.com/results?search_query=como+abrir+explorer.exe+pelo+gerenciador+de+tarefas">
+                            Como abrir explorer.exe pelo gerenciador de tarefas
+                        </a>
+                    </li>
+                </ul>
+            </div>
+
+        </section>
+    </main>
+
+    <!-- Rodapé, GABRIELLI BANDOW -->
+
+    <footer id="footerContainer">
+        <p class="tituloRodape">Autores:</p>
+        <p class="tituloRodape">Contato:</p>
+        <p>Alunos do Curso Técnico em Informática, do ano de 2026. <a href="../HTML/sobre.html">(Acesse sobre nós)</a>
+            
+            <br> Estudamos no Instituto Federal de Educação,
+            Ciência e Tecnologia Sul-rio-grandense (IFSul), campus Camaquã. <br> A disciplina deste trabalho é a de
+            Tópicos Especiais, que uniu Programação para a Web e a turma toda para que ele acontecesse.</p>
+        <div id="containerContatos">
+            <p>Instagram: <a
+                    href="https://www.instagram.com/tinf4ve?utm_source=ig_web_button_share_sheet&stkn=ZDNlZDc0MzIxNw==">Tinf4ve!</a>
+            </p>
+            <p>E-mail: <a href="#"></a></p>
+        </div>
+    </footer>
+
+</body>
+</html>

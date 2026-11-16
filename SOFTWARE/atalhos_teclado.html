@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Atalhos do teclado não funcionam - MundoByte</title>
+    <link rel="stylesheet" href="../CSS/reset.css">
+    <link rel="stylesheet" href="CSS/base_estilo.css">
+    <link rel="stylesheet" href="CSS/layout_estilo.css">
+    <link rel="stylesheet" href="../CSS/header_estilo.css">
+    <link rel="stylesheet" href="../CSS/footer_estilo.css">
+    <link rel="stylesheet" href="CSS/problema1.css">
+    <link rel="icon" href="../IMG/favicon.ico">
+</head>
+<body>
+
+    <header id="headerContainer">
+
+        <!-- linha de cima  -->
+        <div id="headerTop">
+            <span id="logoTurma"></span>
+            <span id="logoIf"></span>
+        </div>
+
+        <!-- Linha debaixo (menu) -->
+        <nav id="headerNav">
+            <a href="../HTML/index.html" class="navItem">Home</a>
+            <a href="../HARDWARE/hardware.html" class="navItem">Visão do computador</a>
+            <a href="../HARDWARE/computadores_antigos.html" class="navItem">Problemas de Hardware</a>
+            <a href="problemas_software.html" class="navItem" aria-current="page">Problemas de Software</a>
+            <a href="../HTML/convite_paraninfo.html" class="navItem">Soares</a>
+            <a href="../HTML/login.html" class="navItem">Entrar</a>
+        </nav>
+    </header>
+
+    <!-- Conteúdo, AMANDA -->
+
+    <main>
+        <h1>Atalhos do teclado não funcionam</h1>
+        <hr>
+        <section>
+            <p>Este problema acontece quando atalhos de teclado, como
+                Ctrl + C, Ctrl + V, Alt + Tab ou as combinações com a tecla
+                Windows (Win + E, Win + D, Win + R), param de responder,
+                mesmo que as letras continuem sendo digitadas normalmente.
+                As causas mais comuns são recursos de acessibilidade
+                ativados sem querer (Teclas de Aderência e Teclas de
+                Filtragem), a tecla Windows bloqueada em teclados gamer,
+                programas em segundo plano que "capturam" as combinações de
+                teclas, o Windows Explorer travado e o driver do teclado
+                corrompido.
+            </p>
+        </section>
+        <hr>
+        <section>
+            <div>
+                <h2>Solução</h2>
+                <p>Comece verificando o próprio teclado. Muitos teclados
+                    gamer e notebooks têm uma tecla ou combinação (como
+                    Fn + F6, Fn + Windows ou um botão com cadeado) que
+                    bloqueia a tecla Windows, ativando o chamado Modo Jogo.
+                    Pressione essa combinação novamente para desbloquear.
+                    Em notebooks, confira também se a tecla Fn Lock não está
+                    invertendo as funções das teclas F1 a F12. Se possível,
+                    teste outro teclado para descartar defeito físico.
+                </p>
+
+                <p>Em seguida, desative os recursos de acessibilidade em
+                    Configurações &gt; Acessibilidade &gt; Teclado,
+                    desligando as opções Teclas de Aderência, Teclas de
+                    Filtragem e Teclas de Alternância, além dos atalhos que
+                    as ativam. Esses recursos costumam ser ligados sem
+                    querer ao pressionar Shift cinco vezes ou segurar o
+                    Shift direito por oito segundos, e fazem o teclado se
+                    comportar de forma estranha.</p>
+
+                <p>Se os atalhos com a tecla Windows ou o Alt + Tab
+                    pararem de funcionar de repente, reinicie o Windows
+                    Explorer. Abra o Gerenciador de Tarefas
+                    (Ctrl + Shift + Esc), encontre o Windows Explorer na
+                    lista, clique com o botão direito e escolha Reiniciar.
+                    Aproveite para finalizar programas que podem estar
+                    capturando os atalhos, como gravadores de tela,
+                    overlays de jogos e softwares de macro do teclado.</p>
+
+                <p>Se o problema continuar, abra o Gerenciador de
+                    Dispositivos, expanda Teclados, clique com o botão
+                    direito no teclado, escolha Desinstalar dispositivo e
+                    reinicie o computador para o driver ser reinstalado.
+                    Veja também a página
+                    <a href="drivers_desatualizados.html">Drivers
+                    desatualizados ou corrompidos</a>. Por fim, abra o
+                    Prompt de Comando como administrador e execute
+                    <code>sfc /scannow</code> para corrigir arquivos do
+                    sistema corrompidos.</p>
+
+                <p>Para melhor compreensão, pesquise um dos tutoriais em
+                    vídeo abaixo:</p>
+
+                <ul class="lista-videos">
+                    <li><a
+                            href="https://www.youtube.com/results?search_query=atalhos+do+teclado+n%C3%A3o+funcionam+windows+como+resolver">
+                            Atalhos do teclado não funcionam no Windows:
+                            como resolver
+                        </a>
+                    </li>
+                    <li><a
+                            href="https://www.youtube.com/results?search_query=como+desativar+teclas+de+ader%C3%AAncia+windows">
+                            Como desativar as Teclas de Aderência no Windows
+                        </a>
+                    </li>
+                </ul>
+            </div>
+
+        </section>
+    </main>
+
+    <!-- Rodapé, GABRIELLI BANDOW -->
+
+    <footer id="footerContainer">
+        <p class="tituloRodape">Autores:</p>
+        <p class="tituloRodape">Contato:</p>
+        <p>Alunos do Curso Técnico em Informática, do ano de 2026. <a href="../HTML/sobre.html">(Acesse sobre nós)</a>
+
+            <br> Estudamos no Instituto Federal de Educação,
+            Ciência e Tecnologia Sul-rio-grandense (IFSul), campus Camaquã. <br> A disciplina deste trabalho é a de
+            Tópicos Especiais, que uniu Programação para a Web e a turma toda para que ele acontecesse.</p>
+        <div id="containerContatos">
+            <p>Instagram: <a
+                    href="https://www.instagram.com/tinf4ve?utm_source=ig_web_button_share_sheet&stkn=ZDNlZDc0MzIxNw==">Tinf4ve!</a>
+            </p>
+            <p>E-mail: <a href="#"></a></p>
+        </div>
+    </footer>
+
+</body>
+</html>

@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Erro de DLL ausente ao iniciar um programa - MundoByte</title>
+    <link rel="stylesheet" href="../CSS/reset.css">
+    <link rel="stylesheet" href="CSS/base_estilo.css">
+    <link rel="stylesheet" href="CSS/layout_estilo.css">
+    <link rel="stylesheet" href="../CSS/header_estilo.css">
+    <link rel="stylesheet" href="../CSS/footer_estilo.css">
+    <link rel="stylesheet" href="CSS/problema1.css">
+    <link rel="icon" href="../IMG/favicon.ico">
+</head>
+<body>
+
+    <header id="headerContainer">
+
+        <!-- linha de cima  -->
+        <div id="headerTop">
+            <span id="logoTurma"></span>
+            <span id="logoIf"></span>
+        </div>
+
+        <!-- Linha debaixo (menu) -->
+        <nav id="headerNav">
+            <a href="../HTML/index.html" class="navItem">Home</a>
+            <a href="../HARDWARE/hardware.html" class="navItem">Visão do computador</a>
+            <a href="../HARDWARE/computadores_antigos.html" class="navItem">Problemas de Hardware</a>
+            <a href="problemas_software.html" class="navItem" aria-current="page">Problemas de Software</a>
+            <a href="../HTML/convite_paraninfo.html" class="navItem">Soares</a>
+            <a href="../HTML/login.html" class="navItem">Entrar</a>
+        </nav>
+    </header>
+
+    <!-- Conteúdo, CARLA -->
+
+    <main>
+        <h1>Erro de DLL ausente ao iniciar um programa</h1>
+        <hr>
+        <section>
+            <p>Ao abrir um jogo ou programa, aparece uma mensagem dizendo
+                que ele não pode ser iniciado porque falta um arquivo, como
+                MSVCP140.dll, VCRUNTIME140.dll ou VCRUNTIME140_1.dll. Esses
+                arquivos fazem parte do Microsoft Visual C++ Redistributable,
+                um pacote que muitos programas precisam para funcionar. O erro
+                aparece quando o pacote não está instalado, está corrompido ou
+                está faltando a versão de 32 ou de 64 bits.
+            </p>
+        </section>
+        <hr>
+        <section>
+            <div>
+                <h2>Solução</h2>
+                <p>Baixe o Microsoft Visual C++ Redistributable mais recente
+                    pelo site oficial da Microsoft e instale as duas versões,
+                    x64 e x86, porque muitos jogos são de 32 bits mesmo em um
+                    Windows de 64 bits. Se ele já estiver instalado, repare:
+                    em Configurações &gt; Aplicativos &gt; Aplicativos
+                    instalados, clique no Microsoft Visual C++ 2015-2022
+                    Redistributable, escolha Modificar e depois Reparar.
+                    Reinicie o computador e tente abrir o programa de
+                    novo.</p>
+
+                <p>Se o arquivo da mensagem for parecido com d3dx9_43.dll
+                    ou xinput1_3.dll, o que falta é o DirectX antigo: instale
+                    o Runtime do DirectX para usuário final, também pelo site
+                    da Microsoft. Em jogos da Steam, clique com o botão
+                    direito no jogo, vá em Propriedades &gt; Arquivos
+                    instalados &gt; Verificar integridade dos arquivos, que
+                    baixa de novo o que estiver faltando.</p>
+
+                <p>Nunca baixe arquivos .dll avulsos de sites de DLL: eles
+                    podem ter vírus ou ser da versão errada. Se o erro
+                    continuar, reinstale o programa e execute
+                    <code>sfc /scannow</code> no Prompt de Comando como
+                    administrador. Se o programa trava ou fecha sem mostrar
+                    erro de DLL, veja a página
+                    <a href="programa_fecha.html">Programa não abre ou fecha
+                    sozinho</a>.</p>
+
+                <p>Para melhor compreensão, pesquise um dos tutoriais em
+                    vídeo abaixo:</p>
+
+                <ul class="lista-videos">
+                    <li><a
+                            href="https://www.youtube.com/results?search_query=msvcp140.dll+est%C3%A1+faltando+como+resolver">
+                            Msvcp140.dll está faltando como resolver
+                        </a>
+                    </li>
+                    <li><a
+                            href="https://www.youtube.com/results?search_query=como+instalar+visual+c%2B%2B+redistributable">
+                            Como instalar visual c++ redistributable
+                        </a>
+                    </li>
+                </ul>
+            </div>
+
+        </section>
+    </main>
+
+    <!-- Rodapé, GABRIELLI BANDOW -->
+
+    <footer id="footerContainer">
+        <p class="tituloRodape">Autores:</p>
+        <p class="tituloRodape">Contato:</p>
+        <p>Alunos do Curso Técnico em Informática, do ano de 2026. <a href="../HTML/sobre.html">(Acesse sobre nós)</a>
+            
+            <br> Estudamos no Instituto Federal de Educação,
+            Ciência e Tecnologia Sul-rio-grandense (IFSul), campus Camaquã. <br> A disciplina deste trabalho é a de
+            Tópicos Especiais, que uniu Programação para a Web e a turma toda para que ele acontecesse.</p>
+        <div id="containerContatos">
+            <p>Instagram: <a
+                    href="https://www.instagram.com/tinf4ve?utm_source=ig_web_button_share_sheet&stkn=ZDNlZDc0MzIxNw==">Tinf4ve!</a>
+            </p>
+            <p>E-mail: <a href="#"></a></p>
+        </div>
+    </footer>
+
+</body>
+</html>

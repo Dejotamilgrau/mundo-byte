@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Loop de reinicialização - MundoByte</title>
+    <link rel="stylesheet" href="../CSS/reset.css">
+    <link rel="stylesheet" href="CSS/base_estilo.css">
+    <link rel="stylesheet" href="CSS/layout_estilo.css">
+    <link rel="stylesheet" href="../CSS/header_estilo.css">
+    <link rel="stylesheet" href="../CSS/footer_estilo.css">
+    <link rel="stylesheet" href="CSS/problema1.css">
+    <link rel="icon" href="../IMG/favicon.ico">
+</head>
+<body>
+
+    <header id="headerContainer">
+
+        <!-- linha de cima  -->
+        <div id="headerTop">
+            <span id="logoTurma"></span>
+            <span id="logoIf"></span>
+        </div>
+
+        <!-- Linha debaixo (menu) -->
+        <nav id="headerNav">
+            <a href="../HTML/index.html" class="navItem">Home</a>
+            <a href="../HARDWARE/hardware.html" class="navItem">Visão do computador</a>
+            <a href="../HARDWARE/computadores_antigos.html" class="navItem">Problemas de Hardware</a>
+            <a href="problemas_software.html" class="navItem" aria-current="page">Problemas de Software</a>
+            <a href="../HTML/convite_paraninfo.html" class="navItem">Soares</a>
+            <a href="../HTML/login.html" class="navItem">Entrar</a>
+        </nav>
+    </header>
+
+    <!-- Conteúdo, AMANDA -->
+
+    <main>
+        <h1>Loop de reinicialização</h1>
+        <hr>
+        <section>
+            <p>Este problema acontece quando o computador liga, começa a
+                carregar o Windows e reinicia sozinho, repetindo isso sem
+                parar, muitas vezes sem nem mostrar uma mensagem de erro.
+                As causas mais comuns são uma atualização do Windows mal
+                instalada, um driver novo incompatível, arquivos do sistema
+                corrompidos ou uma tela azul (BSOD) que some rápido demais
+                para ser lida. Também pode ser hardware, como
+                superaquecimento, memória RAM com defeito ou fonte fraca.
+            </p>
+        </section>
+        <hr>
+        <section>
+            <div>
+                <h2>Solução</h2>
+                <p>O primeiro passo é descobrir o motivo das
+                    reinicializações. Para isso, acesse o menu de Opções
+                    Avançadas: ligue o computador e, assim que aparecer o
+                    logotipo do fabricante, segure o botão Power por 10
+                    segundos para desligá-lo. Depois de repetir isso duas ou
+                    três vezes, o Windows abre a tela de recuperação. Vá em
+                    Solução de problemas &gt; Opções avançadas &gt;
+                    Configurações de Inicialização &gt; Reiniciar e
+                    pressione 9 (ou F9) para escolher Desabilitar reinício
+                    automático após falha. Assim, se houver uma tela azul,
+                    ela ficará parada e você poderá anotar o código do erro
+                    para pesquisar a causa.
+                </p>
+
+                <p>Se o problema começou depois de uma atualização, volte ao
+                    menu Solução de problemas &gt; Opções avançadas e use a
+                    opção Desinstalar Atualizações, começando pela
+                    atualização de qualidade mais recente. Se começou depois
+                    de instalar um driver ou programa, entre nas
+                    Configurações de Inicialização novamente e pressione 4
+                    (ou F4) para iniciar no Modo de Segurança. Nele, abra o
+                    Gerenciador de Dispositivos, clique com o botão direito
+                    no dispositivo atualizado e escolha Propriedades &gt;
+                    Driver &gt; Reverter Driver, ou desinstale o programa
+                    recente pelo Painel de Controle.</p>
+
+                <p>Ainda no Modo de Segurança, verifique os arquivos do
+                    sistema abrindo o Prompt de Comando como administrador
+                    e executando <code>sfc /scannow</code> e, em seguida,
+                    <code>DISM /Online /Cleanup-Image /RestoreHealth</code>.
+                    Se o Windows nem chegar ao Modo de Segurança e passar a
+                    mostrar a tela de reparo automático, siga os passos da
+                    página <a href="loop_reparo.html">Loop de reparo
+                    automático</a>, que explica o Reparo de Inicialização,
+                    a Restauração do Sistema e os comandos bootrec.</p>
+
+                <p>Se nenhuma dessas soluções resolver, o problema
+                    provavelmente é de hardware. Verifique se os coolers
+                    estão girando e se o processador não está esquentando
+                    demais, limpe a poeira do gabinete, retire e recoloque
+                    os pentes de memória RAM (testando um de cada vez) e
+                    confira se a fonte tem potência suficiente. Para mais
+                    detalhes, veja
+                    <a href="../HARDWARE/computadores_antigos.html">Problemas
+                    mais comuns em computadores antigos</a>.</p>
+
+                <p>Para melhor compreensão, pesquise um dos tutoriais em
+                    vídeo abaixo:</p>
+
+                <ul class="lista-videos">
+                    <li><a
+                            href="https://www.youtube.com/results?search_query=windows+reiniciando+sozinho+sem+parar+como+resolver">
+                            Windows reiniciando sozinho sem parar: como
+                            resolver
+                        </a>
+                    </li>
+                    <li><a
+                            href="https://www.youtube.com/results?search_query=como+desativar+rein%C3%ADcio+autom%C3%A1tico+ap%C3%B3s+falha+windows">
+                            Como desativar o reinício automático após falha
+                            no Windows
+                        </a>
+                    </li>
+                </ul>
+            </div>
+
+        </section>
+    </main>
+
+    <!-- Rodapé, GABRIELLI BANDOW -->
+
+    <footer id="footerContainer">
+        <p class="tituloRodape">Autores:</p>
+        <p class="tituloRodape">Contato:</p>
+        <p>Alunos do Curso Técnico em Informática, do ano de 2026. <a href="../HTML/sobre.html">(Acesse sobre nós)</a>
+
+            <br> Estudamos no Instituto Federal de Educação,
+            Ciência e Tecnologia Sul-rio-grandense (IFSul), campus Camaquã. <br> A disciplina deste trabalho é a de
+            Tópicos Especiais, que uniu Programação para a Web e a turma toda para que ele acontecesse.</p>
+        <div id="containerContatos">
+            <p>Instagram: <a
+                    href="https://www.instagram.com/tinf4ve?utm_source=ig_web_button_share_sheet&stkn=ZDNlZDc0MzIxNw==">Tinf4ve!</a>
+            </p>
+            <p>E-mail: <a href="#"></a></p>
+        </div>
+    </footer>
+
+</body>
+</html>

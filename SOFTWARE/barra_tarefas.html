@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Barra de tarefas travada - MundoByte</title>
+    <link rel="stylesheet" href="../CSS/reset.css">
+    <link rel="stylesheet" href="CSS/base_estilo.css">
+    <link rel="stylesheet" href="CSS/layout_estilo.css">
+    <link rel="stylesheet" href="../CSS/header_estilo.css">
+    <link rel="stylesheet" href="../CSS/footer_estilo.css">
+    <link rel="stylesheet" href="CSS/problema1.css">
+    <link rel="icon" href="../IMG/favicon.ico">
+</head>
+<body>
+
+    <header id="headerContainer">
+
+        <!-- linha de cima  -->
+        <div id="headerTop">
+            <span id="logoTurma"></span>
+            <span id="logoIf"></span>
+        </div>
+
+        <!-- Linha debaixo (menu) -->
+        <nav id="headerNav">
+            <a href="../HTML/index.html" class="navItem">Home</a>
+            <a href="../HARDWARE/hardware.html" class="navItem">Visão do computador</a>
+            <a href="../HARDWARE/computadores_antigos.html" class="navItem">Problemas de Hardware</a>
+            <a href="problemas_software.html" class="navItem" aria-current="page">Problemas de Software</a>
+            <a href="../HTML/convite_paraninfo.html" class="navItem">Soares</a>
+            <a href="../HTML/login.html" class="navItem">Entrar</a>
+        </nav>
+    </header>
+
+    <!-- Conteúdo, CHRISTOPHER JACOBSEN -->
+
+    <main>
+        <h1>Barra de tarefas travada</h1>
+        <hr>
+        <section>
+            <p>A barra de tarefas para de responder aos cliques, o menu
+                Iniciar não abre, os ícones somem ou a barra fica congelada na
+                tela, sem esconder nem quando um vídeo está em tela cheia. Na
+                maioria das vezes a causa é o Windows Explorer travado, que é o
+                processo responsável pela barra de tarefas, mas também pode
+                ser uma atualização com problema, arquivos do sistema
+                corrompidos ou um programa que mexe na barra.
+            </p>
+        </section>
+        <hr>
+        <section>
+            <div>
+                <h2>Solução</h2>
+                <p>Comece reiniciando o Windows Explorer: abra o
+                    Gerenciador de Tarefas (Ctrl + Shift + Esc), clique com o
+                    botão direito em Windows Explorer e escolha Reiniciar. A
+                    barra some por alguns segundos e volta funcionando. Se o
+                    Gerenciador de Tarefas também não responder, aperte
+                    Ctrl + Alt + Del e reinicie o computador pelo botão de
+                    energia no canto da tela.</p>
+
+                <p>Se a barra não esconde em tela cheia, normalmente é
+                    algum programa pedindo atenção, com o ícone piscando:
+                    abra esse programa e a barra volta a esconder. Confira
+                    também as opções em Configurações &gt; Personalização &gt;
+                    Barra de tarefas &gt; Comportamentos da barra de tarefas e
+                    desinstale programas instalados recentemente que
+                    personalizam a barra.</p>
+
+                <p>Se o problema voltar sempre, verifique os arquivos do
+                    sistema com <code>sfc /scannow</code> e
+                    <code>DISM /Online /Cleanup-Image /RestoreHealth</code> no
+                    Prompt de Comando como administrador. Se começou depois de
+                    uma atualização, desinstale-a pelo histórico do Windows
+                    Update. Como as notificações também dependem do Explorer,
+                    veja ainda a página
+                    <a href="notificacoes_travadas.html">Notificações e Central
+                    de Ações travadas</a>.</p>
+
+                <p>Para melhor compreensão, pesquise um dos tutoriais em
+                    vídeo abaixo:</p>
+
+                <ul class="lista-videos">
+                    <li><a
+                            href="https://www.youtube.com/results?search_query=barra+de+tarefas+travada+windows+11+n%C3%A3o+responde">
+                            Barra de tarefas travada windows 11 não responde
+                        </a>
+                    </li>
+                    <li><a
+                            href="https://www.youtube.com/results?search_query=menu+iniciar+n%C3%A3o+abre+windows+como+resolver">
+                            Menu iniciar não abre windows como resolver
+                        </a>
+                    </li>
+                </ul>
+            </div>
+
+        </section>
+    </main>
+
+    <!-- Rodapé, GABRIELLI BANDOW -->
+
+    <footer id="footerContainer">
+        <p class="tituloRodape">Autores:</p>
+        <p class="tituloRodape">Contato:</p>
+        <p>Alunos do Curso Técnico em Informática, do ano de 2026. <a href="../HTML/sobre.html">(Acesse sobre nós)</a>
+            
+            <br> Estudamos no Instituto Federal de Educação,
+            Ciência e Tecnologia Sul-rio-grandense (IFSul), campus Camaquã. <br> A disciplina deste trabalho é a de
+            Tópicos Especiais, que uniu Programação para a Web e a turma toda para que ele acontecesse.</p>
+        <div id="containerContatos">
+            <p>Instagram: <a
+                    href="https://www.instagram.com/tinf4ve?utm_source=ig_web_button_share_sheet&stkn=ZDNlZDc0MzIxNw==">Tinf4ve!</a>
+            </p>
+            <p>E-mail: <a href="#"></a></p>
+        </div>
+    </footer>
+
+</body>
+</html>

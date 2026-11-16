@@ -1,0 +1,134 @@
+/* Fontes do Google: Barlow Semi Condensed nos títulos (lembra as etiquetas técnicas das peças)
+ e Atkinson Hyperlegible no texto (feita para ser fácil de ler) */
+@import url("https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:ital,wght@0,400;0,700;1,400&family=Barlow+Semi+Condensed:wght@500;600;700&display=swap");
+
+/* ===== Cores e fontes do site ===== */
+
+:root {
+    --verdePlaca: #1c531b;   /* verde escuro do menu: títulos e botões */
+    --verdeIf: #369831;      /* verde do IF: links e destaques */
+    --verdeClaro: #8CC63C;   /* contorno do campo selecionado */
+    --tinta: #1F2A24;        /* texto */
+    --tintaSuave: #55625A;   /* textos de apoio */
+    --bancada: #F2F4F1;      /* fundo da página */
+    --linha: #D3DBD4;        /* bordas e divisórias */
+    --vermelhoIf: #C8191E;   /* só para avisos de cuidado */
+
+    /* Uma cor para cada categoria de problema */
+    --corHardware: #1F6F8B;
+    --corSoftware: #369831;
+    --corSistema: #6B4FA0;
+
+    --fonteTitulo: "Barlow Semi Condensed", "Arial Narrow", sans-serif;
+    --fonteTexto: "Atkinson Hyperlegible", Verdana, sans-serif;
+}
+
+/* Definição da cor de fundo e da fonte da página */
+body {
+    background-color: var(--bancada);
+    color: var(--tinta);
+    font-family: var(--fonteTexto);
+    font-size: 17px;
+    line-height: 1.6;
+}
+
+/* Campos e botões usam a mesma fonte do texto, e não a padrão do navegador */
+input,
+button {
+    font-family: inherit;
+}
+
+/* ===== Cabeçalho e rodapé =====
+ O cabeçalho e o rodapé continuam com a fonte e os espaçamentos de antes */
+
+header,
+header *,
+footer,
+footer * {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    line-height: 30px;
+}
+
+header,
+footer {
+    font-size: 16px;
+    color: black;
+}
+
+header a,
+footer p,
+footer a {
+    font-size: 16px;
+}
+
+footer p {
+    margin-top: 20px;
+    margin-bottom: 20px;
+    text-align: justify;
+    color: #333333;
+}
+
+/* ===== Conteúdo ===== */
+
+/* Conteúdo centralizado com largura máxima, assim não fica esticado em telas grandes */
+main {
+    width: 100%;
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 56px 24px 72px;
+    box-sizing: border-box;
+}
+
+/* Títulos */
+main h1,
+main h2,
+main h3 {
+    font-family: var(--fonteTitulo);
+    color: var(--verdePlaca);
+    line-height: 1.15;
+}
+
+main h1 {
+    font-size: 44px;
+    font-weight: 700;
+    margin-bottom: 16px;
+}
+
+main h2 {
+    font-size: 28px;
+    font-weight: 600;
+    margin-bottom: 12px;
+}
+
+main h3 {
+    font-size: 21px;
+    font-weight: 600;
+    margin-bottom: 8px;
+}
+
+/* Parágrafos alinhados à esquerda e com no máximo uns 70 caracteres por linha, para a leitura não cansar */
+main p {
+    max-width: 70ch;
+    margin-bottom: 16px;
+}
+
+/* Divisórias discretas entre as partes da página */
+main hr {
+    height: 1px;
+    border: none;
+    background-color: var(--linha);
+    margin: 32px 0;
+}
+
+/* Espaço entre as seções */
+main section {
+    margin-bottom: 24px;
+}
+
+/* Contorno visível em quem estiver selecionado pelo teclado (Tab) */
+main a:focus-visible,
+main button:focus-visible,
+main input:focus-visible {
+    outline: 3px solid var(--verdeClaro);
+    outline-offset: 2px;
+}

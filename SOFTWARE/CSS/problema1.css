@@ -1,0 +1,55 @@
+  /* Organização básica das seções com foto: texto ocupa o espaço disponível e a imagem fica do lado,
+ alinhados ao meio e com 48px de espaço entre eles */
+  .secao {
+      display: grid;
+      grid-template-columns: 1fr auto;
+      align-items: center;
+      gap: 48px;
+  }
+
+
+  #fotoProblema1 {
+      width: 250px;
+      border: 1px solid var(--linha);
+      border-radius: 4px;
+  }
+
+  /* Lista de vídeos no fim das soluções, com bolinhas verdes (o reset.css tira as bolinhas, aqui elas voltam) */
+  .lista-videos li {
+      list-style-type: disc;
+      margin-left: 22px;
+      padding: 3px 0;
+  }
+
+  .lista-videos li::marker {
+      color: var(--verdeIf);
+  }
+
+  .lista-videos a {
+      color: var(--verdePlaca);
+      text-underline-offset: 3px;
+  }
+
+  .lista-videos a:hover {
+      color: var(--verdeIf);
+  }
+
+  /* Comandos para digitar (como sfc /scannow), em letra de computador para não confundir com o texto */
+  main code {
+      padding: 1px 6px;
+      font-family: Consolas, "Courier New", monospace;
+      font-size: 0.9em;
+      color: var(--verdePlaca);
+      background-color: #E3EBE4;
+      border-radius: 3px;
+      /* Quando o comando quebra de linha, o fundo continua certinho nas duas partes */
+      box-decoration-break: clone;
+      -webkit-box-decoration-break: clone;
+  }
+
+  /* No celular a foto vai para baixo do texto */
+  @media (max-width: 700px) {
+      .secao {
+          grid-template-columns: 1fr;
+      }
+  }

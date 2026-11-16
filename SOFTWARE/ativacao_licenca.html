@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Falha na ativação da licença do sistema - MundoByte</title>
+    <link rel="stylesheet" href="../CSS/reset.css">
+    <link rel="stylesheet" href="CSS/base_estilo.css">
+    <link rel="stylesheet" href="CSS/layout_estilo.css">
+    <link rel="stylesheet" href="../CSS/header_estilo.css">
+    <link rel="stylesheet" href="../CSS/footer_estilo.css">
+    <link rel="stylesheet" href="CSS/problema1.css">
+    <link rel="icon" href="../IMG/favicon.ico">
+</head>
+<body>
+
+    <header id="headerContainer">
+
+        <!-- linha de cima  -->
+        <div id="headerTop">
+            <span id="logoTurma"></span>
+            <span id="logoIf"></span>
+        </div>
+
+        <!-- Linha debaixo (menu) -->
+        <nav id="headerNav">
+            <a href="../HTML/index.html" class="navItem">Home</a>
+            <a href="../HARDWARE/hardware.html" class="navItem">Visão do computador</a>
+            <a href="../HARDWARE/computadores_antigos.html" class="navItem">Problemas de Hardware</a>
+            <a href="problemas_software.html" class="navItem" aria-current="page">Problemas de Software</a>
+            <a href="../HTML/convite_paraninfo.html" class="navItem">Soares</a>
+            <a href="../HTML/login.html" class="navItem">Entrar</a>
+        </nav>
+    </header>
+
+    <!-- Conteúdo, CARLA -->
+
+    <main>
+        <h1>Falha na ativação da licença do sistema</h1>
+        <hr>
+        <section>
+            <p>O Windows ou o pacote Office começa a mostrar avisos de que
+                a licença expirou, de que o produto não é original ou a marca
+                d'água "Ativar o Windows", mesmo já tendo sido ativado antes.
+                As causas mais comuns são a troca de uma peça importante, como
+                a placa-mãe, chaves compradas de vendedores não oficiais,
+                ativadores piratas (que funcionam só por um tempo), a data do
+                computador errada e o Office conectado a outra conta
+                Microsoft.
+            </p>
+        </section>
+        <hr>
+        <section>
+            <div>
+                <h2>Solução</h2>
+                <p>Comece vendo a situação da licença em Configurações &gt;
+                    Sistema &gt; Ativação (no Windows 10, Atualização e
+                    Segurança &gt; Ativação). Confira também se a data e a
+                    hora do computador estão certas, porque o relógio errado
+                    atrapalha a verificação da licença: veja a página
+                    <a href="relogio_incorreto.html">Relógio do sistema
+                    incorreto</a>. Se você trocou a placa-mãe, clique em
+                    Solução de problemas e escolha Alterei o hardware neste
+                    dispositivo recentemente. Isso só funciona se a licença
+                    estava ligada à sua conta Microsoft antes da troca.</p>
+
+                <p>Se você tem uma chave original (na etiqueta do
+                    computador, no e-mail da compra ou na caixa), clique em
+                    Alterar chave do produto e digite a chave. Para ver os
+                    detalhes da licença atual, abra o Prompt de Comando e
+                    execute <code>slmgr /dli</code>. Evite ativadores piratas:
+                    a ativação deles é temporária e muitos vêm com vírus.</p>
+
+                <p>No Office, abra o Word ou o Excel, vá em Arquivo &gt;
+                    Conta e confira se está conectado com a mesma conta
+                    Microsoft que tem a licença. Se estiver em outra conta,
+                    clique em Sair e entre com a certa. Se o aviso continuar,
+                    repare o Office em Configurações &gt; Aplicativos &gt;
+                    Aplicativos instalados, clicando no Microsoft Office,
+                    depois em Modificar e escolhendo Reparo Online. Ter duas
+                    versões do Office instaladas também causa esse erro, então
+                    desinstale a que não usa.</p>
+
+                <p>Para melhor compreensão, pesquise um dos tutoriais em
+                    vídeo abaixo:</p>
+
+                <ul class="lista-videos">
+                    <li><a
+                            href="https://www.youtube.com/results?search_query=windows+n%C3%A3o+ativado+depois+de+trocar+placa+m%C3%A3e">
+                            Windows não ativado depois de trocar placa mãe
+                        </a>
+                    </li>
+                    <li><a
+                            href="https://www.youtube.com/results?search_query=office+produto+n%C3%A3o+licenciado+como+resolver">
+                            Office produto não licenciado como resolver
+                        </a>
+                    </li>
+                </ul>
+            </div>
+
+        </section>
+    </main>
+
+    <!-- Rodapé, GABRIELLI BANDOW -->
+
+    <footer id="footerContainer">
+        <p class="tituloRodape">Autores:</p>
+        <p class="tituloRodape">Contato:</p>
+        <p>Alunos do Curso Técnico em Informática, do ano de 2026. <a href="../HTML/sobre.html">(Acesse sobre nós)</a>
+            
+            <br> Estudamos no Instituto Federal de Educação,
+            Ciência e Tecnologia Sul-rio-grandense (IFSul), campus Camaquã. <br> A disciplina deste trabalho é a de
+            Tópicos Especiais, que uniu Programação para a Web e a turma toda para que ele acontecesse.</p>
+        <div id="containerContatos">
+            <p>Instagram: <a
+                    href="https://www.instagram.com/tinf4ve?utm_source=ig_web_button_share_sheet&stkn=ZDNlZDc0MzIxNw==">Tinf4ve!</a>
+            </p>
+            <p>E-mail: <a href="#"></a></p>
+        </div>
+    </footer>
+
+</body>
+</html>

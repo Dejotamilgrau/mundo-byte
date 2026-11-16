@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Notificações e Central de Ações travadas - MundoByte</title>
+    <link rel="stylesheet" href="../CSS/reset.css">
+    <link rel="stylesheet" href="CSS/base_estilo.css">
+    <link rel="stylesheet" href="CSS/layout_estilo.css">
+    <link rel="stylesheet" href="../CSS/header_estilo.css">
+    <link rel="stylesheet" href="../CSS/footer_estilo.css">
+    <link rel="stylesheet" href="CSS/problema1.css">
+    <link rel="icon" href="../IMG/favicon.ico">
+</head>
+<body>
+
+    <header id="headerContainer">
+
+        <!-- linha de cima  -->
+        <div id="headerTop">
+            <span id="logoTurma"></span>
+            <span id="logoIf"></span>
+        </div>
+
+        <!-- Linha debaixo (menu) -->
+        <nav id="headerNav">
+            <a href="../HTML/index.html" class="navItem">Home</a>
+            <a href="../HARDWARE/hardware.html" class="navItem">Visão do computador</a>
+            <a href="../HARDWARE/computadores_antigos.html" class="navItem">Problemas de Hardware</a>
+            <a href="problemas_software.html" class="navItem" aria-current="page">Problemas de Software</a>
+            <a href="../HTML/convite_paraninfo.html" class="navItem">Soares</a>
+            <a href="../HTML/login.html" class="navItem">Entrar</a>
+        </nav>
+    </header>
+
+    <!-- Conteúdo, CARLA -->
+
+    <main>
+        <h1>Notificações e Central de Ações travadas</h1>
+        <hr>
+        <section>
+            <p>O painel de notificações não abre ao clicar no canto da
+                barra de tarefas, abre vazio, ou os avisos ficam acumulados e
+                congelados na tela. No Windows 10 esse painel se chama Central
+                de Ações; no Windows 11, as notificações abrem ao clicar na
+                data e hora. As causas mais comuns são o Windows Explorer
+                travado, o modo Não perturbe ligado, algum aplicativo
+                mandando avisos demais ou arquivos do sistema
+                corrompidos.
+            </p>
+        </section>
+        <hr>
+        <section>
+            <div>
+                <h2>Solução</h2>
+                <p>Comece reiniciando o Windows Explorer, que também cuida
+                    da barra de tarefas: abra o Gerenciador de Tarefas
+                    (Ctrl + Shift + Esc), clique com o botão direito em
+                    Windows Explorer e escolha Reiniciar. Depois teste o
+                    atalho Win + N, que abre as notificações no Windows 11,
+                    ou Win + A, que abre a Central de Ações no Windows
+                    10.</p>
+
+                <p>Confira em Configurações &gt; Sistema &gt; Notificações
+                    se as notificações estão ativadas e se o Não perturbe (no
+                    Windows 10, Assistente de Foco) está desligado. Na mesma
+                    tela, desative as notificações do aplicativo que está
+                    enchendo o painel de avisos.</p>
+
+                <p>Se o painel continuar sem abrir, verifique os arquivos
+                    do sistema: abra o Prompt de Comando como administrador e
+                    execute <code>sfc /scannow</code> e depois
+                    <code>DISM /Online /Cleanup-Image /RestoreHealth</code>.
+                    Se ainda assim não funcionar, crie outro usuário no
+                    Windows e teste nele: se lá o painel funcionar, o
+                    problema está no perfil do seu usuário.</p>
+
+                <p>Para melhor compreensão, pesquise um dos tutoriais em
+                    vídeo abaixo:</p>
+
+                <ul class="lista-videos">
+                    <li><a
+                            href="https://www.youtube.com/results?search_query=central+de+notifica%C3%A7%C3%B5es+n%C3%A3o+abre+windows+11">
+                            Central de notificações não abre windows 11
+                        </a>
+                    </li>
+                    <li><a
+                            href="https://www.youtube.com/results?search_query=central+de+a%C3%A7%C3%B5es+n%C3%A3o+abre+windows+10">
+                            Central de ações não abre windows 10
+                        </a>
+                    </li>
+                </ul>
+            </div>
+
+        </section>
+    </main>
+
+    <!-- Rodapé, GABRIELLI BANDOW -->
+
+    <footer id="footerContainer">
+        <p class="tituloRodape">Autores:</p>
+        <p class="tituloRodape">Contato:</p>
+        <p>Alunos do Curso Técnico em Informática, do ano de 2026. <a href="../HTML/sobre.html">(Acesse sobre nós)</a>
+            
+            <br> Estudamos no Instituto Federal de Educação,
+            Ciência e Tecnologia Sul-rio-grandense (IFSul), campus Camaquã. <br> A disciplina deste trabalho é a de
+            Tópicos Especiais, que uniu Programação para a Web e a turma toda para que ele acontecesse.</p>
+        <div id="containerContatos">
+            <p>Instagram: <a
+                    href="https://www.instagram.com/tinf4ve?utm_source=ig_web_button_share_sheet&stkn=ZDNlZDc0MzIxNw==">Tinf4ve!</a>
+            </p>
+            <p>E-mail: <a href="#"></a></p>
+        </div>
+    </footer>
+
+</body>
+</html>
