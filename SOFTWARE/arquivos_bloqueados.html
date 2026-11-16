@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Arquivos que não podem ser excluídos - MundoByte</title>
+    <title>Arquivos ou pastas que não podem ser excluídos - MundoByte</title>
     <link rel="stylesheet" href="../CSS/reset.css">
     <link rel="stylesheet" href="CSS/base_estilo.css">
     <link rel="stylesheet" href="CSS/layout_estilo.css">
@@ -36,53 +36,54 @@
     <!-- Conteúdo, MILENE -->
 
     <main>
-        <h1>Arquivos ou pastas que não fecham ou não podem ser
-            excluídos</h1>
+        <h1>Arquivos ou pastas que não podem ser excluídos</h1>
         <hr>
-        <section>
-            <p>Quando um arquivo ou pasta não fecha ou não pode ser
-                excluído, a causa mais comum é que ele ainda está sendo
-                utilizado por algum processo oculto em segundo plano, mesmo
-                que o programa correspondente pareça fechado.</p>
+        <section class="secao">
+            <div>
+                <h2>O problema</h2>
+                <p>Ao tentar excluir, mover ou renomear um arquivo ou pasta, o sistema mostra a mensagem "A ação não pode
+                    ser concluída porque o arquivo está aberto em outro programa" (Windows) ou "Dispositivo ou recurso
+                    ocupado" (Linux).</p>
+                <h2>Possíveis causas</h2>
+                <p>O arquivo ainda está sendo usado por algum processo (um programa em execução, mesmo que esteja em
+                    segundo plano, sem janela aberta). Enquanto o processo mantém o arquivo aberto, o sistema bloqueia a
+                    exclusão para não corromper os dados. Também pode ser uma pasta aberta no explorador de arquivos ou
+                    um antivírus examinando o arquivo naquele momento.</p>
+            </div>
+            <figure class="foto">
+                <img src="../IMG/SOFTWARE/arquivos_bloqueados.png" alt="Monitor do Sistema do GNOME mostrando a lista de processos">
+                <figcaption>Imagem: autor desconhecido, <a href="https://commons.wikimedia.org/wiki/File:GNOME_System_Monitor.png">GPLv3, via Wikimedia Commons</a></figcaption>
+            </figure>
         </section>
         <hr>
         <section>
-            <div>
-                <h2>Solução</h2>
-                <p> Para resolver esse problema, basta abrir o Gerenciador
-                    de Tarefas pressionando o atalho Ctrl + Shift + Esc,
-                    localizar o programa ou processo associado a esse
-                    arquivo na lista de aplicativos em execução e clicar em
-                    Finalizar Tarefa para interromper sua atividade.</p>
-
-                <p> Por fim, para verificar se deu certo, tente excluir ou
-                    mover
-                    o arquivo novamente, o que deve ocorrer sem nenhum tipo
-                    de bloqueio do sistema.</p>
-
-                <p>Para melhor compreensão, acesse o tutorial oficial da
-                    Microsoft:<a
-                        href="https://support.microsoft.com/pt-br/windows/experience/storage-filemanagement/manage-drive-space-with-storage-sense">
-                        Ferramentas de configuração do sistema no Windows</a>
-                    Ou assista a um dos tutoriais em vídeo abaixo:</p>
-
-                <ul class="lista-videos">
-                    <li><a
-                            href="https://www.youtube.com/watch?v=1smxXudPnlw">
-                            A Ação Não Pode Ser Concluída Porque o Arquivo
-                            ou Pasta esta Aberto em Outro Programa
-                            (RESOLVIDO)
-                        </a>
-                    </li>
-                    <li><a
-                            href="https://www.youtube.com/watch?v=hu9547bf7Ao">
-                            A AÇÃO NÃO PODE SER CONCLUIDA PORQUE O ARQUIVO
-                            ESTÁ ABERTO EM OUTRO PROGRAMA? APRENDA RESOLVER!
-                        </a>
-                    </li>
-                </ul>
-            </div>
-
+            <h2>Solução no Windows</h2>
+            <p>Abra o Gerenciador de Tarefas (Ctrl + Shift + Esc), localize o programa ou processo associado ao arquivo na
+                lista e clique em Finalizar tarefa. Se não souber qual é o processo, abra o Monitor de Recursos (digite
+                <code>resmon</code> no Executar, Win + R), vá na aba CPU e digite o nome do arquivo no campo Identificadores
+                Associados: o processo que está usando o arquivo aparece na lista.</p>
+            <p>Depois, tente excluir ou mover o arquivo novamente. Se o bloqueio continuar, reinicie o computador, o que
+                encerra todos os processos.</p>
+        </section>
+        <hr>
+        <section>
+            <h2>Solução no Linux</h2>
+            <p>No terminal, o comando <code>lsof caminho/do/arquivo</code> (list open files, ou seja, lista de arquivos
+                abertos) mostra qual processo está usando o arquivo e o seu PID (o número de identificação do processo).
+                Para pendrives e pastas, <code>fuser -m /media/usuario/PENDRIVE</code> faz o mesmo.</p>
+            <p>Depois, encerre o processo com <code>kill PID</code>, trocando PID pelo número mostrado, ou pelo Monitor do
+                Sistema, clicando com o botão direito no processo e escolhendo Finalizar. Se o arquivo não for seu, a
+                mensagem será "Permissão negada": veja a página <a href="permissao_admin.html">Erro de permissão de
+                administrador</a>.</p>
+        </section>
+        <hr>
+        <section>
+            <h2>Saiba mais</h2>
+            <p>Assista a um dos tutoriais em vídeo abaixo:</p>
+            <ul class="lista-videos">
+                <li><a href="https://www.youtube.com/watch?v=1smxXudPnlw">A Ação Não Pode Ser Concluída Porque o Arquivo ou Pasta está Aberto em Outro Programa (RESOLVIDO)</a></li>
+                <li><a href="https://www.youtube.com/watch?v=hu9547bf7Ao">A ação não pode ser concluída porque o arquivo está aberto em outro programa? Aprenda a resolver!</a></li>
+            </ul>
         </section>
     </main>
 
@@ -100,7 +101,7 @@
             <p>Instagram: <a
                     href="https://www.instagram.com/tinf4ve?utm_source=ig_web_button_share_sheet&stkn=ZDNlZDc0MzIxNw==">Tinf4ve!</a>
             </p>
-            <p>E-mail: <a href="#"></a></p>
+            <p>E-mail: <a href="mailto:tinf4v2026@gmail.com">tinf4v2026@gmail.com</a></p>
         </div>
     </footer>
 

@@ -38,44 +38,47 @@
     <main>
         <h1>Volume baixo ou microfone sem funcionar</h1>
         <hr>
-        <section>
-            <p>O som sai baixo mesmo com o volume no máximo, ou o
-                microfone não é detectado em chamadas pelo Meet, Discord ou
-                Teams. Na maioria das vezes isso é causado por alguma
-                configuração do Windows, como o volume separado de cada
-                aplicativo ou a permissão de uso do microfone.
-            </p>
+        <section class="secao">
+            <div>
+                <h2>O problema</h2>
+                <p>O som sai baixo mesmo com o volume no máximo, ou o microfone não é detectado em chamadas pelo Meet,
+                    Discord ou Teams.</p>
+                <h2>Possíveis causas</h2>
+                <p>Na maioria das vezes, uma configuração: o volume separado de cada aplicativo, o dispositivo de entrada
+                    (o microfone selecionado) errado, a permissão de uso do microfone negada ou o botão de mudo no fio do
+                    fone. Também pode ser o driver de áudio.</p>
+            </div>
+            <figure class="foto">
+                <img src="../IMG/SOFTWARE/volume_microfone.jpg" alt="Fone de ouvido com microfone">
+                <figcaption>Imagem: Zephyris at English Wikipedia, <a href="https://commons.wikimedia.org/wiki/File:Headphones_with_Microphone.jpg">CC BY-SA 3.0, via Wikimedia Commons</a></figcaption>
+            </figure>
         </section>
         <hr>
         <section>
-            <div>
-                <h2>Solução</h2>
-                <p>Para o volume baixo, clique com o botão direito no ícone
-                    de alto-falante na barra de tarefas e abra o Mixer de
-                    volume: cada aplicativo tem o seu próprio volume, que pode
-                    estar baixo. Confira também o volume do próprio programa
-                    ou site e do fone. Outro motivo comum é o Windows abaixar
-                    os outros sons durante chamadas: digite mmsys.cpl no menu
-                    Executar (Win + R), abra a aba Comunicações e marque a
-                    opção Não fazer nada.</p>
-
-                <p>Se o microfone não funciona, acesse Configurações &gt;
-                    Privacidade e segurança &gt; Microfone e verifique se o
-                    acesso ao microfone está ativado, inclusive para os
-                    aplicativos da área de trabalho. Depois, em Configurações
-                    &gt; Sistema &gt; Som, na parte de Entrada, selecione o
-                    microfone correto e fale para testar se a barra se mexe.
-                    No navegador, o site também precisa de permissão: clique
-                    no cadeado ao lado do endereço e permita o microfone.
-                    Muitos fones têm um botão de mudo no próprio fio, que
-                    também vale conferir.</p>
-
-                <p>Se nada disso resolver, o problema pode estar no driver
-                    de som. Veja como atualizar ou reinstalar o driver na
-                    página <a href="windows_sem_som.html">Windows sem
-                    som</a>.</p>
-            </div>
-
+            <h2>Solução no Windows</h2>
+            <p>Para o volume baixo, clique com o botão direito no ícone de alto-falante e abra o Mixer de volume, onde
+                cada aplicativo tem seu próprio volume. Digite <code>mmsys.cpl</code> no Executar (Win + R), abra a aba
+                Comunicações e marque Não fazer nada, para o Windows não abaixar os sons durante chamadas.</p>
+            <p>Para o microfone, acesse Configurações &gt; Privacidade e segurança &gt; Microfone e permita o acesso,
+                inclusive para aplicativos da área de trabalho. Em Configurações &gt; Sistema &gt; Som &gt; Entrada,
+                selecione o microfone correto e fale para ver se a barra se mexe. No navegador, clique no cadeado ao lado
+                do endereço e permita o microfone.</p>
+        </section>
+        <hr>
+        <section>
+            <h2>Solução no Linux</h2>
+            <p>Em Configurações &gt; Som, escolha o dispositivo de saída e de entrada corretos e teste o microfone pela
+                barra de nível. O programa Controle de Volume do PulseAudio (<code>pavucontrol</code>) mostra o volume de
+                cada aplicativo e de cada dispositivo, e permite amplificar acima de 100%.</p>
+            <p>Pelo terminal, <code>alsamixer</code> mostra os controles da placa de som: confira se nenhum canal está
+                com "MM" (mudo) embaixo; a tecla M ativa ou silencia o canal. Nos aplicativos em Flatpak ou Snap, confira
+                também se eles têm permissão de acesso ao microfone em Configurações &gt; Aplicativos.</p>
+        </section>
+        <hr>
+        <section>
+            <h2>Saiba mais</h2>
+            <p>Se nada disso resolver, veja como atualizar ou reinstalar o driver na página
+                <a href="windows_sem_som.html">Sistema sem som</a>.</p>
         </section>
     </main>
 
@@ -93,7 +96,7 @@
             <p>Instagram: <a
                     href="https://www.instagram.com/tinf4ve?utm_source=ig_web_button_share_sheet&stkn=ZDNlZDc0MzIxNw==">Tinf4ve!</a>
             </p>
-            <p>E-mail: <a href="#"></a></p>
+            <p>E-mail: <a href="mailto:tinf4v2026@gmail.com">tinf4v2026@gmail.com</a></p>
         </div>
     </footer>
 

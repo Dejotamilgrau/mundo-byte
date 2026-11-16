@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Drivers desatualizados ou corrompidos - MundoByte</title>
+    <title>Sem internet - MundoByte</title>
     <link rel="stylesheet" href="../CSS/reset.css">
     <link rel="stylesheet" href="CSS/base_estilo.css">
     <link rel="stylesheet" href="CSS/layout_estilo.css">
@@ -36,51 +36,56 @@
     <!-- Conteúdo, CARLA -->
 
     <main>
-        <h1>Drivers Desatualizados ou Corrompidos e a Sua Solução</h1>
+        <h1>Sem internet</h1>
+        <hr>
+        <section class="secao">
+            <div>
+                <h2>O problema</h2>
+                <p>O computador não se conecta à rede sem fio (Wi-Fi) ou à rede cabeada, ou se conecta mas não acessa
+                    nenhum site. Durante o nosso trabalho no laboratório, um dos computadores não mostrava nenhuma rede
+                    Wi-Fi: a placa de rede sem fio aparecia no Gerenciador de Dispositivos como "802.11 WLAN Adapter", com
+                    um ponto de exclamação amarelo.</p>
+                <h2>Possíveis causas</h2>
+                <p>Driver da placa de rede (o componente que conecta o computador à rede) ausente ou incompatível, Wi-Fi
+                    desligado pelo modo avião ou por uma tecla do notebook, problema no roteador, configuração de IP
+                    (o endereço do computador na rede) ou de DNS (o serviço que traduz nomes de sites em endereços) errada.
+                    No nosso caso, depois de formatar, o Windows não trazia o driver da placa sem fio, que era antiga.</p>
+            </div>
+            <figure class="foto">
+                <img src="../IMG/internet.jpg" alt="Opção Atualizar driver do 802.11 WLAN Adapter no Gerenciador de Dispositivos">
+                <figcaption>Foto: turma TINF4V, no laboratório</figcaption>
+            </figure>
+        </section>
         <hr>
         <section>
-            <p>Drivers são os programas que permitem que o sistema operacional se comunique com as peças do
-                computador, como a placa de rede, a placa de vídeo e o som. Quando um driver está faltando,
-                desatualizado ou corrompido, o dispositivo deixa de funcionar ou causa travamentos e telas azuis. Em
-                computadores antigos isso acontece com frequência, pois após formatar o computador o sistema não
-                traz os drivers de peças antigas, e muitos fabricantes não lançam mais drivers para as versões novas
-                do Windows. Durante o nosso trabalho no laboratório, passamos por esse problema com a placa de rede
-                sem fio, que aparecia no Gerenciador de Dispositivos como "802.11 WLAN Adapter" com um ponto de
-                exclamação amarelo.
-            </p>
+            <h2>Solução no Windows</h2>
+            <p>Confira se o modo avião está desligado e se outros aparelhos acessam a internet pelo mesmo roteador. Em
+                seguida, abra o Gerenciador de Dispositivos e veja a seção Adaptadores de rede: um dispositivo com ponto
+                de exclamação, ou em Outros dispositivos, está sem driver.</p>
+            <p>Foi assim que resolvemos: nas Propriedades do dispositivo, aba Detalhes, a opção IDs de hardware mostrou os
+                códigos do fabricante e do modelo, que pesquisamos na internet. Em outro computador, baixamos o driver da
+                Realtek para Windows 7 de 32 bits e passamos por pendrive. No Gerenciador de Dispositivos, clicamos com o
+                botão direito no dispositivo &gt; Atualizar driver &gt; Procurar software de driver no computador e
+                selecionamos a pasta do driver.</p>
+            <p>Se o driver estiver instalado, use Configurações &gt; Rede e Internet &gt; Configurações de rede avançadas
+                &gt; Redefinição de rede, ou execute no Prompt de Comando como administrador <code>ipconfig /release</code>,
+                <code>ipconfig /renew</code>, <code>ipconfig /flushdns</code> e <code>netsh winsock reset</code>.</p>
         </section>
         <hr>
-        <section class="secao">
-            <div>
-                <h2>Possíveis causas</h2>
-                <p>As principais causas são a falta do driver após uma formatação, um driver corrompido por uma
-                    atualização malsucedida ou por vírus, e a instalação de um driver incompatível com o sistema, seja
-                    por ser de outra versão do Windows ou de outra arquitetura (32 ou 64 bits). Para identificar o
-                    problema, basta abrir o Gerenciador de Dispositivos e procurar dispositivos com ponto de exclamação
-                    ou que aparecem em "Outros dispositivos". No Linux, o comando "lspci -k" mostra as peças do
-                    computador e qual driver cada uma está usando.
-                </p>
-            </div>
+        <section>
+            <h2>Solução no Linux</h2>
+            <p>O comando <code>nmcli device</code> mostra as interfaces de rede e se estão conectadas, e
+                <code>rfkill list</code> mostra se o Wi-Fi está bloqueado (para desbloquear: <code>rfkill unblock
+                wifi</code>). O comando <code>lspci -k</code> mostra a placa de rede e o driver em uso; se nenhum driver
+                aparecer, abra Programas e Atualizações &gt; Drivers adicionais, que procura drivers proprietários.</p>
+            <p>Para testar a conexão, <code>ping 8.8.8.8</code> verifica se a internet responde; se responder, mas os
+                sites não abrirem, o problema é de DNS. Reiniciar o serviço de rede com <code>sudo systemctl restart
+                NetworkManager</code> resolve muitas falhas.</p>
         </section>
         <hr>
-        <section class="secao">
-            <div>
-                <h2>Solução</h2>
-                <p>Para resolver, primeiro é preciso descobrir qual é a peça. Nas propriedades do dispositivo, na aba
-                    "Detalhes", a opção "IDs de hardware" mostra os códigos do fabricante e do modelo, que podem ser
-                    pesquisados na internet. Depois, em outro computador, baixa-se o driver no site do fabricante na
-                    versão correta do sistema e passa-se o arquivo por pen drive. No Gerenciador de Dispositivos,
-                    clica-se com o botão direito sobre o dispositivo, em "Atualizar driver" e em "Procurar software de
-                    driver no computador", selecionando a pasta do driver. Foi assim que resolvemos o problema da
-                    placa de rede sem fio, usando o driver da Realtek para Windows 7 de 32 bits.
-                </p>
-                <p>Se o driver estiver corrompido, a opção "Reverter driver" volta para a versão anterior, ou então
-                    pode-se desinstalar o dispositivo e instalar o driver novamente. No Ubuntu, a ferramenta "Drivers
-                    adicionais" procura e instala os drivers que estão faltando.
-                </p>
-            </div>
-
-            <img id="fotoProblema1" src="../IMG/drivers.jpg" alt="Atualizar Driver do 802.11 WLAN Adapter">
+        <section>
+            <h2>Saiba mais</h2>
+            <p>Veja também a página <a href="drivers_desatualizados.html">Drivers desatualizados ou corrompidos</a>.</p>
         </section>
     </main>
 
@@ -98,7 +103,7 @@
             <p>Instagram: <a
                     href="https://www.instagram.com/tinf4ve?utm_source=ig_web_button_share_sheet&stkn=ZDNlZDc0MzIxNw==">Tinf4ve!</a>
             </p>
-            <p>E-mail: <a href="#"></a></p>
+            <p>E-mail: <a href="mailto:tinf4v2026@gmail.com">tinf4v2026@gmail.com</a></p>
         </div>
     </footer>
     

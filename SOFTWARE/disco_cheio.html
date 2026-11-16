@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Espaço em disco ficando cheio - MundoByte</title>
+    <title>Espaço em disco ficando cheio sozinho - MundoByte</title>
     <link rel="stylesheet" href="../CSS/reset.css">
     <link rel="stylesheet" href="CSS/base_estilo.css">
     <link rel="stylesheet" href="CSS/layout_estilo.css">
@@ -36,72 +36,55 @@
     <!-- Conteúdo, MILENE -->
 
     <main>
-        <h1> Espaço em disco ficando cheio sozinho no Windows</h1>
+        <h1>Espaço em disco ficando cheio sozinho</h1>
         <hr>
-        <section>
-            <p>Este problema normalmente ocorre
-                porque o Windows e diversos aplicativos geram e acumulam
-                arquivos temporários continuamente em segundo plano. Entre
-                os principais vilões desse consumo estão os arquivos
-                temporários de instalações e navegação, os pontos de
-                restauração automática do sistema e os arquivos de paginação
-                e hibernação utilizados pela memória RAM.
-            </p>
+        <section class="secao">
+            <div>
+                <h2>O problema</h2>
+                <p>O armazenamento do sistema (a unidade C: no Windows, ou a partição raiz "/" no Linux) vai perdendo espaço
+                    livre sem que o usuário tenha salvo arquivos novos, até o computador ficar lento e mostrar avisos de
+                    espaço insuficiente.</p>
+                <h2>Possíveis causas</h2>
+                <p>O sistema e os aplicativos geram arquivos temporários continuamente. Também ocupam espaço os pontos de
+                    restauração (cópias do estado do sistema para desfazer alterações), o arquivo de paginação (espaço do
+                    disco usado como extensão da memória RAM), o arquivo de hibernação, as atualizações antigas e, no
+                    Linux, os pacotes baixados pelo gerenciador de pacotes e os registros (logs) do sistema.</p>
+            </div>
+            <figure class="foto">
+                <img src="../IMG/SOFTWARE/disco_cheio.png" alt="Analisador de uso de disco do GNOME mostrando as pastas que mais ocupam espaço">
+                <figcaption>Imagem: Software: The GNOME Project Screenshot: VulcanSphere, <a href="https://commons.wikimedia.org/wiki/File:GNOME_Disk_Usage_Analyzer_3.32_screenshot.png">GPL, via Wikimedia Commons</a></figcaption>
+            </figure>
         </section>
         <hr>
         <section>
-            <div>
-                <h2>Solução</h2>
-                <p>Para resolver esse problema é possivel utilizar a
-                    ferramenta nativa Limpeza de Disco pressionando Win + R,
-                    digitando cleanmgr e selecionando a unidade C:. Ao
-                    clicar em Limpar arquivos do sistema, selecione e apague
-                    arquivos de atualizações antigas do
-                    Windows Update, pontos de restauração e itens da
-                    Lixeira.
-                </p>
-
-                <p>Além do utilitário, também é recomendado limpar as
-                    pastas de armazenamento temporário manualmente. Para
-                    isso, abra o menu Executar (Win + R), digite %temp% e
-                    apague todo o conteúdo da pasta, ignorando apenas os
-                    itens que o sistema informar estarem em uso no momento.
-                    Repita o mesmo procedimento digitando temp no
-                    Executar.</p>
-
-                <p> Para evitar que o problema volte a acontecer, é possivel
-                    ativar o Sensor de Armazenamento em Configurações >
-                    Sistema > Armazenamento, permitindo que o Windows faça
-                    essa eliminação de arquivos desnecessários de forma
-                    automática. Ao final, abra o "Este Computador" para
-                    verificar se a barra da unidade C: voltou a indicar um
-                    aumento significativo de espaço livre.</p>
-
-                <p>Para melhor compreensão, acesse os materiais da
-                    Microsoft:<a
-                        href="https://support.microsoft.com/pt-br/windows/experience/storage-filemanagement/manage-drive-space-with-storage-sense">
-                        Guia da Microsoft sobre como gerenciar espaço em
-                        disco com o Sensor de Armazenamento,</a> <a
-                        href="https://support.microsoft.com/pt-br/windows/experience/storage-filemanagement/free-up-drive-space-in-windows">
-                        Libere espaço em disco no Windows.</a>
-                    Ou assista a um dos tutoriais em vídeo abaixo:</p>
-
-                <ul class="lista-videos">
-                    <li><a
-                            href="https://www.youtube.com/watch?v=LW41hu1MpdM">
-                            Como Limpar Arquivos Temporários no Windows e
-                            Deixar o PC Mais Rápido
-                        </a>
-                    </li>
-                    <li><a
-                            href="https://www.youtube.com/watch?v=aSFfD0f5io4">
-                            Como ativar o Sensor de Armazenamento do Windows
-                            10
-                        </a>
-                    </li>
-                </ul>
-            </div>
-
+            <h2>Solução no Windows</h2>
+            <p>Pressione Win + R, digite <code>cleanmgr</code> e selecione a unidade C:. Clique em Limpar arquivos do
+                sistema e marque arquivos do Windows Update, arquivos temporários e a Lixeira. Depois, abra o Executar,
+                digite <code>%temp%</code> e apague o conteúdo da pasta, ignorando os itens em uso.</p>
+            <p>Para evitar que o problema volte, ative o Sensor de Armazenamento em Configurações &gt; Sistema &gt;
+                Armazenamento, que exclui arquivos desnecessários automaticamente.</p>
+        </section>
+        <hr>
+        <section>
+            <h2>Solução no Linux</h2>
+            <p>O comando <code>df -h</code> mostra o espaço livre em cada partição, e o Analisador de uso de disco
+                (baobab) mostra graficamente quais pastas ocupam mais espaço.</p>
+            <p>Para liberar espaço, execute <code>sudo apt clean</code> (apaga os pacotes já baixados),
+                <code>sudo apt autoremove</code> (remove dependências e kernels antigos que não são mais usados) e
+                <code>sudo journalctl --vacuum-size=200M</code> (reduz os registros do sistema a 200 MB). Esvazie também a
+                Lixeira e a pasta <code>~/.cache</code>.</p>
+        </section>
+        <hr>
+        <section>
+            <h2>Saiba mais</h2>
+            <p>Acesse os materiais da Microsoft:
+                <a href="https://support.microsoft.com/pt-br/windows/experience/storage-filemanagement/manage-drive-space-with-storage-sense">Gerenciar espaço em disco com o Sensor de Armazenamento</a> e
+                <a href="https://support.microsoft.com/pt-br/windows/experience/storage-filemanagement/free-up-drive-space-in-windows">Liberar espaço em disco no Windows</a>,
+                ou assista a um dos tutoriais em vídeo abaixo:</p>
+            <ul class="lista-videos">
+                <li><a href="https://www.youtube.com/watch?v=LW41hu1MpdM">Como limpar arquivos temporários no Windows e deixar o PC mais rápido</a></li>
+                <li><a href="https://www.youtube.com/watch?v=aSFfD0f5io4">Como ativar o Sensor de Armazenamento do Windows 10</a></li>
+            </ul>
         </section>
     </main>
 
@@ -119,7 +102,7 @@
             <p>Instagram: <a
                     href="https://www.instagram.com/tinf4ve?utm_source=ig_web_button_share_sheet&stkn=ZDNlZDc0MzIxNw==">Tinf4ve!</a>
             </p>
-            <p>E-mail: <a href="#"></a></p>
+            <p>E-mail: <a href="mailto:tinf4v2026@gmail.com">tinf4v2026@gmail.com</a></p>
         </div>
     </footer>
 

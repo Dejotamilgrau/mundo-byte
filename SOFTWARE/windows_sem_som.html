@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Windows sem som - MundoByte</title>
+    <title>Sistema sem som - MundoByte</title>
     <link rel="stylesheet" href="../CSS/reset.css">
     <link rel="stylesheet" href="CSS/base_estilo.css">
     <link rel="stylesheet" href="CSS/layout_estilo.css">
@@ -36,66 +36,52 @@
     <!-- Conteúdo, MILENE -->
 
     <main>
-        <h1>Windows sem som</h1>
+        <h1>Sistema sem som</h1>
         <hr>
-        <section>
-            <p>Problemas de som no computador costumam ser provocados por
-                falhas simples de configuração ou por drivers incompatíveis
-                e desatualizados. A causa mais comum é a seleção incorreta
-                do dispositivo de saída, algo muito frequente após conectar
-                fones Bluetooth, monitores HDMI ou caixas de som externas.
-
-            </p>
+        <section class="secao">
+            <div>
+                <h2>O problema</h2>
+                <p>Nenhum som sai pelos alto-falantes ou pelo fone, mesmo com o volume alto e sem o mudo ativado.</p>
+                <h2>Possíveis causas</h2>
+                <p>A causa mais comum é o dispositivo de saída (o aparelho por onde o som deve sair) selecionado errado,
+                    algo frequente depois de conectar fones Bluetooth, monitores HDMI ou caixas de som externas. Também pode
+                    ser o serviço de áudio travado ou o driver da placa de som incompatível ou desatualizado.</p>
+            </div>
+            <figure class="foto">
+                <img src="../IMG/SOFTWARE/windows_sem_som.jpg" alt="Placa de som PCI C-Media CMI8738">
+                <figcaption>Imagem: Crazyblocks, <a href="https://commons.wikimedia.org/wiki/File:C-Media_8738_PCI_Sound_Card_-_C-Media_CMI8738_PCI.jpg">CC0, via Wikimedia Commons</a></figcaption>
+            </figure>
         </section>
         <hr>
         <section>
-            <div>
-                <h2>Solução</h2>
-                <p>Para resolver este problema basta clicar no ícone de
-                    alto-falante na barra de tarefas, expandir a lista de
-                    dispositivos e selecionar manualmente a saída correta,
-                    garantindo também que o volume não esteja no mudo.</p>
-
-                <p>Se a troca do dispositivo não surtir efeito, o próprio
-                    Windows oferece ferramentas nativas para corrigir o
-                    problema. É possivel executar a Solução de Problemas de
-                    Áudio nas configurações do sistema ou reiniciar os
-                    serviços responsáveis pelo som digitando services.msc no
-                    menu Executar (Win + R), localizando o serviço Áudio do
-                    Windows e clicando em reiniciar. Isso costuma destravar
-                    o áudio sem a necessidade de reiniciar a máquina. </p>
-
-                <p>Por fim, quando o problema é causado por falhas no
-                    software do componente, a solução definitiva passa pela
-                    atualização ou reinstalação do driver. Acessando o
-                    Gerenciador de Dispositivos, você deve expandir a aba de
-                    controladores de som, clicar com o botão direito sobre o
-                    dispositivo e selecionar a opção de atualizar o driver.
-                    Caso o erro persista, desinstalar o dispositivo e
-                    reiniciar o computador fará com que o sistema
-                    operacional reconheça a placa de som e reinstale o
-                    driver padrão automaticamente, restabelecendo o
-                    áudio.</p>
-
-                <p>Para melhor compreensão, acesse o <a
-                        href="https://support.microsoft.com/pt-br/windows/hardware/audio/fix-sound-or-audio-problems-in-windows">
-                        Guia da Microsoft sobre problemas de som</a>
-                    ou assista a um dos tutoriais em vídeo abaixo:</p>
-
-                <ul class="lista-videos">
-                    <li><a
-                            href="https://www.youtube.com/watch?v=MXgCNKZ_BZY">
-                            Como CORRIGIR Windows 10/11 SEM SOM? É FÁCIL!
-                        </a>
-                    </li>
-                    <li><a
-                            href="https://www.youtube.com/watch?v=nlvychiaF9k">
-                            Corrigir Problemas Audio Windows - Atualizado
-                        </a>
-                    </li>
-                </ul>
-            </div>
-
+            <h2>Solução no Windows</h2>
+            <p>Clique no ícone de alto-falante na barra de tarefas, expanda a lista de dispositivos e selecione a saída
+                correta. Se não resolver, execute a Solução de problemas de áudio nas Configurações ou digite
+                <code>services.msc</code> no Executar (Win + R) e reinicie o serviço Áudio do Windows.</p>
+            <p>Quando a causa é o driver, abra o Gerenciador de Dispositivos, expanda Controladores de som, vídeo e jogos,
+                clique com o botão direito no dispositivo e escolha Atualizar driver. Se o erro continuar, desinstale o
+                dispositivo e reinicie: o Windows reconhece a placa de som e reinstala o driver padrão.</p>
+        </section>
+        <hr>
+        <section>
+            <h2>Solução no Linux</h2>
+            <p>Em Configurações &gt; Som, escolha o dispositivo de saída correto. Para placas com várias saídas (como
+                HDMI e P2), o <code>pavucontrol</code>, na aba Configuração, permite escolher o perfil certo.</p>
+            <p>Se o som parou de repente, reinicie o servidor de som (o programa que gerencia o áudio de todos os
+                aplicativos) com <code>systemctl --user restart pipewire pipewire-pulse wireplumber</code> nas versões
+                recentes do Ubuntu. O comando <code>aplay -l</code> lista as placas de som reconhecidas pelo kernel; se
+                nenhuma aparecer, o problema é de driver ou de hardware.</p>
+        </section>
+        <hr>
+        <section>
+            <h2>Saiba mais</h2>
+            <p>Acesse o <a href="https://support.microsoft.com/pt-br/windows/hardware/audio/fix-sound-or-audio-problems-in-windows">Guia
+                da Microsoft sobre problemas de som</a>, veja a página <a href="volume_microfone.html">Volume baixo ou
+                microfone sem funcionar</a> ou assista a um dos tutoriais em vídeo abaixo:</p>
+            <ul class="lista-videos">
+                <li><a href="https://www.youtube.com/watch?v=MXgCNKZ_BZY">Como corrigir Windows 10/11 sem som</a></li>
+                <li><a href="https://www.youtube.com/watch?v=nlvychiaF9k">Corrigir problemas de áudio no Windows</a></li>
+            </ul>
         </section>
     </main>
 
@@ -113,7 +99,7 @@
             <p>Instagram: <a
                     href="https://www.instagram.com/tinf4ve?utm_source=ig_web_button_share_sheet&stkn=ZDNlZDc0MzIxNw==">Tinf4ve!</a>
             </p>
-            <p>E-mail: <a href="#"></a></p>
+            <p>E-mail: <a href="mailto:tinf4v2026@gmail.com">tinf4v2026@gmail.com</a></p>
         </div>
     </footer>
 

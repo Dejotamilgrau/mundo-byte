@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Erro de boot do Windows XP no Rufus e Ventoy - MundoByte</title>
+    <title>Erro de boot do Windows XP no Rufus e no Ventoy - MundoByte</title>
     <link rel="stylesheet" href="../CSS/reset.css">
     <link rel="stylesheet" href="CSS/base_estilo.css">
     <link rel="stylesheet" href="CSS/layout_estilo.css">
@@ -36,46 +36,53 @@
     <!-- Conteúdo, MILENE -->
 
     <main>
-        <h1>A Incompatibilidade da Instalação do Windows XP via USB e a Sua Solução</h1>
-        <hr>
-        <section>
-            <p>A principal causa de falhas ao instalar o Windows XP a partir de um pen drive é a incompatibilidade
-                nativa do
-                sistema com tecnologias modernas. Lançado em 2001 com foco em mídias de CD-ROM, o seu instalador
-                original
-                não possui drivers para ler barramentos USB na primeira fase de boot. Além disso, não reconhece discos
-                rígidos em modo SATA/AHCI nem esquemas de partição GPT/UEFI. Por essas limitações, ferramentas populares
-                como Rufus e Ventoy costumam falhar. Embora consigam carregar a etapa inicial em modo texto, o
-                computador
-                perde a referência da unidade USB ao reiniciar para a segunda fase (modo gráfico).
-                Essa interrupção gera erros de arquivos ausentes ou a tradicional tela azul.
-            </p>
-        </section>
+        <h1>Erro de boot do Windows XP no Rufus e no Ventoy</h1>
         <hr>
         <section class="secao">
             <div>
-                <h2>Solução</h2>
-                <p>Para contornar esse problema, utiliza-se o software WinSetupFromUSB em vez do Rufus ou Ventoy. Essa
-                    ferramenta faz com que o pen drive simule a estrutura de um disco óptico (CD/DVD),
-                    ultrapassando os limites de boot do sistema e permitindo concluir a instalação do Windows XP com
-                    sucesso.
-                </p>
-                <p>Para visualizar todo o processo de criação do pendrive de boot usando o WinSetupFromUSB,
-                    assista a um dos tutoriais em vídeo abaixo:
-                </p>
-                <ul class="lista-videos">
-                    <li><a href="https://www.youtube.com/watch?v=3TnIl9qkfE0">
-                            Boot de instalação do Windows XP pelo PENDRIVE BOOTÁVEL.
-                        </a>
-                    </li>
-                    <li><a href="https://www.youtube.com/watch?v=VvYlbkOYUsI">
-                            Install Windows XP from USB with WinSetupFromUSB (New and better method)
-                        </a>
-                    </li>
-                </ul>
+                <h2>O problema</h2>
+                <p>Ao instalar o Windows XP a partir de um pendrive de boot (pendrive preparado para iniciar o computador e
+                    instalar um sistema) criado com o Rufus ou o Ventoy, a primeira etapa da instalação, em modo texto,
+                    funciona, mas ao reiniciar para a segunda etapa (modo gráfico) aparecem erros de arquivos ausentes ou a
+                    tela azul (BSOD).</p>
+                <h2>Possíveis causas</h2>
+                <p>O Windows XP foi lançado em 2001, pensado para instalação por CD-ROM. O seu instalador não tem drivers
+                    para o barramento USB (o canal de comunicação das portas USB) na primeira fase da inicialização, não
+                    reconhece discos no modo SATA/AHCI (o padrão de comunicação dos discos modernos) e não suporta o esquema
+                    de partição GPT nem o firmware UEFI. Por isso, ao reiniciar, o computador perde a referência do
+                    pendrive.</p>
             </div>
-
-            <img id="fotoProblema1" src="../IMG/problema1.png" alt="Foto do problema 1">
+            <figure class="foto">
+                <img src="../IMG/problema1.png" alt="Tela do WinSetupFromUSB">
+                <figcaption>Captura de tela: turma TINF4V</figcaption>
+            </figure>
+        </section>
+        <hr>
+        <section>
+            <h2>Solução no Windows</h2>
+            <p>Em vez do Rufus ou do Ventoy, usamos o WinSetupFromUSB. Essa ferramenta faz o pendrive simular a
+                estrutura de um disco óptico (CD/DVD), contornando as limitações de boot do sistema e permitindo concluir a
+                instalação do Windows XP. Se a instalação ainda mostrar tela azul ao procurar o disco, mude o modo do
+                controlador SATA de AHCI para IDE (ou "Compatibility") no setup da BIOS.</p>
+        </section>
+        <hr>
+        <section>
+            <h2>E no Linux?</h2>
+            <p>O problema é específico do instalador do Windows XP. Distribuições Linux, como o Ubuntu, são feitas para
+                instalação por pendrive e funcionam normalmente com o <a href="pendrive_ventoy.html">Ventoy</a>, o
+                <a href="pendrive_rufus.html">Rufus</a> ou o <a href="pendrive_iso.html">comando dd</a>. Para quem usa
+                Linux e precisa criar o pendrive do Windows XP, o WinSetupFromUSB não funciona, mas é possível usar o
+                programa em uma máquina virtual com Windows.</p>
+        </section>
+        <hr>
+        <section>
+            <h2>Saiba mais</h2>
+            <p>Para ver todo o processo de criação do pendrive com o WinSetupFromUSB, assista a um dos tutoriais em vídeo
+                abaixo:</p>
+            <ul class="lista-videos">
+                <li><a href="https://www.youtube.com/watch?v=3TnIl9qkfE0">Boot de instalação do Windows XP pelo pendrive bootável</a></li>
+                <li><a href="https://www.youtube.com/watch?v=VvYlbkOYUsI">Install Windows XP from USB with WinSetupFromUSB (New and better method)</a></li>
+            </ul>
         </section>
     </main>
 
@@ -93,7 +100,7 @@
             <p>Instagram: <a
                     href="https://www.instagram.com/tinf4ve?utm_source=ig_web_button_share_sheet&stkn=ZDNlZDc0MzIxNw==">Tinf4ve!</a>
             </p>
-            <p>E-mail: <a href="#"></a></p>
+            <p>E-mail: <a href="mailto:tinf4v2026@gmail.com">tinf4v2026@gmail.com</a></p>
         </div>
     </footer>
 

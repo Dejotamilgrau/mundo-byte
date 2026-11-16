@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Inicialização lenta do Windows - MundoByte</title>
+    <title>Inicialização lenta do sistema - MundoByte</title>
     <link rel="stylesheet" href="../CSS/reset.css">
     <link rel="stylesheet" href="CSS/base_estilo.css">
     <link rel="stylesheet" href="CSS/layout_estilo.css">
@@ -36,92 +36,60 @@
     <!-- Conteúdo, AMANDA -->
 
     <main>
-        <h1>Inicialização lenta do Windows</h1>
+        <h1>Inicialização lenta do sistema</h1>
         <hr>
-        <section>
-            <p>Este problema acontece quando o computador demora vários
-                minutos para chegar à área de trabalho ou, mesmo depois de
-                ligado, fica travando nos primeiros momentos de uso. As
-                causas mais comuns são o excesso de programas configurados
-                para iniciar junto com o Windows, o disco quase cheio,
-                atualizações pendentes, drivers desatualizados e, em
-                computadores mais antigos, o uso de um HD mecânico em vez
-                de um SSD.
-            </p>
+        <section class="secao">
+            <div>
+                <h2>O problema</h2>
+                <p>O computador demora vários minutos para chegar à área de trabalho ou, mesmo depois de ligado, fica sem
+                    responder nos primeiros momentos de uso.</p>
+                <h2>Possíveis causas</h2>
+                <p>Excesso de programas de inicialização (programas configurados para abrir junto com o sistema), pouco
+                    espaço livre no disco, atualizações pendentes, drivers desatualizados e, em computadores antigos, o uso
+                    de um HD (disco rígido mecânico, com partes que giram) em vez de um SSD (unidade de estado sólido, sem
+                    partes móveis e muito mais rápida).</p>
+            </div>
+            <figure class="foto">
+                <img src="../IMG/SOFTWARE/inicializacao_lenta.jpg" alt="Disco rígido Maxtor de 3,5 polegadas ao lado de um SSD Intel de 2,5 polegadas">
+                <figcaption>Imagem: machu., <a href="https://commons.wikimedia.org/wiki/File:Maxtor_HDD_and_Intel_SSD_20100117.jpg">CC BY-SA 2.0, via Wikimedia Commons</a></figcaption>
+            </figure>
         </section>
         <hr>
         <section>
-            <div>
-                <h2>Solução</h2>
-                <p>O primeiro passo é reduzir os programas que abrem junto
-                    com o sistema. Abra o Gerenciador de Tarefas
-                    (Ctrl + Shift + Esc), vá até a aba Aplicativos de
-                    inicialização (ou Inicializar, no Windows 10) e observe
-                    a coluna Impacto na inicialização. Clique com o botão
-                    direito nos programas que não precisam abrir sozinhos,
-                    como launchers de jogos, mensageiros e atualizadores, e
-                    escolha Desabilitar. Evite desativar itens de drivers de
-                    áudio, vídeo ou do antivírus.
-                </p>
-
-                <p>Em seguida, verifique se a unidade C: tem pelo menos
-                    15% de espaço livre, pois o Windows precisa desse espaço
-                    para arquivos temporários e memória virtual. Se estiver
-                    cheia, siga os passos da página
-                    <a href="disco_cheio.html">Espaço em disco ficando cheio
-                    sozinho</a>, usando a Limpeza de Disco (cleanmgr) e
-                    apagando o conteúdo da pasta %temp%.</p>
-
-                <p>Também é importante instalar as atualizações pendentes
-                    em Configurações &gt; Windows Update e manter os drivers
-                    em dia, conforme explicado na página
-                    <a href="drivers_desatualizados.html">Drivers
-                    desatualizados ou corrompidos</a>. Atualizações que ficam
-                    "pela metade" costumam deixar o desligamento e a
-                    inicialização bem mais demorados.</p>
-
-                <p>Se a lentidão continuar, verifique a integridade dos
-                    arquivos do sistema. Abra o Prompt de Comando como
-                    administrador e execute <code>sfc /scannow</code>. Ao
-                    terminar, execute também
-                    <code>DISM /Online /Cleanup-Image /RestoreHealth</code>
-                    e reinicie o computador. Uma verificação com o Windows
-                    Defender (Configurações &gt; Privacidade e segurança &gt;
-                    Segurança do Windows) ajuda a descartar vírus rodando em
-                    segundo plano.</p>
-
-                <p>Por fim, abra o Gerenciador de Tarefas na aba Desempenho
-                    logo após ligar o computador. Se o Disco ficar em 100% de
-                    uso por vários minutos, o gargalo provavelmente é o HD
-                    mecânico. Nesse caso, a solução mais eficiente é trocar
-                    o HD por um SSD, o que costuma reduzir o tempo de
-                    inicialização de minutos para poucos segundos. Para mais
-                    detalhes, veja
-                    <a href="../HARDWARE/computadores_antigos.html">Problemas
-                    mais comuns em computadores antigos</a>.</p>
-
-                <p>Para melhor compreensão, acesse o material da
-                    Microsoft:<a
-                        href="https://support.microsoft.com/pt-br/windows/dicas-para-melhorar-o-desempenho-do-computador-no-windows-b3b3ef5b-5953-fb6a-2528-4bbed82fba96">
-                        Dicas para melhorar o desempenho do computador no
-                        Windows.</a>
-                    Ou pesquise um dos tutoriais em vídeo abaixo:</p>
-
-                <ul class="lista-videos">
-                    <li><a
-                            href="https://www.youtube.com/results?search_query=como+desativar+programas+da+inicializa%C3%A7%C3%A3o+do+windows">
-                            Como desativar programas da inicialização do
-                            Windows
-                        </a>
-                    </li>
-                    <li><a
-                            href="https://www.youtube.com/results?search_query=windows+demorando+para+iniciar+como+resolver">
-                            Windows demorando para iniciar: como resolver
-                        </a>
-                    </li>
-                </ul>
-            </div>
-
+            <h2>Solução no Windows</h2>
+            <p>Abra o Gerenciador de Tarefas (Ctrl + Shift + Esc), vá em Aplicativos de inicialização e observe a coluna
+                Impacto na inicialização. Desabilite os programas que não precisam abrir sozinhos, como launchers de
+                jogos e mensageiros, mas não os drivers de áudio, vídeo e o antivírus.</p>
+            <p>Mantenha pelo menos 15% de espaço livre na unidade C: (veja <a href="disco_cheio.html">Espaço em disco
+                ficando cheio sozinho</a>), instale as atualizações pendentes e execute <code>sfc /scannow</code> e
+                <code>DISM /Online /Cleanup-Image /RestoreHealth</code> no Prompt de Comando como administrador.</p>
+            <p>Na aba Desempenho do Gerenciador de Tarefas, se o Disco ficar em 100% de uso por vários minutos após ligar,
+                o gargalo (o componente que limita a velocidade) é o HD. Trocar o HD por um SSD reduz a inicialização de
+                minutos para segundos.</p>
+        </section>
+        <hr>
+        <section>
+            <h2>Solução no Linux</h2>
+            <p>O comando <code>systemd-analyze</code> mostra quanto tempo a inicialização levou, e
+                <code>systemd-analyze blame</code> lista os serviços (programas que rodam em segundo plano) em ordem do
+                mais demorado. Um serviço desnecessário pode ser desativado com <code>sudo systemctl disable
+                nome-do-servico</code>; um caso comum é o <code>NetworkManager-wait-online.service</code>, que espera a
+                rede conectar.</p>
+            <p>Os programas que abrem junto com a sessão ficam no aplicativo Aplicativos de inicialização. No Linux,
+                o comando <code>iotop</code> mostra o uso do disco; se o HD estiver sempre no limite, a troca por um SSD
+                também é a solução mais eficiente.</p>
+        </section>
+        <hr>
+        <section>
+            <h2>Saiba mais</h2>
+            <p>Acesse o material da Microsoft
+                <a href="https://support.microsoft.com/pt-br/windows/dicas-para-melhorar-o-desempenho-do-computador-no-windows-b3b3ef5b-5953-fb6a-2528-4bbed82fba96">Dicas para melhorar o desempenho do computador no Windows</a>,
+                veja <a href="../HARDWARE/computadores_antigos.html">Problemas mais comuns em computadores antigos</a> ou
+                pesquise um dos tutoriais em vídeo abaixo:</p>
+            <ul class="lista-videos">
+                <li><a href="https://www.youtube.com/results?search_query=como+desativar+programas+da+inicializa%C3%A7%C3%A3o+do+windows">Como desativar programas da inicialização do Windows</a></li>
+                <li><a href="https://www.youtube.com/results?search_query=windows+demorando+para+iniciar+como+resolver">Windows demorando para iniciar: como resolver</a></li>
+            </ul>
         </section>
     </main>
 
@@ -139,7 +107,7 @@
             <p>Instagram: <a
                     href="https://www.instagram.com/tinf4ve?utm_source=ig_web_button_share_sheet&stkn=ZDNlZDc0MzIxNw==">Tinf4ve!</a>
             </p>
-            <p>E-mail: <a href="#"></a></p>
+            <p>E-mail: <a href="mailto:tinf4v2026@gmail.com">tinf4v2026@gmail.com</a></p>
         </div>
     </footer>
 

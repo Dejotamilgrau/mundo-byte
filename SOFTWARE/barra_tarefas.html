@@ -38,63 +38,52 @@
     <main>
         <h1>Barra de tarefas travada</h1>
         <hr>
-        <section>
-            <p>A barra de tarefas para de responder aos cliques, o menu
-                Iniciar não abre, os ícones somem ou a barra fica congelada na
-                tela, sem esconder nem quando um vídeo está em tela cheia. Na
-                maioria das vezes a causa é o Windows Explorer travado, que é o
-                processo responsável pela barra de tarefas, mas também pode
-                ser uma atualização com problema, arquivos do sistema
-                corrompidos ou um programa que mexe na barra.
-            </p>
+        <section class="secao">
+            <div>
+                <h2>O problema</h2>
+                <p>A barra de tarefas (a faixa com o menu Iniciar e os programas abertos; no Ubuntu, o painel superior e o
+                    dock) para de responder aos cliques, os ícones somem ou ela fica congelada na tela, sem se esconder nem
+                    com um vídeo em tela cheia.</p>
+                <h2>Possíveis causas</h2>
+                <p>Na maioria das vezes, o processo responsável pela interface travou: o Windows Explorer (explorer.exe)
+                    no Windows ou o GNOME Shell no Ubuntu. Também pode ser uma atualização com falha, arquivos do sistema
+                    corrompidos ou um programa ou extensão que modifica a barra.</p>
+            </div>
+            <figure class="foto">
+                <img src="../IMG/SOFTWARE/barra_tarefas.png" alt="Área de trabalho do Ubuntu Unity com o painel e o lançador de aplicativos">
+                <figcaption>Imagem: Rudra Saraswat and the Ubuntu Unity developer team, <a href="https://commons.wikimedia.org/wiki/File:Ubuntu_Unity_22.04_LTS_default_desktop_English.png">GPL, via Wikimedia Commons</a></figcaption>
+            </figure>
         </section>
         <hr>
         <section>
-            <div>
-                <h2>Solução</h2>
-                <p>Comece reiniciando o Windows Explorer: abra o
-                    Gerenciador de Tarefas (Ctrl + Shift + Esc), clique com o
-                    botão direito em Windows Explorer e escolha Reiniciar. A
-                    barra some por alguns segundos e volta funcionando. Se o
-                    Gerenciador de Tarefas também não responder, aperte
-                    Ctrl + Alt + Del e reinicie o computador pelo botão de
-                    energia no canto da tela.</p>
-
-                <p>Se a barra não esconde em tela cheia, normalmente é
-                    algum programa pedindo atenção, com o ícone piscando:
-                    abra esse programa e a barra volta a esconder. Confira
-                    também as opções em Configurações &gt; Personalização &gt;
-                    Barra de tarefas &gt; Comportamentos da barra de tarefas e
-                    desinstale programas instalados recentemente que
-                    personalizam a barra.</p>
-
-                <p>Se o problema voltar sempre, verifique os arquivos do
-                    sistema com <code>sfc /scannow</code> e
-                    <code>DISM /Online /Cleanup-Image /RestoreHealth</code> no
-                    Prompt de Comando como administrador. Se começou depois de
-                    uma atualização, desinstale-a pelo histórico do Windows
-                    Update. Como as notificações também dependem do Explorer,
-                    veja ainda a página
-                    <a href="notificacoes_travadas.html">Notificações e Central
-                    de Ações travadas</a>.</p>
-
-                <p>Para melhor compreensão, pesquise um dos tutoriais em
-                    vídeo abaixo:</p>
-
-                <ul class="lista-videos">
-                    <li><a
-                            href="https://www.youtube.com/results?search_query=barra+de+tarefas+travada+windows+11+n%C3%A3o+responde">
-                            Barra de tarefas travada windows 11 não responde
-                        </a>
-                    </li>
-                    <li><a
-                            href="https://www.youtube.com/results?search_query=menu+iniciar+n%C3%A3o+abre+windows+como+resolver">
-                            Menu iniciar não abre windows como resolver
-                        </a>
-                    </li>
-                </ul>
-            </div>
-
+            <h2>Solução no Windows</h2>
+            <p>Abra o Gerenciador de Tarefas (Ctrl + Shift + Esc), clique com o botão direito em Windows Explorer e
+                escolha Reiniciar. Se a barra não se esconde em tela cheia, normalmente algum programa está com o ícone
+                piscando, pedindo atenção: abra esse programa. Confira também as opções em Configurações &gt;
+                Personalização &gt; Barra de tarefas.</p>
+            <p>Se o problema voltar sempre, execute <code>sfc /scannow</code> e <code>DISM /Online /Cleanup-Image
+                /RestoreHealth</code> no Prompt de Comando como administrador. Se começou depois de uma atualização,
+                desinstale-a pelo histórico do Windows Update.</p>
+        </section>
+        <hr>
+        <section>
+            <h2>Solução no Linux</h2>
+            <p>No Ubuntu com Xorg, aperte Alt + F2, digite <code>r</code> e pressione Enter para reiniciar o GNOME Shell
+                sem fechar os programas. No Wayland (padrão nas versões recentes) isso não é possível: encerre a sessão e
+                entre novamente. Se nem o mouse responder, aperte Ctrl + Alt + F3 para abrir um terminal de texto, faça
+                login e execute <code>sudo systemctl restart gdm3</code> (o que fecha os programas abertos).</p>
+            <p>Se o problema começou depois de instalar uma extensão do GNOME, desative-a no aplicativo Extensões ou com
+                <code>gnome-extensions disable nome-da-extensao</code>.</p>
+        </section>
+        <hr>
+        <section>
+            <h2>Saiba mais</h2>
+            <p>Veja também a página <a href="notificacoes_travadas.html">Notificações e Central de Ações travadas</a> ou
+                pesquise um dos tutoriais em vídeo abaixo:</p>
+            <ul class="lista-videos">
+                <li><a href="https://www.youtube.com/results?search_query=barra+de+tarefas+travada+windows+11+n%C3%A3o+responde">Barra de tarefas travada no Windows 11</a></li>
+                <li><a href="https://www.youtube.com/results?search_query=menu+iniciar+n%C3%A3o+abre+windows+como+resolver">Menu Iniciar não abre no Windows: como resolver</a></li>
+            </ul>
         </section>
     </main>
 
@@ -112,7 +101,7 @@
             <p>Instagram: <a
                     href="https://www.instagram.com/tinf4ve?utm_source=ig_web_button_share_sheet&stkn=ZDNlZDc0MzIxNw==">Tinf4ve!</a>
             </p>
-            <p>E-mail: <a href="#"></a></p>
+            <p>E-mail: <a href="mailto:tinf4v2026@gmail.com">tinf4v2026@gmail.com</a></p>
         </div>
     </footer>
 

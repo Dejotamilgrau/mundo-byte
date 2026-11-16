@@ -53,3 +53,35 @@
           grid-template-columns: 1fr;
       }
   }
+
+  /* Foto do problema com o crédito embaixo (fotos do Wikimedia Commons precisam citar autor e licença) */
+  .foto {
+      width: 300px;
+      margin: 0;
+  }
+
+  .foto img {
+      display: block;
+      width: 100%;
+      border: 1px solid var(--linha);
+      border-radius: 4px;
+  }
+
+  .foto figcaption {
+      margin-top: 6px;
+      font-size: 12px;
+      line-height: 1.4;
+      color: #555555;
+  }
+
+  .foto figcaption a {
+      color: var(--verdePlaca);
+  }
+
+  /* No celular a foto ocupa a largura toda, até 420px */
+  @media (max-width: 700px) {
+      .foto {
+          width: 100%;
+          max-width: 420px;
+      }
+  }

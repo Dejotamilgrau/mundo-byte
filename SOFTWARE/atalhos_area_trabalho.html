@@ -36,90 +36,59 @@
     <!-- Conteúdo, AMANDA -->
 
     <main>
-        <h1>Atalhos de aplicativos na área de trabalho não funcionam</h1>
+        <h1>Atalhos da área de trabalho não funcionam</h1>
         <hr>
-        <section>
-            <p>Este problema acontece quando, ao dar dois cliques em um
-                atalho da área de trabalho, nada acontece, aparece a
-                mensagem "O item ao qual este atalho se refere foi alterado
-                ou movido", o Windows pergunta com qual programa abrir o
-                arquivo ou o ícone fica em branco. As causas mais comuns são
-                o programa ter sido movido, atualizado para outra pasta ou
-                desinstalado, a associação dos arquivos de atalho (.lnk)
-                corrompida, o cache de ícones danificado ou um antivírus
-                bloqueando o programa.
-            </p>
+        <section class="secao">
+            <div>
+                <h2>O problema</h2>
+                <p>Ao dar dois cliques em um atalho da área de trabalho, nada acontece, aparece a mensagem "O item ao qual
+                    este atalho se refere foi alterado ou movido", o sistema pergunta com qual programa abrir o arquivo ou
+                    o ícone fica em branco.</p>
+                <h2>Possíveis causas</h2>
+                <p>O programa foi movido, desinstalado ou atualizado para outra pasta, e o atalho continua apontando para o
+                    caminho antigo. Também pode ser a associação dos arquivos de atalho (.lnk no Windows, .desktop no
+                    Linux) corrompida, o cache de ícones (a cópia das imagens dos ícones que o sistema guarda para
+                    carregar mais rápido) danificado ou um antivírus bloqueando o programa.</p>
+            </div>
+            <figure class="foto">
+                <img src="../IMG/SOFTWARE/atalhos_area_trabalho.png" alt="Área de trabalho do Ubuntu MATE com atalhos">
+                <figcaption>Imagem: The Ubuntu MATE Team, <a href="https://commons.wikimedia.org/wiki/File:Ubuntu_MATE_22.04_Desktop_en.png">GPL, via Wikimedia Commons</a></figcaption>
+            </figure>
         </section>
         <hr>
         <section>
-            <div>
-                <h2>Solução</h2>
-                <p>O primeiro passo é verificar para onde o atalho aponta.
-                    Clique com o botão direito no atalho, escolha
-                    Propriedades e confira o campo Destino. Clique em Abrir
-                    local do arquivo: se o Windows avisar que o item não
-                    existe mais, o programa foi movido ou desinstalado. Nesse
-                    caso, apague o atalho e, se o programa ainda estiver
-                    instalado, crie um novo: procure o programa no menu
-                    Iniciar, clique com o botão direito e escolha Abrir local
-                    do arquivo, depois clique com o botão direito no
-                    programa e selecione Mostrar mais opções &gt; Enviar
-                    para &gt; Área de trabalho (criar atalho). Se o programa
-                    não aparecer no menu Iniciar, reinstale-o.
-                </p>
-
-                <p>Se o atalho aponta para o lugar certo, mas o programa
-                    não abre, tente executá-lo direto pela pasta de
-                    instalação ou clicando com o botão direito e escolhendo
-                    Executar como administrador. Verifique também o
-                    histórico de proteção da Segurança do Windows (ou do
-                    seu antivírus), pois o programa pode ter sido colocado
-                    em quarentena. Se mesmo assim não abrir, o problema é
-                    no próprio aplicativo, e a solução é desinstalá-lo e
-                    instalá-lo novamente.</p>
-
-                <p>Se todos os atalhos pararem de funcionar ao mesmo tempo
-                    ou passarem a abrir com o mesmo programa (como o Bloco
-                    de Notas), a associação dos arquivos .lnk foi
-                    corrompida, geralmente por vírus ou por uma escolha
-                    errada em "Abrir com". Abra o Prompt de Comando como
-                    administrador e execute <code>sfc /scannow</code> e, em
-                    seguida,
-                    <code>DISM /Online /Cleanup-Image /RestoreHealth</code>,
-                    reiniciando o computador ao final. Faça também uma
-                    verificação completa com a Segurança do Windows. Se o
-                    problema começou há pouco tempo, a Restauração do
-                    Sistema para uma data anterior também resolve.</p>
-
-                <p>Se os atalhos funcionam, mas os ícones aparecem em
-                    branco ou errados, o problema é o cache de ícones.
-                    Abra o Gerenciador de Tarefas (Ctrl + Shift + Esc),
-                    clique com o botão direito no Windows Explorer e
-                    escolha Reiniciar. Se não resolver, pressione Win + R,
-                    digite <code>ie4uinit.exe -show</code> e pressione
-                    Enter para recriar o cache de ícones. Se o problema for
-                    com atalhos do teclado, veja a página
-                    <a href="atalhos_teclado.html">Atalhos do teclado não
-                    funcionam</a>.</p>
-
-                <p>Para melhor compreensão, pesquise um dos tutoriais em
-                    vídeo abaixo:</p>
-
-                <ul class="lista-videos">
-                    <li><a
-                            href="https://www.youtube.com/results?search_query=atalhos+da+%C3%A1rea+de+trabalho+n%C3%A3o+abrem+windows">
-                            Atalhos da área de trabalho não abrem no Windows
-                        </a>
-                    </li>
-                    <li><a
-                            href="https://www.youtube.com/results?search_query=como+corrigir+%C3%ADcones+em+branco+na+%C3%A1rea+de+trabalho+windows">
-                            Como corrigir ícones em branco na área de
-                            trabalho
-                        </a>
-                    </li>
-                </ul>
-            </div>
-
+            <h2>Solução no Windows</h2>
+            <p>Clique com o botão direito no atalho, escolha Propriedades e confira o campo Destino. Clique em Abrir local
+                do arquivo: se o Windows avisar que o item não existe mais, o programa foi movido ou desinstalado. Apague o
+                atalho e, se o programa ainda estiver instalado, crie um novo pelo menu Iniciar: botão direito no programa
+                &gt; Abrir local do arquivo &gt; botão direito &gt; Enviar para &gt; Área de trabalho (criar atalho).</p>
+            <p>Se todos os atalhos abrirem com o mesmo programa, como o Bloco de Notas, a associação dos arquivos .lnk foi
+                corrompida. Abra o Prompt de Comando como administrador e execute <code>sfc /scannow</code> (System File
+                Checker, que verifica e repara os arquivos do sistema) e depois <code>DISM /Online /Cleanup-Image
+                /RestoreHealth</code> (que repara a imagem do Windows usada pelo sfc), reiniciando ao final.</p>
+            <p>Se os ícones estiverem em branco, reinicie o Windows Explorer pelo Gerenciador de Tarefas ou execute
+                <code>ie4uinit.exe -show</code> no Executar (Win + R) para recriar o cache de ícones.</p>
+        </section>
+        <hr>
+        <section>
+            <h2>Solução no Linux</h2>
+            <p>No Linux, os atalhos são arquivos .desktop, que ficam em <code>~/.local/share/applications</code> e
+                <code>/usr/share/applications</code>. Abra o atalho em um editor de texto e confira a linha
+                <code>Exec=</code>, que indica o comando executado: se o programa mudou de lugar, corrija o caminho.</p>
+            <p>No Ubuntu, atalhos copiados para a área de trabalho precisam ser liberados: clique com o botão direito
+                neles e escolha Permitir execução. Se o ícone estiver em branco, apague o cache com
+                <code>rm -rf ~/.cache/thumbnails</code> e reinicie a sessão. Se o programa foi desinstalado, reinstale-o
+                pela loja de aplicativos ou com <code>sudo apt install nome-do-programa</code>.</p>
+        </section>
+        <hr>
+        <section>
+            <h2>Saiba mais</h2>
+            <p>Pesquise um dos tutoriais em vídeo abaixo. Se o problema for com atalhos do teclado, veja a página
+                <a href="atalhos_teclado.html">Atalhos do teclado não funcionam</a>.</p>
+            <ul class="lista-videos">
+                <li><a href="https://www.youtube.com/results?search_query=atalhos+da+%C3%A1rea+de+trabalho+n%C3%A3o+abrem+windows">Atalhos da área de trabalho não abrem no Windows</a></li>
+                <li><a href="https://www.youtube.com/results?search_query=como+corrigir+%C3%ADcones+em+branco+na+%C3%A1rea+de+trabalho+windows">Como corrigir ícones em branco na área de trabalho</a></li>
+            </ul>
         </section>
     </main>
 
@@ -137,7 +106,7 @@
             <p>Instagram: <a
                     href="https://www.instagram.com/tinf4ve?utm_source=ig_web_button_share_sheet&stkn=ZDNlZDc0MzIxNw==">Tinf4ve!</a>
             </p>
-            <p>E-mail: <a href="#"></a></p>
+            <p>E-mail: <a href="mailto:tinf4v2026@gmail.com">tinf4v2026@gmail.com</a></p>
         </div>
     </footer>
 

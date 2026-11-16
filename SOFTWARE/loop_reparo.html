@@ -38,82 +38,57 @@
     <main>
         <h1>Loop de reparo automático</h1>
         <hr>
-        <section>
-            <p> Este problema ocorre quando o Windows tenta corrigir erros
-                de inicialização
-                de forma autônoma, falha e entra num ciclo infinito de
-                reinicializações.</p>
+        <section class="secao">
+            <div>
+                <h2>O problema</h2>
+                <p>O Windows tenta corrigir sozinho um erro de inicialização, falha, reinicia e volta para a tela "Preparando
+                    Reparo Automático", em um ciclo sem fim.</p>
+                <h2>Possíveis causas</h2>
+                <p>Arquivos de inicialização danificados, como o BCD (Boot Configuration Data, o arquivo que diz ao
+                    computador onde está o Windows) ou o MBR (Master Boot Record, o primeiro setor do disco, que inicia o
+                    carregamento), o registro do Windows (o banco de dados de configurações do sistema) corrompido ou
+                    setores defeituosos no disco.</p>
+            </div>
+            <figure class="foto">
+                <img src="../IMG/SOFTWARE/loop_reparo.png" alt="Diagrama das opções do Ambiente de Recuperação do Windows">
+                <figcaption>Imagem: Armchair, <a href="https://commons.wikimedia.org/wiki/File:Windows_Recovery_Environment.png">CC BY-SA 4.0, via Wikimedia Commons</a></figcaption>
+            </figure>
         </section>
         <hr>
         <section>
-            <div>
-                <h2>Solução</h2>
-                <p>Para resolver esse problema, é necessário acessar o menu
-                    de Opções Avançadas. Caso a tela azul de reparo não
-                    apareça automaticamente, você pode forçar o acesso
-                    ligando o computador e, assim que o logotipo do
-                    fabricante surgir, mantendo o botão Power pressionado
-                    por 10 segundos para desligá-lo. Após repetir esse
-                    processo de duas a três vezes, o sistema carregará a
-                    tela de preparação do reparo. Nela, navegue em Opções
-                    Avançadas > Solução de problemas > Opções Avançadas.
-                </p>
-
-                <p>A primeira tentativa de solução deve ser a opção Reparo
-                    de Inicialização, em que o próprio sistema tenta
-                    identificar e corrigir os arquivos corrompidos. Se o
-                    Windows exibir a mensagem de que não pôde reparar o
-                    computador, o próximo passo é tentar a Restauração do
-                    Sistema, que não faz você perder arquivos pessoais. Ao
-                    selecionar essa opção, escolha sua conta de usuário,
-                    insira a senha e selecione um ponto de restauração
-                    criado antes do surgimento do problema para voltar o
-                    sistema a um estado funcional.</p>
-
-                <p> Caso os recursos automáticos falhem, é preciso
-                    reconstruir a estrutura de inicialização do disco
-                    manualmente utilizando o Prompt de Comando, localizado
-                    no mesmo menu de opções avançadas. Com o terminal
-                    aberto, execute a sequência de comandos digitando
-                    bootrec /fixmbr, bootrec /fixboot (caso ocorra erro de
-                    acesso negado, digite bootsect /nt60 sys antes de tentar
-                    novamente), bootrec /scanos e bootrec /rebuildbcd,
-                    pressionando Enter após cada um. Finalize digitando exit
-                    e clique em continuar para o Windows.</p>
-
-                <p>Se o registro do sistema estiver criticamente danificado
-                    e nenhuma das alternativas anteriores funcionar, o
-                    último recurso local é a restauração do sistema mantendo
-                    os dados. Em Solução de problemas, selecione Restaurar o
-                    PC e escolha a opção Manter meus arquivos. O Windows
-                    será reinstalado preservando seus documentos e dados
-                    pessoais, embora os programas precisem ser instalados
-                    novamente após a conclusão.
-                </p>
-
-                <p>Para melhor compreensão, acesse o tutorial oficial da
-                    Microsoft:<a
-                        href="https://support.microsoft.com/pt-br/windows/experience/startup-boot/startup-repair">
-                        Reparo de Inicialização do Windows 10 e Windows
-                        11</a>
-                    Ou assista a um dos tutoriais em vídeo abaixo:</p>
-
-                <ul class="lista-videos">
-                    <li><a
-                            href="https://www.youtube.com/watch?v=byWc-883FJ0">
-                            Como corrigir o loop de reparo automático no PC
-                            | 5 Métodos | 4DDiG
-                        </a>
-                    </li>
-                    <li><a
-                            href="https://www.youtube.com/watch?v=aSFfD0f5io4">
-                            Como Corrigir Erro do "REPARO AUTOMÁTICO" No
-                            Windows 11 (LOOP)
-                        </a>
-                    </li>
-                </ul>
-            </div>
-
+            <h2>Solução no Windows</h2>
+            <p>Se a tela de recuperação não aparecer sozinha, ligue o computador e, quando surgir o logotipo do
+                fabricante, segure o botão de energia por 10 segundos; repita duas ou três vezes. Na tela de reparo, vá em
+                Opções avançadas &gt; Solução de problemas &gt; Opções avançadas.</p>
+            <p>Tente primeiro o Reparo de Inicialização. Se falhar, use a Restauração do Sistema e escolha um ponto de
+                restauração anterior ao problema; ela não apaga arquivos pessoais.</p>
+            <p>Se os recursos automáticos falharem, abra o Prompt de Comando no mesmo menu e reconstrua a inicialização
+                com <code>bootrec /fixmbr</code>, <code>bootrec /fixboot</code> (se der acesso negado, execute antes
+                <code>bootsect /nt60 sys</code>), <code>bootrec /scanos</code> e <code>bootrec /rebuildbcd</code>.
+                Para verificar o disco, use <code>chkdsk C: /f /r</code>. Como último recurso, Restaurar o PC &gt; Manter
+                meus arquivos reinstala o Windows preservando os documentos.</p>
+        </section>
+        <hr>
+        <section>
+            <h2>Solução no Linux</h2>
+            <p>O Linux não tem um reparo automático igual ao do Windows, mas o problema equivalente é o sistema parar no
+                terminal do initramfs (um mini sistema carregado antes do Linux) ou no modo de emergência. Nesse terminal,
+                o comando <code>fsck -y /dev/sda2</code> (trocando sda2 pela partição do sistema) verifica e corrige o
+                sistema de arquivos; depois, digite <code>exit</code> para continuar a inicialização.</p>
+            <p>Se o problema for no GRUB, inicie por um pendrive do Ubuntu e use o Boot-Repair, ou monte a partição e
+                execute <code>sudo grub-install /dev/sda</code> e <code>sudo update-grub</code>. Veja também a página
+                <a href="so_corrompido.html">Sistema operacional corrompido</a>.</p>
+        </section>
+        <hr>
+        <section>
+            <h2>Saiba mais</h2>
+            <p>Acesse o tutorial oficial da Microsoft
+                <a href="https://support.microsoft.com/pt-br/windows/experience/startup-boot/startup-repair">Reparo de Inicialização do Windows 10 e Windows 11</a>
+                ou assista a um dos tutoriais em vídeo abaixo:</p>
+            <ul class="lista-videos">
+                <li><a href="https://www.youtube.com/watch?v=byWc-883FJ0">Como corrigir o loop de reparo automático no PC | 5 Métodos</a></li>
+                <li><a href="https://www.youtube.com/watch?v=aSFfD0f5io4">Como corrigir erro do "Reparo Automático" no Windows 11 (loop)</a></li>
+            </ul>
         </section>
     </main>
 
@@ -131,7 +106,7 @@
             <p>Instagram: <a
                     href="https://www.instagram.com/tinf4ve?utm_source=ig_web_button_share_sheet&stkn=ZDNlZDc0MzIxNw==">Tinf4ve!</a>
             </p>
-            <p>E-mail: <a href="#"></a></p>
+            <p>E-mail: <a href="mailto:tinf4v2026@gmail.com">tinf4v2026@gmail.com</a></p>
         </div>
     </footer>
 

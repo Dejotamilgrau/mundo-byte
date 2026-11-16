@@ -38,66 +38,54 @@
     <main>
         <h1>Falha na ativação da licença do sistema</h1>
         <hr>
-        <section>
-            <p>O Windows ou o pacote Office começa a mostrar avisos de que
-                a licença expirou, de que o produto não é original ou a marca
-                d'água "Ativar o Windows", mesmo já tendo sido ativado antes.
-                As causas mais comuns são a troca de uma peça importante, como
-                a placa-mãe, chaves compradas de vendedores não oficiais,
-                ativadores piratas (que funcionam só por um tempo), a data do
-                computador errada e o Office conectado a outra conta
-                Microsoft.
-            </p>
+        <section class="secao">
+            <div>
+                <h2>O problema</h2>
+                <p>O Windows ou o pacote Office passa a mostrar avisos de que a licença expirou, de que o produto não é
+                    original ou a marca d'água "Ativar o Windows", mesmo já tendo sido ativado antes. A ativação é a
+                    verificação, feita pela Microsoft, de que a cópia instalada tem uma licença (o direito de uso) válida.</p>
+                <h2>Possíveis causas</h2>
+                <p>A troca de um componente importante, como a placa-mãe, que muda a identificação do computador; chaves de
+                    produto compradas de vendedores não oficiais; ativadores piratas, que funcionam só por um tempo; a data
+                    do sistema incorreta; e o Office conectado a uma conta Microsoft diferente da que tem a licença.</p>
+            </div>
+            <figure class="foto">
+                <img src="../IMG/SOFTWARE/ativacao_licenca.jpg" alt="Certificado de autenticidade do Windows colado em um computador">
+                <figcaption>Imagem: GennadyL, <a href="https://commons.wikimedia.org/wiki/File:Microsoft_Windows_Certificate_of_Authenticity.jpg">CC0, via Wikimedia Commons</a></figcaption>
+            </figure>
         </section>
         <hr>
         <section>
-            <div>
-                <h2>Solução</h2>
-                <p>Comece vendo a situação da licença em Configurações &gt;
-                    Sistema &gt; Ativação (no Windows 10, Atualização e
-                    Segurança &gt; Ativação). Confira também se a data e a
-                    hora do computador estão certas, porque o relógio errado
-                    atrapalha a verificação da licença: veja a página
-                    <a href="relogio_incorreto.html">Relógio do sistema
-                    incorreto</a>. Se você trocou a placa-mãe, clique em
-                    Solução de problemas e escolha Alterei o hardware neste
-                    dispositivo recentemente. Isso só funciona se a licença
-                    estava ligada à sua conta Microsoft antes da troca.</p>
-
-                <p>Se você tem uma chave original (na etiqueta do
-                    computador, no e-mail da compra ou na caixa), clique em
-                    Alterar chave do produto e digite a chave. Para ver os
-                    detalhes da licença atual, abra o Prompt de Comando e
-                    execute <code>slmgr /dli</code>. Evite ativadores piratas:
-                    a ativação deles é temporária e muitos vêm com vírus.</p>
-
-                <p>No Office, abra o Word ou o Excel, vá em Arquivo &gt;
-                    Conta e confira se está conectado com a mesma conta
-                    Microsoft que tem a licença. Se estiver em outra conta,
-                    clique em Sair e entre com a certa. Se o aviso continuar,
-                    repare o Office em Configurações &gt; Aplicativos &gt;
-                    Aplicativos instalados, clicando no Microsoft Office,
-                    depois em Modificar e escolhendo Reparo Online. Ter duas
-                    versões do Office instaladas também causa esse erro, então
-                    desinstale a que não usa.</p>
-
-                <p>Para melhor compreensão, pesquise um dos tutoriais em
-                    vídeo abaixo:</p>
-
-                <ul class="lista-videos">
-                    <li><a
-                            href="https://www.youtube.com/results?search_query=windows+n%C3%A3o+ativado+depois+de+trocar+placa+m%C3%A3e">
-                            Windows não ativado depois de trocar placa mãe
-                        </a>
-                    </li>
-                    <li><a
-                            href="https://www.youtube.com/results?search_query=office+produto+n%C3%A3o+licenciado+como+resolver">
-                            Office produto não licenciado como resolver
-                        </a>
-                    </li>
-                </ul>
-            </div>
-
+            <h2>Solução no Windows</h2>
+            <p>Veja a situação da licença em Configurações &gt; Sistema &gt; Ativação. Confira se a data e a hora estão
+                corretas (veja <a href="relogio_incorreto.html">Relógio do sistema incorreto</a>). Se a placa-mãe foi
+                trocada, clique em Solução de problemas &gt; Alterei o hardware neste dispositivo recentemente, o que só
+                funciona se a licença estava vinculada à sua conta Microsoft.</p>
+            <p>Se você tem uma chave original (na etiqueta do computador, no e-mail da compra ou na caixa), clique em
+                Alterar chave do produto. O comando <code>slmgr /dli</code> no Prompt de Comando mostra os detalhes da
+                licença atual. Evite ativadores piratas: a ativação é temporária e muitos contêm malware.</p>
+            <p>No Office, vá em Arquivo &gt; Conta e confira se está conectado com a conta que tem a licença. Se o aviso
+                continuar, repare o Office em Configurações &gt; Aplicativos &gt; Aplicativos instalados &gt; Microsoft
+                Office &gt; Modificar &gt; Reparo Online.</p>
+        </section>
+        <hr>
+        <section>
+            <h2>Solução no Linux</h2>
+            <p>A maioria das distribuições Linux, como o Ubuntu, é software livre e gratuita, então não existe ativação
+                nem chave de produto: o sistema pode ser instalado em quantos computadores for preciso. O mesmo vale para o
+                LibreOffice, o pacote de escritório livre que substitui o Office e abre arquivos .docx e .xlsx.</p>
+            <p>A exceção são distribuições comerciais, como o Red Hat Enterprise Linux, que usam assinatura. Nelas, o
+                comando <code>sudo subscription-manager status</code> mostra a situação e <code>sudo subscription-manager
+                register</code> registra o computador na conta da empresa.</p>
+        </section>
+        <hr>
+        <section>
+            <h2>Saiba mais</h2>
+            <p>Pesquise um dos tutoriais em vídeo abaixo:</p>
+            <ul class="lista-videos">
+                <li><a href="https://www.youtube.com/results?search_query=windows+n%C3%A3o+ativado+depois+de+trocar+placa+m%C3%A3e">Windows não ativado depois de trocar a placa-mãe</a></li>
+                <li><a href="https://www.youtube.com/results?search_query=office+produto+n%C3%A3o+licenciado+como+resolver">Office: produto não licenciado, como resolver</a></li>
+            </ul>
         </section>
     </main>
 
@@ -115,7 +103,7 @@
             <p>Instagram: <a
                     href="https://www.instagram.com/tinf4ve?utm_source=ig_web_button_share_sheet&stkn=ZDNlZDc0MzIxNw==">Tinf4ve!</a>
             </p>
-            <p>E-mail: <a href="#"></a></p>
+            <p>E-mail: <a href="mailto:tinf4v2026@gmail.com">tinf4v2026@gmail.com</a></p>
         </div>
     </footer>
 

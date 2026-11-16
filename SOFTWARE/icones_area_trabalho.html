@@ -38,41 +38,47 @@
     <main>
         <h1>Ícones da área de trabalho sumidos ou desorganizados</h1>
         <hr>
-        <section>
-            <p>Os ícones da área de trabalho podem sumir de uma hora
-                para outra ou mudar de lugar sozinhos. Geralmente isso
-                acontece porque a opção de mostrar os ícones foi desativada,
-                porque a organização automática está ligada ou porque a
-                resolução da tela mudou, por exemplo ao conectar um segundo
-                monitor.
-            </p>
+        <section class="secao">
+            <div>
+                <h2>O problema</h2>
+                <p>Os ícones da área de trabalho somem de uma hora para outra ou mudam de lugar sozinhos.</p>
+                <h2>Possíveis causas</h2>
+                <p>A opção de exibir os ícones foi desativada, a organização automática está ligada ou a resolução da tela
+                    mudou, por exemplo ao conectar um segundo monitor, o que faz o sistema reposicionar os ícones. No
+                    Windows, a sincronização do OneDrive pode mover a pasta da área de trabalho. No Ubuntu, a área de
+                    trabalho é uma extensão do GNOME, que pode ter sido desativada.</p>
+            </div>
+            <figure class="foto">
+                <img src="../IMG/SOFTWARE/aplicativos_padrao.png" alt="Área de trabalho do Ubuntu 22.04">
+                <figcaption>Imagem: Canonical Inc, <a href="https://commons.wikimedia.org/wiki/File:Ubuntu_22.04_LTS_default_desktop_-_English.png">GPL, via Wikimedia Commons</a></figcaption>
+            </figure>
         </section>
         <hr>
         <section>
-            <div>
-                <h2>Solução</h2>
-                <p>Se todos os ícones sumiram, clique com o botão direito
-                    em um espaço vazio da área de trabalho, vá em Exibir e
-                    marque Mostrar ícones da área de trabalho. Para trazer de
-                    volta ícones do sistema, como Este Computador e Lixeira,
-                    acesse Configurações &gt; Personalização &gt; Temas &gt;
-                    Configurações de ícones da área de trabalho.</p>
-
-                <p>Se os ícones se reorganizam sozinhos, clique com o botão
-                    direito na área de trabalho, vá em Exibir e desmarque
-                    Organizar ícones automaticamente. Evite também ficar
-                    trocando a resolução da tela, porque o Windows reposiciona
-                    os ícones a cada mudança.</p>
-
-                <p>Se os arquivos sumiram de verdade, confira se o backup
-                    do OneDrive está ativado: ele move a área de trabalho para
-                    a pasta OneDrive, e os arquivos podem estar lá. Já quando
-                    os ícones aparecem em branco ou com a imagem errada, basta
-                    reiniciar o Windows Explorer pelo Gerenciador de Tarefas
-                    (Ctrl + Shift + Esc), clicando com o botão direito em
-                    Windows Explorer e escolhendo Reiniciar.</p>
-            </div>
-
+            <h2>Solução no Windows</h2>
+            <p>Se todos os ícones sumiram, clique com o botão direito em um espaço vazio da área de trabalho, vá em Exibir
+                e marque Mostrar ícones da área de trabalho. Para trazer de volta ícones do sistema, como Este Computador e
+                Lixeira, acesse Configurações &gt; Personalização &gt; Temas &gt; Configurações de ícones da área de
+                trabalho.</p>
+            <p>Se os ícones se reorganizam sozinhos, desmarque Exibir &gt; Organizar ícones automaticamente. Se os
+                arquivos sumiram de verdade, confira a pasta OneDrive\Área de Trabalho. Para ícones em branco, reinicie o
+                Windows Explorer pelo Gerenciador de Tarefas (Ctrl + Shift + Esc).</p>
+        </section>
+        <hr>
+        <section>
+            <h2>Solução no Linux</h2>
+            <p>No Ubuntu, os ícones da área de trabalho são controlados pela extensão Desktop Icons NG (DING). Abra o
+                aplicativo Extensões e confira se ela está ativada, ou execute <code>gnome-extensions enable
+                ding@rastersoft.com</code>. As opções de tamanho e posição dos ícones ficam em Configurações &gt;
+                Aparência.</p>
+            <p>Os arquivos da área de trabalho ficam na pasta <code>~/Área de Trabalho</code> (ou
+                <code>~/Desktop</code>, em sistemas em inglês). Se os ícones sumiram, abra essa pasta no gerenciador de
+                arquivos para conferir se os arquivos ainda existem.</p>
+        </section>
+        <hr>
+        <section>
+            <h2>Saiba mais</h2>
+            <p>Veja também a página <a href="atalhos_area_trabalho.html">Atalhos da área de trabalho não funcionam</a>.</p>
         </section>
     </main>
 
@@ -90,7 +96,7 @@
             <p>Instagram: <a
                     href="https://www.instagram.com/tinf4ve?utm_source=ig_web_button_share_sheet&stkn=ZDNlZDc0MzIxNw==">Tinf4ve!</a>
             </p>
-            <p>E-mail: <a href="#"></a></p>
+            <p>E-mail: <a href="mailto:tinf4v2026@gmail.com">tinf4v2026@gmail.com</a></p>
         </div>
     </footer>
 

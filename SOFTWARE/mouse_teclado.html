@@ -38,45 +38,41 @@
     <main>
         <h1>Mouse ou teclado não funciona</h1>
         <hr>
-        <section>
-            <p>Quando o mouse ou o teclado para de responder, a causa
-                quase sempre é simples: mau contato na porta USB, pilhas
-                fracas nos modelos sem fio ou um driver que travou. Antes de
-                pensar em trocar o dispositivo, vale testar as soluções
-                abaixo.
-            </p>
+        <section class="secao">
+            <div>
+                <h2>O problema</h2>
+                <p>O mouse ou o teclado para de responder: o cursor não se move, as teclas não digitam ou o dispositivo
+                    não é reconhecido ao ser conectado.</p>
+                <h2>Possíveis causas</h2>
+                <p>Mau contato na porta USB, pilhas fracas em modelos sem fio, receptor USB (o pequeno adaptador do
+                    dispositivo sem fio) desconectado, perda do pareamento Bluetooth, driver travado ou defeito físico no
+                    próprio dispositivo.</p>
+            </div>
+            <figure class="foto">
+                <img src="../IMG/SOFTWARE/mouse_teclado.jpg" alt="Mouse óptico Logitech">
+                <figcaption>Imagem: Rasbak, <a href="https://commons.wikimedia.org/wiki/File:Optical_mouse.jpg">CC BY-SA 3.0, via Wikimedia Commons</a></figcaption>
+            </figure>
         </section>
         <hr>
         <section>
-            <div>
-                <h2>Solução</h2>
-                <p>Comece pelo básico: desconecte o dispositivo e conecte em
-                    outra porta USB, de preferência uma da parte de trás do
-                    gabinete, que fica ligada direto na placa-mãe. Nos
-                    modelos sem fio, troque as pilhas ou recarregue a bateria
-                    e confira se o receptor USB está conectado. Nos modelos
-                    Bluetooth, remova o dispositivo em Configurações &gt;
-                    Bluetooth e dispositivos e faça o pareamento de novo.</p>
-
-                <p>Se o dispositivo funciona em outro computador, o problema
-                    provavelmente está no driver. Abra o Gerenciador de
-                    Dispositivos (clique com o botão direito no botão
-                    Iniciar), expanda a aba Mouse e outros dispositivos
-                    apontadores ou a aba Teclados, clique com o botão direito
-                    no dispositivo e escolha Desinstalar dispositivo. Ao
-                    reiniciar o computador, o Windows instala o driver de novo
-                    automaticamente. Também vale conferir a aba Controladores
-                    USB: um item com um ponto de exclamação amarelo indica
-                    falha na porta.</p>
-
-                <p>Enquanto o problema não é resolvido, dá para usar o
-                    computador mesmo assim. Sem mouse, a tecla Tab muda entre
-                    os campos, as setas navegam e o Enter confirma; o atalho
-                    Win + X abre um menu com o Gerenciador de Dispositivos.
-                    Sem teclado, é possível usar o Teclado Virtual, que fica
-                    em Configurações &gt; Acessibilidade &gt; Teclado.</p>
-            </div>
-
+            <h2>Solução no Windows</h2>
+            <p>Conecte o dispositivo em outra porta USB, de preferência na parte traseira do gabinete, que fica ligada
+                direto na placa-mãe. Nos modelos sem fio, troque as pilhas e confira o receptor. Nos modelos Bluetooth,
+                remova o dispositivo em Configurações &gt; Bluetooth e dispositivos e faça o pareamento de novo.</p>
+            <p>Se o dispositivo funciona em outro computador, abra o Gerenciador de Dispositivos (Win + X), expanda Mouse e
+                outros dispositivos apontadores ou Teclados, clique em Desinstalar dispositivo e reinicie. Na seção
+                Controladores USB, um item com ponto de exclamação indica falha na porta. Sem mouse, use Tab, setas e
+                Enter; sem teclado, use o Teclado Virtual em Configurações &gt; Acessibilidade &gt; Teclado.</p>
+        </section>
+        <hr>
+        <section>
+            <h2>Solução no Linux</h2>
+            <p>Depois de conectar o dispositivo, o comando <code>lsusb</code> mostra se ele foi reconhecido e
+                <code>sudo dmesg -w</code> mostra em tempo real as mensagens do kernel ao conectar e desconectar; erros
+                como "device descriptor read error" indicam problema na porta ou no cabo.</p>
+            <p>Para dispositivos Bluetooth, use Configurações &gt; Bluetooth ou o comando <code>bluetoothctl</code>
+                (dentro dele: <code>remove</code>, <code>scan on</code> e <code>pair</code>). Sem teclado, o Ubuntu oferece
+                o teclado na tela em Configurações &gt; Acessibilidade &gt; Digitação.</p>
         </section>
     </main>
 
@@ -94,7 +90,7 @@
             <p>Instagram: <a
                     href="https://www.instagram.com/tinf4ve?utm_source=ig_web_button_share_sheet&stkn=ZDNlZDc0MzIxNw==">Tinf4ve!</a>
             </p>
-            <p>E-mail: <a href="#"></a></p>
+            <p>E-mail: <a href="mailto:tinf4v2026@gmail.com">tinf4v2026@gmail.com</a></p>
         </div>
     </footer>
 

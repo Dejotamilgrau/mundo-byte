@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Como Apagar o Boot do Pen Drive e Voltar ao Normal - MundoByte</title>
+    <title>Como apagar o boot do pendrive e voltar ao normal - MundoByte</title>
     <link rel="stylesheet" href="../CSS/reset.css">
     <link rel="stylesheet" href="CSS/base_estilo.css">
     <link rel="stylesheet" href="CSS/layout_estilo.css">
@@ -36,56 +36,47 @@
     <!-- Conteúdo, AMARAL -->
 
     <main>
-        <h1>Como Apagar o Boot do Pen Drive e Voltar ao Normal</h1>
+        <h1>Como apagar o boot do pendrive e voltar ao normal</h1>
         <hr>
-        <section>
-            <p>Depois de usar um pen drive de boot, é comum ele não voltar a funcionar como antes. Muitas vezes ele
-                aparece com um tamanho bem menor do que o real, fica dividido em mais de uma partição ou o Windows nem
-                consegue formatá-lo pelo jeito normal. Isso acontece porque o Ventoy, o Rufus e o comando "dd" criam
-                partições especiais no pen drive. Para deixá-lo como novo, é preciso apagar todas essas partições e
-                criar uma nova, o que também apaga todos os arquivos que estiverem nele.
-            </p>
+        <section class="secao">
+            <div>
+                <h2>O problema</h2>
+                <p>Depois de usar um pendrive de boot, ele muitas vezes não volta a funcionar como antes: aparece com um
+                    tamanho bem menor do que o real, fica dividido em mais de uma partição (divisão lógica do armazenamento)
+                    ou o Windows não consegue formatá-lo pelo jeito normal.</p>
+                <h2>Possíveis causas</h2>
+                <p>O Ventoy, o Rufus e o comando <code>dd</code> criam partições especiais e uma tabela de partições própria
+                    no pendrive. Para deixá-lo como novo, é preciso apagar todas as partições e criar uma nova, o que também
+                    apaga todos os arquivos dele.</p>
+            </div>
+            <figure class="foto">
+                <img src="../IMG/SOFTWARE/limpar_pendrive.png" alt="Programa Discos do GNOME mostrando as partições de um disco">
+                <figcaption>Imagem: Software: The GNOME Project Screenshot: VulcanSphere, <a href="https://commons.wikimedia.org/wiki/File:GNOME_Disks_3.32_screenshot.png">GPL, via Wikimedia Commons</a></figcaption>
+            </figure>
         </section>
         <hr>
         <section>
-            <h2>No Windows, pelo DiskPart</h2>
-            <p>O DiskPart é uma ferramenta que já vem no Windows. Para usá-lo, abre-se o Prompt de Comando como
-                administrador e digita-se "diskpart". Em seguida, o comando "list disk" mostra todos os discos do
-                computador, e é preciso identificar o pen drive pelo tamanho. Esse passo exige atenção, pois escolher o
-                disco errado apaga o HD do computador.
-            </p>
-            <p>Depois, digita-se "select disk N", trocando N pelo número do pen drive, e "clean", que apaga todas as
-                partições. Para criar a partição nova, usa-se "create partition primary", depois "format fs=exfat
-                quick" para formatar e "assign" para o pen drive receber uma letra. Por fim, "exit" fecha o DiskPart e
-                o pen drive volta a aparecer com o tamanho completo. Se for preciso usar o pen drive em aparelhos
-                antigos, como som de carro ou TV, pode-se formatar em FAT32 pelo próprio Windows depois.
-            </p>
+            <h2>Solução no Windows, pelo DiskPart</h2>
+            <p>O DiskPart é uma ferramenta de linha de comando do Windows para gerenciar discos. Abra o Prompt de Comando
+                como administrador e digite <code>diskpart</code>. O comando <code>list disk</code> mostra todos os discos;
+                identifique o pendrive pelo tamanho. Atenção: escolher o disco errado apaga o HD do computador.</p>
+            <p>Digite <code>select disk N</code> (trocando N pelo número do pendrive) e <code>clean</code>, que apaga
+                todas as partições. Depois, <code>create partition primary</code>, <code>format fs=exfat quick</code> e
+                <code>assign</code> criam, formatam e dão uma letra à nova partição. Digite <code>exit</code> para sair.</p>
+            <p>Sem comandos, abra o Gerenciamento de Disco (botão direito no menu Iniciar), exclua cada volume do pendrive
+                e, no espaço "Não alocado", crie um Novo volume simples. Outra opção é o Rufus, escolhendo "Não
+                inicializável" em Seleção de boot.</p>
         </section>
         <hr>
         <section>
-            <h2>No Windows, pelo Gerenciamento de Disco</h2>
-            <p>Também é possível fazer isso sem comandos. Clica-se com o botão direito no menu Iniciar e abre-se o
-                "Gerenciamento de Disco". Na parte de baixo da janela, localiza-se o pen drive, clica-se com o botão
-                direito em cada partição dele e escolhe-se "Excluir volume". Quando todo o espaço aparecer como "Não
-                alocado", clica-se com o botão direito nele, em "Novo volume simples", e segue-se o assistente até o
-                final.
-            </p>
-            <p>Outra opção é usar o próprio Rufus: em "Seleção de boot" escolhe-se "Não inicializável" e clica-se em
-                "INICIAR", e ele formata o pen drive como um pen drive comum.
-            </p>
-        </section>
-        <hr>
-        <section>
-            <h2>No Linux</h2>
-            <p>No Ubuntu, a forma mais simples é pelo programa "Discos". Seleciona-se o pen drive na lista da
-                esquerda, clica-se no menu de três pontos e em "Formatar disco", e depois no botão "+" para criar uma
-                nova partição ocupando todo o espaço.
-            </p>
-            <p>Pelo terminal, primeiro identifica-se o pen drive com "lsblk". Depois, o comando "sudo wipefs -a
-                /dev/sdX" apaga todas as partições, "sudo parted /dev/sdX mklabel msdos" cria uma nova tabela de
-                partições, "sudo parted /dev/sdX mkpart primary fat32 0% 100%" cria a partição e "sudo mkfs.vfat -F 32
-                /dev/sdX1" formata em FAT32, sempre trocando "sdX" pelo nome do pen drive.
-            </p>
+            <h2>Solução no Linux</h2>
+            <p>No Ubuntu, abra o programa Discos, selecione o pendrive, clique no menu de três pontos &gt; Formatar disco e
+                depois no botão + para criar uma partição ocupando todo o espaço.</p>
+            <p>Pelo terminal, identifique o pendrive com <code>lsblk</code> e execute, trocando sdX pelo nome dele:
+                <code>sudo wipefs -a /dev/sdX</code> (apaga as assinaturas de partição),
+                <code>sudo parted /dev/sdX mklabel msdos</code> (cria uma tabela de partições MBR),
+                <code>sudo parted /dev/sdX mkpart primary fat32 0% 100%</code> (cria a partição) e
+                <code>sudo mkfs.vfat -F 32 /dev/sdX1</code> (formata em FAT32).</p>
         </section>
     </main>
 
@@ -103,7 +94,7 @@
             <p>Instagram: <a
                     href="https://www.instagram.com/tinf4ve?utm_source=ig_web_button_share_sheet&stkn=ZDNlZDc0MzIxNw==">Tinf4ve!</a>
             </p>
-            <p>E-mail: <a href="#"></a></p>
+            <p>E-mail: <a href="mailto:tinf4v2026@gmail.com">tinf4v2026@gmail.com</a></p>
         </div>
     </footer>
 

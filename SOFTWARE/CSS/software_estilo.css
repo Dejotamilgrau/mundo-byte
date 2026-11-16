@@ -112,3 +112,45 @@
         height: 180px;
     }
 }
+
+/* ===== Windows ou Linux? ===== */
+
+#windows-linux {
+    margin-top: 32px;
+}
+
+/* As duas caixas, Windows e Linux, lado a lado */
+#sistemas {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+    margin-top: 16px;
+}
+
+.sistema {
+    padding: 20px;
+    background-color: white;
+    border: 1px solid var(--linha);
+    border-left: 4px solid var(--verdeIf);
+    border-radius: 6px;
+}
+
+.sistema h3 {
+    margin-bottom: 6px;
+}
+
+/* Comandos em letra de computador, igual nas páginas dos problemas */
+#windows-linux code {
+    padding: 1px 6px;
+    font-family: Consolas, "Courier New", monospace;
+    font-size: 0.9em;
+    background-color: #E3EBE4;
+    border-radius: 3px;
+}
+
+/* No celular, uma caixa embaixo da outra */
+@media (max-width: 700px) {
+    #sistemas {
+        grid-template-columns: 1fr;
+    }
+}

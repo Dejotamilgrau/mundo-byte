@@ -38,65 +38,55 @@
     <main>
         <h1>Erro de permissão de administrador</h1>
         <hr>
-        <section>
-            <p>Ao instalar um programa, apagar ou alterar um arquivo, ou
-                mudar uma configuração, o Windows mostra mensagens como "Você
-                precisa de permissão para executar esta ação", "Acesso
-                negado" ou "A operação solicitada requer elevação". Isso
-                acontece quando a sua conta não é de administrador, quando o
-                programa precisa ser aberto como administrador, quando o
-                arquivo pertence a outro usuário ou ao sistema, ou quando o
-                computador é da escola ou de uma empresa e foi bloqueado de
-                propósito.
-            </p>
+        <section class="secao">
+            <div>
+                <h2>O problema</h2>
+                <p>Ao instalar um programa, apagar um arquivo ou mudar uma configuração, o sistema mostra mensagens como
+                    "Você precisa de permissão para executar esta ação", "Acesso negado", "A operação solicitada requer
+                    elevação" (Windows) ou "Permission denied" (Linux).</p>
+                <h2>Possíveis causas</h2>
+                <p>A conta usada não tem privilégios de administrador (permissão para alterar o sistema), o programa precisa
+                    ser executado com elevação, o arquivo pertence a outro usuário ou ao sistema, ou o computador é de uma
+                    escola ou empresa e foi bloqueado de propósito pela equipe de TI.</p>
+            </div>
+            <figure class="foto">
+                <img src="../IMG/SOFTWARE/permissao_admin.png" alt="Janela de autenticação do PolicyKit pedindo a senha de administrador no Linux">
+                <figcaption>Imagem: David Zeuthen, <a href="https://commons.wikimedia.org/wiki/File:PolicyKit-authentication-agent-example.png">GPLv2, via Wikimedia Commons</a></figcaption>
+            </figure>
         </section>
         <hr>
         <section>
-            <div>
-                <h2>Solução</h2>
-                <p>Veja primeiro qual é o tipo da sua conta, em
-                    Configurações &gt; Contas &gt; Suas informações: abaixo do
-                    nome aparece Administrador ou Conta padrão. Uma conta
-                    padrão precisa da senha de um administrador para instalar
-                    programas. Em computadores da escola ou do trabalho, esse
-                    bloqueio é proposital: peça ajuda ao responsável em vez de
-                    tentar burlar.</p>
-
-                <p>Para programas e comandos que pedem permissão, clique com
-                    o botão direito no programa e escolha Executar como
-                    administrador. Comandos como <code>sfc /scannow</code>
-                    também só funcionam no Prompt de Comando aberto como
-                    administrador: procure por cmd no menu Iniciar e use essa
-                    mesma opção.</p>
-
-                <p>Se o erro for de acesso negado em um arquivo ou pasta sua,
-                    clique com o botão direito nela, vá em Propriedades &gt;
-                    Segurança &gt; Avançado, clique em Alterar ao lado de
-                    Proprietário, digite o nome do seu usuário e confirme.
-                    Depois dê Controle total para o seu usuário na aba
-                    Segurança. Não mude as permissões de pastas do sistema,
-                    como C:\Windows. Se o arquivo não apaga porque está aberto
-                    em algum programa, veja a página
-                    <a href="arquivos_bloqueados.html">Arquivos ou pastas que
-                    não podem ser excluídos</a>.</p>
-
-                <p>Para melhor compreensão, pesquise um dos tutoriais em
-                    vídeo abaixo:</p>
-
-                <ul class="lista-videos">
-                    <li><a
-                            href="https://www.youtube.com/results?search_query=voc%C3%AA+precisa+de+permiss%C3%A3o+para+executar+esta+a%C3%A7%C3%A3o+windows+como+resolver">
-                            Você precisa de permissão para executar esta ação windows como resolver
-                        </a>
-                    </li>
-                    <li><a
-                            href="https://www.youtube.com/results?search_query=como+tomar+posse+de+pasta+windows+acesso+negado">
-                            Como tomar posse de pasta windows acesso negado
-                        </a>
-                    </li>
-                </ul>
-            </div>
-
+            <h2>Solução no Windows</h2>
+            <p>Veja o tipo da sua conta em Configurações &gt; Contas &gt; Suas informações: Administrador ou Conta
+                padrão. Uma conta padrão precisa da senha de um administrador. Em computadores da escola ou do trabalho,
+                o bloqueio é proposital: peça ajuda ao responsável.</p>
+            <p>Para programas e comandos que pedem permissão, clique com o botão direito e escolha Executar como
+                administrador; isso aciona o UAC (Controle de Conta de Usuário), a janela que pede confirmação. Se o erro
+                for em um arquivo seu, vá em Propriedades &gt; Segurança &gt; Avançado, clique em Alterar ao lado de
+                Proprietário, digite o seu usuário e dê Controle total. Não altere as permissões de pastas do sistema, como
+                <code>C:\Windows</code>.</p>
+        </section>
+        <hr>
+        <section>
+            <h2>Solução no Linux</h2>
+            <p>No Linux, o administrador é o usuário root. Comandos que alteram o sistema devem ser executados com
+                <code>sudo</code> na frente (por exemplo, <code>sudo apt install programa</code>), que pede a sua senha.
+                O comando <code>groups</code> mostra se o seu usuário está no grupo sudo; se não estiver, outro
+                administrador pode adicioná-lo com <code>sudo usermod -aG sudo nome-do-usuario</code>.</p>
+            <p>Para ver as permissões de um arquivo, use <code>ls -l arquivo</code>, que mostra o dono, o grupo e as
+                permissões de leitura (r), escrita (w) e execução (x). Para tomar posse de um arquivo seu, use
+                <code>sudo chown seu-usuario arquivo</code>; para permitir que um script seja executado, use
+                <code>chmod +x script.sh</code>.</p>
+        </section>
+        <hr>
+        <section>
+            <h2>Saiba mais</h2>
+            <p>Se o arquivo não pode ser apagado porque está aberto em algum programa, veja a página
+                <a href="arquivos_bloqueados.html">Arquivos ou pastas que não podem ser excluídos</a>.</p>
+            <ul class="lista-videos">
+                <li><a href="https://www.youtube.com/results?search_query=voc%C3%AA+precisa+de+permiss%C3%A3o+para+executar+esta+a%C3%A7%C3%A3o+windows+como+resolver">Você precisa de permissão para executar esta ação: como resolver</a></li>
+                <li><a href="https://www.youtube.com/results?search_query=como+tomar+posse+de+pasta+windows+acesso+negado">Como tomar posse de uma pasta no Windows (acesso negado)</a></li>
+            </ul>
         </section>
     </main>
 
@@ -114,7 +104,7 @@
             <p>Instagram: <a
                     href="https://www.instagram.com/tinf4ve?utm_source=ig_web_button_share_sheet&stkn=ZDNlZDc0MzIxNw==">Tinf4ve!</a>
             </p>
-            <p>E-mail: <a href="#"></a></p>
+            <p>E-mail: <a href="mailto:tinf4v2026@gmail.com">tinf4v2026@gmail.com</a></p>
         </div>
     </footer>
 

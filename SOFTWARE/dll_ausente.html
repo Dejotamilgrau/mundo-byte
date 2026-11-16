@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Erro de DLL ausente ao iniciar um programa - MundoByte</title>
+    <title>Erro de biblioteca ausente (DLL) ao iniciar um programa - MundoByte</title>
     <link rel="stylesheet" href="../CSS/reset.css">
     <link rel="stylesheet" href="CSS/base_estilo.css">
     <link rel="stylesheet" href="CSS/layout_estilo.css">
@@ -36,66 +36,53 @@
     <!-- Conteúdo, CARLA -->
 
     <main>
-        <h1>Erro de DLL ausente ao iniciar um programa</h1>
+        <h1>Erro de biblioteca ausente (DLL) ao iniciar um programa</h1>
         <hr>
-        <section>
-            <p>Ao abrir um jogo ou programa, aparece uma mensagem dizendo
-                que ele não pode ser iniciado porque falta um arquivo, como
-                MSVCP140.dll, VCRUNTIME140.dll ou VCRUNTIME140_1.dll. Esses
-                arquivos fazem parte do Microsoft Visual C++ Redistributable,
-                um pacote que muitos programas precisam para funcionar. O erro
-                aparece quando o pacote não está instalado, está corrompido ou
-                está faltando a versão de 32 ou de 64 bits.
-            </p>
+        <section class="secao">
+            <div>
+                <h2>O problema</h2>
+                <p>Ao abrir um jogo ou programa, aparece uma mensagem dizendo que ele não pode ser iniciado porque falta um
+                    arquivo, como MSVCP140.dll ou VCRUNTIME140.dll. Esses arquivos são bibliotecas compartilhadas
+                    (conjuntos de funções prontas que vários programas usam). No Windows elas têm a extensão .dll; no Linux,
+                    .so, e o erro aparece como "error while loading shared libraries".</p>
+                <h2>Possíveis causas</h2>
+                <p>O pacote que contém a biblioteca não está instalado, está corrompido ou falta a versão da arquitetura
+                    certa (32 ou 64 bits). No Windows, a maioria dessas DLLs faz parte do Microsoft Visual C++
+                    Redistributable ou do DirectX. No Linux, a biblioteca pertence a um pacote que não foi instalado como
+                    dependência.</p>
+            </div>
         </section>
         <hr>
         <section>
-            <div>
-                <h2>Solução</h2>
-                <p>Baixe o Microsoft Visual C++ Redistributable mais recente
-                    pelo site oficial da Microsoft e instale as duas versões,
-                    x64 e x86, porque muitos jogos são de 32 bits mesmo em um
-                    Windows de 64 bits. Se ele já estiver instalado, repare:
-                    em Configurações &gt; Aplicativos &gt; Aplicativos
-                    instalados, clique no Microsoft Visual C++ 2015-2022
-                    Redistributable, escolha Modificar e depois Reparar.
-                    Reinicie o computador e tente abrir o programa de
-                    novo.</p>
-
-                <p>Se o arquivo da mensagem for parecido com d3dx9_43.dll
-                    ou xinput1_3.dll, o que falta é o DirectX antigo: instale
-                    o Runtime do DirectX para usuário final, também pelo site
-                    da Microsoft. Em jogos da Steam, clique com o botão
-                    direito no jogo, vá em Propriedades &gt; Arquivos
-                    instalados &gt; Verificar integridade dos arquivos, que
-                    baixa de novo o que estiver faltando.</p>
-
-                <p>Nunca baixe arquivos .dll avulsos de sites de DLL: eles
-                    podem ter vírus ou ser da versão errada. Se o erro
-                    continuar, reinstale o programa e execute
-                    <code>sfc /scannow</code> no Prompt de Comando como
-                    administrador. Se o programa trava ou fecha sem mostrar
-                    erro de DLL, veja a página
-                    <a href="programa_fecha.html">Programa não abre ou fecha
-                    sozinho</a>.</p>
-
-                <p>Para melhor compreensão, pesquise um dos tutoriais em
-                    vídeo abaixo:</p>
-
-                <ul class="lista-videos">
-                    <li><a
-                            href="https://www.youtube.com/results?search_query=msvcp140.dll+est%C3%A1+faltando+como+resolver">
-                            Msvcp140.dll está faltando como resolver
-                        </a>
-                    </li>
-                    <li><a
-                            href="https://www.youtube.com/results?search_query=como+instalar+visual+c%2B%2B+redistributable">
-                            Como instalar visual c++ redistributable
-                        </a>
-                    </li>
-                </ul>
-            </div>
-
+            <h2>Solução no Windows</h2>
+            <p>Baixe o Microsoft Visual C++ Redistributable mais recente no site oficial da Microsoft e instale as duas
+                versões, x64 e x86, porque muitos jogos são de 32 bits mesmo em um Windows de 64 bits. Se ele já estiver
+                instalado, repare-o em Configurações &gt; Aplicativos &gt; Aplicativos instalados &gt; Modificar &gt;
+                Reparar.</p>
+            <p>Se o arquivo for parecido com d3dx9_43.dll ou xinput1_3.dll, instale o Runtime do DirectX para usuário
+                final. Na Steam, use Propriedades &gt; Arquivos instalados &gt; Verificar integridade dos arquivos. Nunca
+                baixe arquivos .dll avulsos de sites de DLL: eles podem conter malware ou ser da versão errada.</p>
+        </section>
+        <hr>
+        <section>
+            <h2>Solução no Linux</h2>
+            <p>O comando <code>ldd /caminho/do/programa</code> lista as bibliotecas de que o programa precisa e marca
+                como "not found" as que estão faltando. Para descobrir qual pacote contém a biblioteca, instale o
+                apt-file (<code>sudo apt install apt-file</code> e <code>sudo apt-file update</code>) e execute
+                <code>apt-file search nome-da-biblioteca.so</code>.</p>
+            <p>Depois, instale o pacote encontrado com <code>sudo apt install nome-do-pacote</code>. Se o programa veio
+                da loja de aplicativos em formato Flatpak ou Snap, as bibliotecas já vêm junto: reinstalar o programa
+                costuma resolver.</p>
+        </section>
+        <hr>
+        <section>
+            <h2>Saiba mais</h2>
+            <p>Se o programa fecha sem mostrar erro de biblioteca, veja a página <a href="programa_fecha.html">Programa
+                não abre ou fecha sozinho</a> ou pesquise um dos tutoriais em vídeo abaixo:</p>
+            <ul class="lista-videos">
+                <li><a href="https://www.youtube.com/results?search_query=msvcp140.dll+est%C3%A1+faltando+como+resolver">MSVCP140.dll está faltando: como resolver</a></li>
+                <li><a href="https://www.youtube.com/results?search_query=como+instalar+visual+c%2B%2B+redistributable">Como instalar o Visual C++ Redistributable</a></li>
+            </ul>
         </section>
     </main>
 
@@ -113,7 +100,7 @@
             <p>Instagram: <a
                     href="https://www.instagram.com/tinf4ve?utm_source=ig_web_button_share_sheet&stkn=ZDNlZDc0MzIxNw==">Tinf4ve!</a>
             </p>
-            <p>E-mail: <a href="#"></a></p>
+            <p>E-mail: <a href="mailto:tinf4v2026@gmail.com">tinf4v2026@gmail.com</a></p>
         </div>
     </footer>
 

@@ -38,42 +38,43 @@
     <main>
         <h1>Impressora não imprime</h1>
         <hr>
-        <section>
-            <p>É comum mandar um documento para a impressora e nada
-                acontecer: o arquivo fica parado na fila de impressão ou a
-                impressora aparece como offline, mesmo estando ligada.
-                Normalmente a causa é um documento travado na fila, uma falha
-                de conexão ou o serviço de impressão do Windows parado.
-            </p>
+        <section class="secao">
+            <div>
+                <h2>O problema</h2>
+                <p>O documento é enviado para a impressora e nada acontece: o trabalho fica parado na fila de impressão
+                    (a lista de documentos aguardando para serem impressos) ou a impressora aparece como offline, mesmo
+                    estando ligada.</p>
+                <h2>Possíveis causas</h2>
+                <p>Um documento travado na fila, falha na conexão (cabo USB ou rede Wi-Fi), driver ausente ou o serviço
+                    de impressão parado: o Spooler de Impressão no Windows ou o CUPS (Common Unix Printing System, o
+                    sistema de impressão do Linux).</p>
+            </div>
+            <figure class="foto">
+                <img src="../IMG/SOFTWARE/impressora.jpg" alt="Impressora jato de tinta Epson">
+                <figcaption>Imagem: Somebody in the WWW at English Wikipedia, <a href="https://commons.wikimedia.org/wiki/File:Epson-inkjet-printer.jpg">CC BY-SA 3.0, via Wikimedia Commons</a></figcaption>
+            </figure>
         </section>
         <hr>
         <section>
-            <div>
-                <h2>Solução</h2>
-                <p>Confira primeiro se a impressora está ligada, com papel e
-                    sem mensagem de erro no visor, e se o cabo USB está bem
-                    conectado. Se ela for de rede, precisa estar conectada ao
-                    mesmo Wi-Fi do computador. Depois, em Configurações &gt;
-                    Bluetooth e dispositivos &gt; Impressoras e scanners,
-                    abra a fila de impressão da impressora e, no menu
-                    Impressora, desmarque a opção Usar impressora offline
-                    caso ela esteja marcada.</p>
-
-                <p>Se a fila estiver travada, cancele todos os documentos
-                    dela. Quando eles não somem, é preciso reiniciar o
-                    serviço de impressão: digite services.msc no menu
-                    Executar (Win + R), localize o serviço Spooler de
-                    Impressão e clique em Parar. Em seguida, apague os
-                    arquivos da pasta C:\Windows\System32\spool\PRINTERS,
-                    volte ao serviço e clique em Iniciar. Isso limpa a fila
-                    por completo.</p>
-
-                <p>Se mesmo assim a impressora não funcionar, remova ela da
-                    lista de Impressoras e scanners e adicione novamente,
-                    instalando o driver mais recente disponível no site do
-                    fabricante.</p>
-            </div>
-
+            <h2>Solução no Windows</h2>
+            <p>Confira se a impressora está ligada, com papel, sem mensagem de erro no visor e com o cabo USB conectado;
+                se for de rede, ela precisa estar na mesma rede do computador. Em Configurações &gt; Bluetooth e
+                dispositivos &gt; Impressoras e scanners, abra a fila da impressora e desmarque Usar impressora offline.</p>
+            <p>Se a fila estiver travada, digite <code>services.msc</code> no Executar (Win + R), pare o serviço Spooler de
+                Impressão, apague os arquivos da pasta <code>C:\Windows\System32\spool\PRINTERS</code> e inicie o serviço
+                novamente. Se não resolver, remova a impressora e adicione-a de novo com o driver mais recente do site do
+                fabricante.</p>
+        </section>
+        <hr>
+        <section>
+            <h2>Solução no Linux</h2>
+            <p>Abra Configurações &gt; Impressoras, confira se a impressora aparece e use o menu da impressora para ver e
+                cancelar os trabalhos. Pelo terminal, <code>lpstat -t</code> mostra o estado das impressoras e da fila, e
+                <code>cancel -a</code> cancela todos os trabalhos.</p>
+            <p>Se a fila continuar travada, reinicie o serviço de impressão com <code>sudo systemctl restart cups</code>.
+                A página <code>http://localhost:631</code>, aberta no navegador, é a interface de administração do CUPS,
+                onde é possível adicionar a impressora novamente. Muitas impressoras HP precisam do pacote
+                <code>hplip</code>, e as de outras marcas podem ter driver no site do fabricante.</p>
         </section>
     </main>
 
@@ -91,7 +92,7 @@
             <p>Instagram: <a
                     href="https://www.instagram.com/tinf4ve?utm_source=ig_web_button_share_sheet&stkn=ZDNlZDc0MzIxNw==">Tinf4ve!</a>
             </p>
-            <p>E-mail: <a href="#"></a></p>
+            <p>E-mail: <a href="mailto:tinf4v2026@gmail.com">tinf4v2026@gmail.com</a></p>
         </div>
     </footer>
 

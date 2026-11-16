@@ -36,50 +36,55 @@
     <!-- Conteúdo, CHRISTOPHER B. -->
 
     <main>
-        <h1>A Corrupção do Sistema Operacional em Computadores Antigos e a Sua Solução</h1>
+        <h1>Sistema operacional corrompido</h1>
+        <hr>
+        <section class="secao">
+            <div>
+                <h2>O problema</h2>
+                <p>Um sistema operacional corrompido é aquele em que arquivos essenciais foram danificados ou apagados,
+                    fazendo com que o computador não consiga iniciar ou funcione de forma instável. Os sintomas mais
+                    frequentes são mensagens como "Missing Operating System" ou "BOOTMGR is missing" ao ligar, a tela azul
+                    (BSOD), programas que param de funcionar e, no Linux, o computador parando no terminal do initramfs.</p>
+                <h2>Possíveis causas</h2>
+                <p>Desligamento incorreto ou queda de energia enquanto arquivos estavam sendo gravados, atualizações
+                    interrompidas, malware e, principalmente em máquinas antigas, setores defeituosos (partes danificadas da
+                    superfície do HD, que não guardam mais dados). Em computadores antigos o problema é mais comum, pois o
+                    HD já está desgastado, a fonte de alimentação pode estar fraca e o sistema passou anos sem
+                    manutenção.</p>
+            </div>
+            <figure class="foto">
+                <img src="../IMG/so-corrompido.png" alt="Tela Windows Error Recovery informando que o Windows não conseguiu iniciar">
+                <figcaption>Foto: turma TINF4V, no laboratório</figcaption>
+            </figure>
+        </section>
         <hr>
         <section>
-            <p>Um sistema operacional corrompido é aquele em que arquivos essenciais do Windows ou do Linux foram
-                danificados ou apagados, fazendo com que o computador não consiga iniciar ou funcione de forma
-                instável. Em computadores antigos esse problema é bem mais comum, pois o HD já está desgastado pelo
-                tempo de uso, a fonte de energia pode estar fraca e muitas vezes o sistema passou anos sem manutenção.
-                Os sintomas mais frequentes são mensagens como "Missing Operating System" ou "BOOTMGR is missing" ao
-                ligar, a tradicional tela azul, programas que param de funcionar e, no Linux, o computador parando no
-                terminal "initramfs".
-            </p>
+            <h2>Solução no Windows</h2>
+            <p>Inicie pelo pendrive de instalação e use a opção Reparo de Inicialização. Se não resolver, no Prompt de
+                Comando das opções de recuperação, os comandos <code>bootrec /fixmbr</code>, <code>bootrec /fixboot</code>
+                e <code>bootrec /rebuildbcd</code> recuperam a inicialização. Com o Windows funcionando, o comando
+                <code>sfc /scannow</code> repara os arquivos do sistema e <code>chkdsk C: /f /r</code> marca os setores
+                defeituosos para que não sejam mais usados.</p>
+            <p>Para verificar a saúde do disco, use o programa CrystalDiskInfo, que lê os dados S.M.A.R.T. (o
+                autodiagnóstico que o próprio HD ou SSD faz).</p>
         </section>
         <hr>
-        <section class="secao">
-            <div>
-                <h2>Possíveis causas</h2>
-                <p>As causas mais comuns são o desligamento incorreto do computador ou uma queda de energia enquanto
-                    arquivos estavam sendo gravados, atualizações do sistema interrompidas no meio, vírus e,
-                    principalmente em máquinas antigas, setores defeituosos no HD. Para saber se o problema está no
-                    HD, pode-se verificar a saúde do disco com o programa CrystalDiskInfo no Windows ou com o comando
-                    "sudo smartctl -a /dev/sda" no Linux. Barulhos de clique vindos do gabinete também indicam que o
-                    HD está falhando.
-                </p>
-            </div>
+        <section>
+            <h2>Solução no Linux</h2>
+            <p>No terminal do initramfs ou a partir de um pendrive do Ubuntu, execute <code>fsck -y /dev/sda2</code>
+                (trocando sda2 pela partição do sistema) para verificar e corrigir o sistema de arquivos. Com o sistema
+                iniciado, <code>sudo dpkg --configure -a</code> termina a instalação de pacotes que ficaram pela metade e
+                <code>sudo apt install --fix-broken</code> corrige dependências quebradas.</p>
+            <p>A saúde do disco é verificada com <code>sudo smartctl -a /dev/sda</code> (pacote smartmontools) ou pelo
+                programa Discos, na opção Dados e testes SMART.</p>
         </section>
         <hr>
-        <section class="secao">
-            <div>
-                <h2>Solução</h2>
-                <p>No Windows, o primeiro passo é iniciar pelo pen drive de instalação e utilizar a opção "Reparo de
-                    Inicialização". Caso não resolva, pelo Prompt de Comando das opções de recuperação, os comandos
-                    "bootrec /fixmbr", "bootrec /fixboot" e "bootrec /rebuildbcd" recuperam o boot do sistema. Com o
-                    Windows funcionando novamente, o comando "sfc /scannow" verifica e corrige os arquivos do sistema,
-                    e o "chkdsk C: /f /r" marca os setores defeituosos do HD para que não sejam mais usados. No Linux,
-                    utiliza-se o "fsck" na partição do sistema e, em seguida, "sudo dpkg --configure -a" para terminar
-                    a instalação de pacotes que ficaram pela metade.
-                </p>
-                <p>Se nada disso funcionar, a solução definitiva é salvar os arquivos importantes e reinstalar o
-                    sistema operacional. Antes disso, é importante verificar se o HD está saudável, pois se ele estiver
-                    com defeito o problema volta a acontecer, sendo necessário trocá-lo.
-                </p>
-            </div>
-
-            <img id="fotoProblema1" src="../IMG/so-corrompido.png" alt="Tela Windows Error Recovery">
+        <section>
+            <h2>Quando nada funciona</h2>
+            <p>Salve os arquivos importantes (iniciando por um pendrive com Linux, se o sistema não abrir) e reinstale o
+                sistema operacional. Antes disso, confira se o HD está saudável: se ele estiver com defeito, o problema
+                volta a acontecer e é necessário trocá-lo. Barulhos de clique vindos do gabinete também indicam HD com
+                falha. Veja também <a href="loop_reparo.html">Loop de reparo automático</a>.</p>
         </section>
     </main>
 
@@ -97,7 +102,7 @@
             <p>Instagram: <a
                     href="https://www.instagram.com/tinf4ve?utm_source=ig_web_button_share_sheet&stkn=ZDNlZDc0MzIxNw==">Tinf4ve!</a>
             </p>
-            <p>E-mail: <a href="#"></a></p>
+            <p>E-mail: <a href="mailto:tinf4v2026@gmail.com">tinf4v2026@gmail.com</a></p>
         </div>
     </footer>
 

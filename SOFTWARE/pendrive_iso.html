@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Como Criar um Pen Drive de Boot Direto com a ISO - MundoByte</title>
+    <title>Como criar um pendrive de boot direto com a ISO - MundoByte</title>
     <link rel="stylesheet" href="../CSS/reset.css">
     <link rel="stylesheet" href="CSS/base_estilo.css">
     <link rel="stylesheet" href="CSS/layout_estilo.css">
@@ -36,53 +36,47 @@
     <!-- Conteúdo, AMARAL -->
 
     <main>
-        <h1>Como Criar um Pen Drive de Boot Direto com a ISO</h1>
+        <h1>Como criar um pendrive de boot direto com a ISO</h1>
         <hr>
-        <section>
-            <p>Também é possível criar um pen drive de boot sem usar o Ventoy ou o Rufus, gravando a imagem ISO
-                diretamente com ferramentas que já vêm no sistema. No Linux isso é feito com o comando "dd" ou com o
-                programa "Discos", e no Windows, para instalar o Windows 10 ou 11, basta copiar os arquivos da ISO para
-                o pen drive. Essas formas são úteis quando não se tem internet para baixar outros programas, mas exigem
-                mais cuidado.
-            </p>
+        <section class="secao">
+            <div>
+                <h2>Quando usar</h2>
+                <p>É possível criar um pendrive de boot sem o Ventoy ou o Rufus, gravando a imagem ISO com ferramentas que
+                    já vêm no sistema. No Linux isso é feito com o comando <code>dd</code> ou com o programa Discos; no
+                    Windows, para o Windows 10 ou 11, basta copiar os arquivos da ISO. Essas formas são úteis quando não há
+                    internet para baixar outros programas, mas exigem mais cuidado.</p>
+            </div>
+            <figure class="foto">
+                <img src="../IMG/SOFTWARE/pendrive_iso.jpg" alt="Pendrive USB ao lado de uma moeda">
+                <figcaption>Imagem: EU+Mexico, <a href="https://commons.wikimedia.org/wiki/File:USB_flash_drive,_1TB.jpg">CC0, via Wikimedia Commons</a></figcaption>
+            </figure>
         </section>
         <hr>
         <section>
             <h2>No Linux, pelo terminal</h2>
-            <p>Primeiro, conecta-se o pen drive e usa-se o comando "lsblk" para descobrir o nome dele, que aparece
-                como "sdb", "sdc" ou parecido, conferindo pelo tamanho. Esse passo é muito importante, pois se o disco
-                errado for escolhido, o comando apaga o HD do computador.
-            </p>
-            <p>Depois, grava-se a ISO com o comando "sudo dd if=arquivo.iso of=/dev/sdX bs=4M status=progress
-                oflag=sync", trocando "arquivo.iso" pelo caminho da imagem e "sdX" pelo nome do pen drive. O nome deve
-                ser o do disco inteiro (por exemplo, /dev/sdb) e não o de uma partição (como /dev/sdb1). Quando o
-                comando terminar, o pen drive já está pronto.
-            </p>
-            <p>Esse método funciona bem com ISOs de Linux, como o Ubuntu. Com ISOs do Windows, o "dd" normalmente não
-                funciona, sendo melhor usar o Rufus ou o método explicado abaixo.
-            </p>
+            <p>Conecte o pendrive e use <code>lsblk</code> para descobrir o nome dele, que aparece como sdb, sdc ou
+                parecido, conferindo pelo tamanho. Esse passo é muito importante: se o disco errado for escolhido, o
+                comando apaga o HD do computador.</p>
+            <p>Grave a ISO com <code>sudo dd if=arquivo.iso of=/dev/sdX bs=4M status=progress oflag=sync</code>, trocando
+                arquivo.iso pelo caminho da imagem e sdX pelo nome do pendrive. Use o nome do disco inteiro (por exemplo,
+                /dev/sdb), não o de uma partição (/dev/sdb1). Esse método funciona bem com ISOs de Linux; com ISOs do
+                Windows, o dd normalmente não funciona.</p>
         </section>
         <hr>
         <section>
             <h2>No Linux, pelo programa Discos</h2>
-            <p>No Ubuntu, também é possível fazer a mesma coisa sem o terminal. Abre-se o programa "Discos",
-                seleciona-se o pen drive na lista da esquerda, clica-se no menu de três pontos e em "Restaurar imagem
-                de disco", escolhendo o arquivo ISO e clicando em "Iniciar restauração".
-            </p>
+            <p>No Ubuntu, abra o programa Discos, selecione o pendrive na lista da esquerda, clique no menu de três pontos
+                e em Restaurar imagem de disco, escolha o arquivo ISO e clique em Iniciar restauração.</p>
         </section>
         <hr>
         <section>
             <h2>No Windows, copiando os arquivos</h2>
-            <p>Para o Windows 10 e 11, o pen drive pode ser criado apenas copiando os arquivos da ISO. Primeiro,
-                formata-se o pen drive em FAT32. Depois, dá-se um duplo clique no arquivo ISO, que é aberto como se
-                fosse um DVD, e copia-se todo o seu conteúdo para o pen drive.
-            </p>
-            <p>Esse método tem duas limitações. Ele só funciona em computadores com UEFI, ou seja, não serve para
-                computadores antigos com BIOS Legacy. Além disso, o FAT32 não aceita arquivos maiores que 4 GB, e em
-                algumas ISOs o arquivo "sources/install.wim" passa desse tamanho, fazendo a cópia falhar. Nesses casos,
-                o mais simples é usar o <a href="pendrive_rufus.html">Rufus</a> ou o
-                <a href="pendrive_ventoy.html">Ventoy</a>.
-            </p>
+            <p>Para o Windows 10 e 11, formate o pendrive em FAT32, dê um duplo clique no arquivo ISO, que é montado
+                (aberto como se fosse um DVD), e copie todo o conteúdo para o pendrive.</p>
+            <p>Esse método só funciona em computadores com UEFI, não em computadores antigos com BIOS Legacy. Além disso,
+                o FAT32 não aceita arquivos maiores que 4 GB, e em algumas ISOs o arquivo
+                <code>sources/install.wim</code> passa desse tamanho. Nesses casos, use o <a href="pendrive_rufus.html">Rufus</a>
+                ou o <a href="pendrive_ventoy.html">Ventoy</a>.</p>
         </section>
     </main>
 
@@ -100,7 +94,7 @@
             <p>Instagram: <a
                     href="https://www.instagram.com/tinf4ve?utm_source=ig_web_button_share_sheet&stkn=ZDNlZDc0MzIxNw==">Tinf4ve!</a>
             </p>
-            <p>E-mail: <a href="#"></a></p>
+            <p>E-mail: <a href="mailto:tinf4v2026@gmail.com">tinf4v2026@gmail.com</a></p>
         </div>
     </footer>
     

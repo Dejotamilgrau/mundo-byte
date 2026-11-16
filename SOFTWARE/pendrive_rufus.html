@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Como Criar um Pen Drive de Boot com o Rufus - MundoByte</title>
+    <title>Como criar um pendrive de boot com o Rufus - MundoByte</title>
     <link rel="stylesheet" href="../CSS/reset.css">
     <link rel="stylesheet" href="CSS/base_estilo.css">
     <link rel="stylesheet" href="CSS/layout_estilo.css">
@@ -36,53 +36,50 @@
     <!-- Conteúdo, AMARAL -->
 
     <main>
-        <h1>Como Criar um Pen Drive de Boot com o Rufus</h1>
+        <h1>Como criar um pendrive de boot com o Rufus</h1>
         <hr>
-        <section>
-            <p>O Rufus é um programa gratuito para Windows que grava uma imagem ISO no pen drive, deixando ele pronto
-                para instalar um sistema operacional. Ao contrário do Ventoy, cada pen drive fica com apenas um sistema
-                por vez, mas em troca o Rufus permite ajustar várias configurações, o que ajuda bastante em
-                computadores antigos. O programa não precisa ser instalado, basta baixar no site oficial rufus.ie e
-                abrir.
-            </p>
+        <section class="secao">
+            <div>
+                <h2>O que é o Rufus</h2>
+                <p>O Rufus é um programa livre para Windows que grava uma imagem ISO no pendrive, deixando-o pronto para
+                    instalar um sistema operacional. Diferente do Ventoy, cada pendrive fica com um sistema por vez, mas o
+                    Rufus permite ajustar várias configurações, o que ajuda em computadores antigos. Ele não precisa ser
+                    instalado: basta baixar no site oficial rufus.ie e abrir.</p>
+                <h2>O que é necessário</h2>
+                <p>Um pendrive de pelo menos 8 GB, o arquivo ISO do sistema e um computador com Windows. Todo o conteúdo do
+                    pendrive será apagado durante a gravação.</p>
+            </div>
+            <figure class="foto">
+                <img src="../IMG/SOFTWARE/pendrive_rufus.png" alt="Janela principal do Rufus">
+                <figcaption>Imagem: Rufus, <a href="https://commons.wikimedia.org/wiki/File:Rufus_Screenshot.png">GPL, via Wikimedia Commons</a></figcaption>
+            </figure>
         </section>
         <hr>
         <section>
-            <h2>O que é necessário</h2>
-            <p>Um pen drive de pelo menos 8 GB, o arquivo ISO do sistema e um computador com Windows para rodar o
-                Rufus. Todo o conteúdo do pen drive será apagado durante a gravação, então é preciso salvar os
-                arquivos importantes antes.
-            </p>
+            <h2>Passo a passo no Windows</h2>
+            <p>Em Dispositivo, selecione o pendrive. Em Seleção de boot, clique em SELECIONAR e escolha o arquivo ISO.</p>
+            <p>Em Esquema de partição, escolha MBR para computadores antigos com BIOS Legacy (com Sistema de destino "BIOS
+                ou UEFI-CSM") ou GPT para computadores com UEFI. Se o esquema estiver errado, o pendrive não aparece no
+                menu de boot. O Sistema de arquivos (a forma de organizar os dados no pendrive, como FAT32 ou NTFS) e o
+                Tamanho do cluster podem ficar como o Rufus sugerir.</p>
+            <p>Clique em INICIAR. Com ISOs do Windows 11, o Rufus oferece remover a exigência de TPM 2.0 (chip de
+                segurança) e Secure Boot (inicialização segura), permitindo instalar em computadores que oficialmente não
+                seriam compatíveis. Com ISOs de Linux, escolha o modo Imagem ISO (recomendado) ou, se não funcionar, o modo
+                Imagem DD. Espere aparecer "PRONTO".</p>
         </section>
         <hr>
         <section>
-            <h2>Passo a passo</h2>
-            <p>Ao abrir o Rufus, em "Dispositivo" seleciona-se o pen drive. Em "Seleção de boot", clica-se em
-                "SELECIONAR" e escolhe-se o arquivo ISO.
-            </p>
-            <p>Em seguida, define-se o "Esquema de partição". Para computadores antigos, que usam BIOS Legacy,
-                escolhe-se MBR, e o "Sistema de destino" fica como "BIOS (ou UEFI-CSM)". Para computadores mais novos
-                com UEFI, escolhe-se GPT. Se o esquema estiver errado, o pen drive não aparece no menu de boot do
-                computador. Os campos "Sistema de arquivos" e "Tamanho do cluster" podem ficar como o Rufus sugerir.
-            </p>
-            <p>Por fim, clica-se em "INICIAR". Com ISOs do Windows 11, o Rufus mostra uma janela com opções para
-                remover a exigência de TPM 2.0 e Secure Boot, o que permite instalar em computadores que oficialmente
-                não seriam compatíveis. Com ISOs de Linux, ele pergunta se a gravação deve ser no "modo Imagem ISO",
-                que é o recomendado, ou no "modo Imagem DD", que pode ser usado caso o primeiro não funcione. Depois de
-                confirmar o aviso de que os dados serão apagados, basta esperar a barra de progresso chegar ao fim e
-                aparecer "PRONTO".
-            </p>
+            <h2>E no Linux?</h2>
+            <p>O Rufus só funciona no Windows. No Linux, o mesmo resultado é obtido com o <a href="pendrive_ventoy.html">Ventoy</a>,
+                que tem versão para Linux, ou gravando a ISO diretamente com o comando <code>dd</code> ou com o programa
+                Discos, como explicado em <a href="pendrive_iso.html">Como criar um pendrive de boot direto com a ISO</a>.</p>
         </section>
         <hr>
         <section>
-            <h2>Como iniciar pelo pen drive</h2>
-            <p>Com o pen drive conectado, liga-se o computador e aperta-se a tecla do menu de boot (geralmente F12,
-                F11, F8 ou Esc, dependendo da placa-mãe) e escolhe-se o pen drive. A instalação do sistema começa
-                normalmente, como se fosse por um CD ou DVD.
-            </p>
-            <p>No nosso trabalho, o Rufus também não conseguiu instalar o Windows XP, por limitações do próprio
-                sistema. A solução está na página <a href="problema1.html">do problema com o Windows XP</a>.
-            </p>
+            <h2>Como iniciar pelo pendrive</h2>
+            <p>Com o pendrive conectado, ligue o computador, aperte a tecla do menu de boot (geralmente F12, F11, F8 ou
+                Esc) e escolha o pendrive. No nosso trabalho, o Rufus também não conseguiu instalar o Windows XP; a solução
+                está na página <a href="problema1.html">Erro de boot do Windows XP no Rufus e no Ventoy</a>.</p>
         </section>
     </main>
 
@@ -100,7 +97,7 @@
             <p>Instagram: <a
                     href="https://www.instagram.com/tinf4ve?utm_source=ig_web_button_share_sheet&stkn=ZDNlZDc0MzIxNw==">Tinf4ve!</a>
             </p>
-            <p>E-mail: <a href="#"></a></p>
+            <p>E-mail: <a href="mailto:tinf4v2026@gmail.com">tinf4v2026@gmail.com</a></p>
         </div>
     </footer>
 

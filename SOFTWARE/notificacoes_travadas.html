@@ -38,60 +38,50 @@
     <main>
         <h1>Notificações e Central de Ações travadas</h1>
         <hr>
-        <section>
-            <p>O painel de notificações não abre ao clicar no canto da
-                barra de tarefas, abre vazio, ou os avisos ficam acumulados e
-                congelados na tela. No Windows 10 esse painel se chama Central
-                de Ações; no Windows 11, as notificações abrem ao clicar na
-                data e hora. As causas mais comuns são o Windows Explorer
-                travado, o modo Não perturbe ligado, algum aplicativo
-                mandando avisos demais ou arquivos do sistema
-                corrompidos.
-            </p>
+        <section class="secao">
+            <div>
+                <h2>O problema</h2>
+                <p>O painel de notificações não abre, abre vazio ou os avisos ficam acumulados e congelados na tela. No
+                    Windows 10 esse painel se chama Central de Ações; no Windows 11 ele abre ao clicar na data e hora; no
+                    Ubuntu, as notificações aparecem ao clicar no relógio do painel superior.</p>
+                <h2>Possíveis causas</h2>
+                <p>O processo da interface travado (Windows Explorer ou GNOME Shell), o modo Não perturbe ativado, um
+                    aplicativo enviando notificações em excesso ou arquivos do sistema corrompidos.</p>
+            </div>
+            <figure class="foto">
+                <img src="../IMG/SOFTWARE/notificacoes_travadas.png" alt="Notificação exibida pelo Zenity no GNOME">
+                <figcaption>Imagem: Sun Microsystems/GNOME, <a href="https://commons.wikimedia.org/wiki/File:Zenity_notification.png">CC BY-SA 3.0, via Wikimedia Commons</a></figcaption>
+            </figure>
         </section>
         <hr>
         <section>
-            <div>
-                <h2>Solução</h2>
-                <p>Comece reiniciando o Windows Explorer, que também cuida
-                    da barra de tarefas: abra o Gerenciador de Tarefas
-                    (Ctrl + Shift + Esc), clique com o botão direito em
-                    Windows Explorer e escolha Reiniciar. Depois teste o
-                    atalho Win + N, que abre as notificações no Windows 11,
-                    ou Win + A, que abre a Central de Ações no Windows
-                    10.</p>
-
-                <p>Confira em Configurações &gt; Sistema &gt; Notificações
-                    se as notificações estão ativadas e se o Não perturbe (no
-                    Windows 10, Assistente de Foco) está desligado. Na mesma
-                    tela, desative as notificações do aplicativo que está
-                    enchendo o painel de avisos.</p>
-
-                <p>Se o painel continuar sem abrir, verifique os arquivos
-                    do sistema: abra o Prompt de Comando como administrador e
-                    execute <code>sfc /scannow</code> e depois
-                    <code>DISM /Online /Cleanup-Image /RestoreHealth</code>.
-                    Se ainda assim não funcionar, crie outro usuário no
-                    Windows e teste nele: se lá o painel funcionar, o
-                    problema está no perfil do seu usuário.</p>
-
-                <p>Para melhor compreensão, pesquise um dos tutoriais em
-                    vídeo abaixo:</p>
-
-                <ul class="lista-videos">
-                    <li><a
-                            href="https://www.youtube.com/results?search_query=central+de+notifica%C3%A7%C3%B5es+n%C3%A3o+abre+windows+11">
-                            Central de notificações não abre windows 11
-                        </a>
-                    </li>
-                    <li><a
-                            href="https://www.youtube.com/results?search_query=central+de+a%C3%A7%C3%B5es+n%C3%A3o+abre+windows+10">
-                            Central de ações não abre windows 10
-                        </a>
-                    </li>
-                </ul>
-            </div>
-
+            <h2>Solução no Windows</h2>
+            <p>Reinicie o Windows Explorer pelo Gerenciador de Tarefas (Ctrl + Shift + Esc) e teste o atalho Win + N
+                (Windows 11) ou Win + A (Windows 10). Em Configurações &gt; Sistema &gt; Notificações, confira se as
+                notificações estão ativadas, se o Não perturbe (Assistente de Foco no Windows 10) está desligado e
+                desative as notificações do aplicativo que está enchendo o painel.</p>
+            <p>Se o painel continuar sem abrir, execute <code>sfc /scannow</code> e <code>DISM /Online /Cleanup-Image
+                /RestoreHealth</code> no Prompt de Comando como administrador. Se em outra conta de usuário o painel
+                funcionar, o problema está no perfil do seu usuário.</p>
+        </section>
+        <hr>
+        <section>
+            <h2>Solução no Linux</h2>
+            <p>No Ubuntu, abra Configurações &gt; Notificações e confira se o Não perturbe está desligado e se o
+                aplicativo pode enviar notificações. O atalho Super + V abre a lista de notificações.</p>
+            <p>Se o painel travar, reinicie o GNOME Shell (no Xorg, Alt + F2, digite <code>r</code> e Enter; no Wayland,
+                encerre a sessão e entre de novo). Para testar se as notificações funcionam, execute
+                <code>notify-send "Teste" "Funcionou"</code> no terminal.</p>
+        </section>
+        <hr>
+        <section>
+            <h2>Saiba mais</h2>
+            <p>Veja também a página <a href="barra_tarefas.html">Barra de tarefas travada</a> ou pesquise um dos
+                tutoriais em vídeo abaixo:</p>
+            <ul class="lista-videos">
+                <li><a href="https://www.youtube.com/results?search_query=central+de+notifica%C3%A7%C3%B5es+n%C3%A3o+abre+windows+11">Central de notificações não abre no Windows 11</a></li>
+                <li><a href="https://www.youtube.com/results?search_query=central+de+a%C3%A7%C3%B5es+n%C3%A3o+abre+windows+10">Central de Ações não abre no Windows 10</a></li>
+            </ul>
         </section>
     </main>
 
@@ -109,7 +99,7 @@
             <p>Instagram: <a
                     href="https://www.instagram.com/tinf4ve?utm_source=ig_web_button_share_sheet&stkn=ZDNlZDc0MzIxNw==">Tinf4ve!</a>
             </p>
-            <p>E-mail: <a href="#"></a></p>
+            <p>E-mail: <a href="mailto:tinf4v2026@gmail.com">tinf4v2026@gmail.com</a></p>
         </div>
     </footer>
 

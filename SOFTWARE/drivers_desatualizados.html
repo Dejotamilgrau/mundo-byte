@@ -38,65 +38,59 @@
     <main>
         <h1>Drivers desatualizados ou corrompidos</h1>
         <hr>
-        <section>
-            <p>Driver é o programa que faz o Windows conversar com uma peça
-                do computador, como a placa de vídeo, o som, a placa de rede
-                ou a impressora. Quando o driver está faltando, está velho ou
-                corrompido, a peça para de funcionar ou funciona mal: a imagem
-                fica em baixa resolução, o som some, a internet não conecta ou
-                aparecem travamentos e telas azuis. Isso é comum depois de
-                formatar o computador ou de uma atualização do Windows.
-            </p>
+        <section class="secao">
+            <div>
+                <h2>O problema</h2>
+                <p>Driver é o software que permite ao sistema operacional se comunicar com um componente de hardware,
+                    como a placa de vídeo, a placa de som, a placa de rede ou a impressora. Quando o driver está ausente,
+                    desatualizado ou corrompido, o dispositivo deixa de funcionar ou funciona mal: a imagem fica em baixa
+                    resolução, o som some, a rede não conecta ou surgem travamentos e telas azuis.</p>
+                <h2>Possíveis causas</h2>
+                <p>A falta do driver depois de formatar o computador, um driver corrompido por uma atualização interrompida
+                    ou por malware, e a instalação de um driver incompatível, de outra versão do sistema ou de outra
+                    arquitetura (32 ou 64 bits). Em computadores antigos, muitos fabricantes não lançam mais drivers para
+                    as versões novas do Windows.</p>
+            </div>
+            <figure class="foto">
+                <img src="../IMG/drivers.jpg" alt="Janela Atualizar Driver do adaptador 802.11 WLAN no Gerenciador de Dispositivos">
+                <figcaption>Foto: turma TINF4V, no laboratório</figcaption>
+            </figure>
         </section>
         <hr>
         <section>
-            <div>
-                <h2>Solução</h2>
-                <p>Comece descobrindo qual peça está com problema. Clique
-                    com o botão direito no botão Iniciar e abra o Gerenciador
-                    de Dispositivos. Peças com um triângulo amarelo, ou que
-                    aparecem em Outros dispositivos, estão sem driver. Se a
-                    placa de vídeo aparece como Adaptador de Vídeo Básico da
-                    Microsoft, é porque o driver de vídeo não está
-                    instalado.</p>
-
-                <p>A melhor fonte de drivers é o site do fabricante: do
-                    notebook ou da placa-mãe, ou da NVIDIA, AMD e Intel no caso
-                    da placa de vídeo. O Windows Update também tem drivers, em
-                    Configurações &gt; Windows Update &gt; Opções avançadas
-                    &gt; Atualizações opcionais. Evite programas que prometem
-                    atualizar todos os drivers de uma vez: muitos instalam
-                    propaganda, vírus ou o driver errado. Se não souber qual é
-                    a peça, abra as Propriedades dela, vá na aba Detalhes,
-                    escolha IDs de hardware e pesquise os códigos que
-                    aparecem.</p>
-
-                <p>Se o problema começou depois de atualizar um driver, abra
-                    as Propriedades da peça, vá na aba Driver e clique em
-                    Reverter driver para voltar à versão anterior. Se o driver
-                    estiver corrompido, clique em Desinstalar dispositivo e
-                    reinicie o computador, para o Windows instalar de novo.
-                    Veja como resolvemos o driver da placa de rede sem fio no
-                    laboratório na página <a href="sem_internet.html">Sem
-                    internet</a>.</p>
-
-                <p>Para melhor compreensão, pesquise um dos tutoriais em
-                    vídeo abaixo:</p>
-
-                <ul class="lista-videos">
-                    <li><a
-                            href="https://www.youtube.com/results?search_query=como+atualizar+drivers+windows+11+gerenciador+de+dispositivos">
-                            Como atualizar drivers windows 11 gerenciador de dispositivos
-                        </a>
-                    </li>
-                    <li><a
-                            href="https://www.youtube.com/results?search_query=como+reverter+driver+windows">
-                            Como reverter driver windows
-                        </a>
-                    </li>
-                </ul>
-            </div>
-
+            <h2>Solução no Windows</h2>
+            <p>Abra o Gerenciador de Dispositivos (botão direito no menu Iniciar). Dispositivos com um triângulo amarelo,
+                ou listados em Outros dispositivos, estão sem driver. Se a placa de vídeo aparece como Adaptador de Vídeo
+                Básico da Microsoft, o driver de vídeo não está instalado.</p>
+            <p>Baixe o driver no site do fabricante (do notebook, da placa-mãe, ou da NVIDIA, AMD e Intel para placas de
+                vídeo). Se não souber qual é o dispositivo, abra as Propriedades &gt; Detalhes &gt; IDs de hardware e
+                pesquise os códigos VEN (fabricante) e DEV (modelo). Evite programas que prometem atualizar todos os
+                drivers de uma vez.</p>
+            <p>Se o problema começou depois de uma atualização de driver, use Propriedades &gt; Driver &gt; Reverter
+                driver. Se o driver estiver corrompido, clique em Desinstalar dispositivo e reinicie.</p>
+        </section>
+        <hr>
+        <section>
+            <h2>Solução no Linux</h2>
+            <p>No Linux, a maioria dos drivers já vem dentro do kernel (o núcleo do sistema), então muitos dispositivos
+                funcionam sem instalar nada. Os comandos <code>lspci -k</code> e <code>lsusb</code> mostram os
+                dispositivos e qual módulo (driver) cada um está usando; se a linha "Kernel driver in use" não aparecer,
+                o dispositivo está sem driver.</p>
+            <p>Para drivers proprietários, como os da NVIDIA e de algumas placas de rede sem fio, abra Programas e
+                Atualizações &gt; Drivers adicionais, ou execute <code>sudo ubuntu-drivers install</code>. Manter o sistema
+                atualizado com <code>sudo apt update &amp;&amp; sudo apt upgrade</code> também atualiza o kernel e os
+                drivers que vêm com ele.</p>
+        </section>
+        <hr>
+        <section>
+            <h2>Saiba mais</h2>
+            <p>Veja como resolvemos o driver da placa de rede sem fio no laboratório na página <a href="sem_internet.html">Sem
+                internet</a>, ou pesquise um dos tutoriais em vídeo abaixo:</p>
+            <ul class="lista-videos">
+                <li><a href="https://www.youtube.com/results?search_query=como+atualizar+drivers+windows+11+gerenciador+de+dispositivos">Como atualizar drivers no Windows 11 pelo Gerenciador de Dispositivos</a></li>
+                <li><a href="https://www.youtube.com/results?search_query=como+reverter+driver+windows">Como reverter um driver no Windows</a></li>
+                <li><a href="https://www.youtube.com/results?search_query=ubuntu+drivers+adicionais+nvidia">Drivers adicionais no Ubuntu</a></li>
+            </ul>
         </section>
     </main>
 
@@ -114,7 +108,7 @@
             <p>Instagram: <a
                     href="https://www.instagram.com/tinf4ve?utm_source=ig_web_button_share_sheet&stkn=ZDNlZDc0MzIxNw==">Tinf4ve!</a>
             </p>
-            <p>E-mail: <a href="#"></a></p>
+            <p>E-mail: <a href="mailto:tinf4v2026@gmail.com">tinf4v2026@gmail.com</a></p>
         </div>
     </footer>
 

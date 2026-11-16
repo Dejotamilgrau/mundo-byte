@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Aplicativos padrão resetando sozinhos - MundoByte</title>
+    <title>Aplicativos padrão redefinidos automaticamente - MundoByte</title>
     <link rel="stylesheet" href="../CSS/reset.css">
     <link rel="stylesheet" href="CSS/base_estilo.css">
     <link rel="stylesheet" href="CSS/layout_estilo.css">
@@ -36,61 +36,57 @@
     <!-- Conteúdo, CARLA -->
 
     <main>
-        <h1>Aplicativos padrão resetando sozinhos</h1>
+        <h1>Aplicativos padrão redefinidos automaticamente</h1>
         <hr>
-        <section>
-            <p>Depois de uma atualização, o Windows volta a abrir os PDFs
-                no Edge, os links em outro navegador ou as fotos em outro
-                programa, mesmo você já tendo escolhido os seus programas
-                favoritos. Isso acontece porque algumas atualizações
-                redefinem as escolhas quando consideram a configuração
-                inválida, e às vezes um programa recém-instalado ou atualizado
-                "toma" os arquivos para ele. Quando isso acontece, o Windows
-                costuma mostrar o aviso "Um aplicativo padrão foi
-                redefinido".
-            </p>
+        <section class="secao">
+            <div>
+                <h2>O problema</h2>
+                <p>Depois de uma atualização, o sistema operacional volta a abrir os arquivos PDF no Edge, os links em
+                    outro navegador ou as fotos em outro programa, mesmo que o usuário já tenha escolhido os seus
+                    aplicativos padrão (os programas que o sistema usa automaticamente para abrir cada tipo de arquivo).
+                    No Windows, isso costuma vir acompanhado do aviso "Um aplicativo padrão foi redefinido".</p>
+                <h2>Possíveis causas</h2>
+                <p>Algumas atualizações redefinem a associação de arquivos (a ligação entre uma extensão, como .pdf, e o
+                    programa que a abre) quando consideram a configuração inválida. Também acontece de um programa
+                    recém-instalado ou atualizado registrar-se como padrão sem pedir permissão.</p>
+            </div>
+            <figure class="foto">
+                <img src="../IMG/SOFTWARE/aplicativos_padrao.png" alt="Área de trabalho do Ubuntu 22.04 com o dock de aplicativos">
+                <figcaption>Imagem: Canonical Inc, <a href="https://commons.wikimedia.org/wiki/File:Ubuntu_22.04_LTS_default_desktop_-_English.png">GPL, via Wikimedia Commons</a></figcaption>
+            </figure>
         </section>
         <hr>
         <section>
-            <div>
-                <h2>Solução</h2>
-                <p>Para escolher de novo, abra Configurações &gt;
-                    Aplicativos &gt; Aplicativos padrão e procure o programa
-                    que você quer usar, como o Chrome ou o Adobe Reader.
-                    Clique nele e use o botão Definir padrão, se aparecer, ou
-                    escolha o programa em cada tipo de arquivo da lista (por
-                    exemplo .pdf, .html, HTTP e HTTPS).</p>
-
-                <p>Outro jeito rápido é pelo próprio arquivo: clique com o
-                    botão direito em um arquivo do tipo que mudou, escolha
-                    Abrir com &gt; Escolher outro aplicativo, selecione o
-                    programa certo e clique em Sempre. Muitos programas
-                    também têm, nas configurações deles, uma opção como
-                    Tornar padrão, que leva direto para a tela certa do
-                    Windows.</p>
-
-                <p>Se volta a mudar depois de toda atualização, mantenha o
-                    programa atualizado e, se continuar, desinstale e instale
-                    de novo pelo site oficial, para ele se registrar outra vez
-                    no Windows.</p>
-
-                <p>Para melhor compreensão, pesquise um dos tutoriais em
-                    vídeo abaixo:</p>
-
-                <ul class="lista-videos">
-                    <li><a
-                            href="https://www.youtube.com/results?search_query=windows+trocando+programa+padr%C3%A3o+sozinho+pdf">
-                            Windows trocando programa padrão sozinho pdf
-                        </a>
-                    </li>
-                    <li><a
-                            href="https://www.youtube.com/results?search_query=como+definir+navegador+padr%C3%A3o+windows+11">
-                            Como definir navegador padrão windows 11
-                        </a>
-                    </li>
-                </ul>
-            </div>
-
+            <h2>Solução no Windows</h2>
+            <p>Abra Configurações &gt; Aplicativos &gt; Aplicativos padrão e procure o programa desejado, como o Chrome
+                ou o Adobe Reader. Clique nele e use o botão Definir padrão, se aparecer, ou escolha o programa em cada
+                extensão da lista (por exemplo .pdf, .html, HTTP e HTTPS).</p>
+            <p>Outra forma é pelo próprio arquivo: clique com o botão direito em um arquivo do tipo que mudou, escolha
+                Abrir com &gt; Escolher outro aplicativo, selecione o programa certo e clique em Sempre.</p>
+            <p>Se a associação voltar a mudar a cada atualização, mantenha o programa atualizado e, se continuar,
+                desinstale e reinstale-o pelo site oficial, para que ele registre novamente as associações no
+                sistema.</p>
+        </section>
+        <hr>
+        <section>
+            <h2>Solução no Linux</h2>
+            <p>No Ubuntu, os aplicativos padrão de navegador, e-mail, música, vídeo e fotos ficam em Configurações &gt;
+                Aplicativos &gt; Aplicativos padrão. Para outras extensões, clique com o botão direito no arquivo,
+                escolha Abrir com outro aplicativo, selecione o programa e marque Sempre usar para este tipo de
+                arquivo.</p>
+            <p>Pelo terminal, o comando <code>xdg-mime query default application/pdf</code> mostra qual programa abre os
+                PDFs, e <code>xdg-mime default org.gnome.Evince.desktop application/pdf</code> define um novo padrão. As
+                escolhas ficam gravadas no arquivo <code>~/.config/mimeapps.list</code>.</p>
+        </section>
+        <hr>
+        <section>
+            <h2>Saiba mais</h2>
+            <p>Pesquise um dos tutoriais em vídeo abaixo:</p>
+            <ul class="lista-videos">
+                <li><a href="https://www.youtube.com/results?search_query=windows+trocando+programa+padr%C3%A3o+sozinho+pdf">Windows trocando programa padrão sozinho (PDF)</a></li>
+                <li><a href="https://www.youtube.com/results?search_query=como+definir+navegador+padr%C3%A3o+windows+11">Como definir o navegador padrão no Windows 11</a></li>
+                <li><a href="https://www.youtube.com/results?search_query=ubuntu+aplicativos+padr%C3%A3o">Aplicativos padrão no Ubuntu</a></li>
+            </ul>
         </section>
     </main>
 
@@ -108,7 +104,7 @@
             <p>Instagram: <a
                     href="https://www.instagram.com/tinf4ve?utm_source=ig_web_button_share_sheet&stkn=ZDNlZDc0MzIxNw==">Tinf4ve!</a>
             </p>
-            <p>E-mail: <a href="#"></a></p>
+            <p>E-mail: <a href="mailto:tinf4v2026@gmail.com">tinf4v2026@gmail.com</a></p>
         </div>
     </footer>
 

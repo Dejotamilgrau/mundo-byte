@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Como Criar um Pen Drive de Boot com o Ventoy - MundoByte</title>
+    <title>Como criar um pendrive de boot com o Ventoy - MundoByte</title>
     <link rel="stylesheet" href="../CSS/reset.css">
     <link rel="stylesheet" href="CSS/base_estilo.css">
     <link rel="stylesheet" href="CSS/layout_estilo.css">
@@ -36,60 +36,53 @@
     <!-- Conteúdo, CHRISTOPHER B. -->
 
     <main>
-        <h1>Como Criar um Pen Drive de Boot com o Ventoy</h1>
+        <h1>Como criar um pendrive de boot com o Ventoy</h1>
         <hr>
-        <section>
-            <p>O Ventoy é um programa gratuito que transforma o pen drive em um disco de boot capaz de guardar várias
-                imagens ISO ao mesmo tempo. Diferente de outros programas, ele não grava a ISO no pen drive: depois de
-                instalado, basta copiar os arquivos .iso para dentro dele, como se fosse um pen drive comum, e na hora
-                de ligar o computador aparece um menu para escolher qual sistema iniciar. Isso é muito útil no
-                laboratório, pois um único pen drive pode ter o Windows 7, o Windows 10 e o Ubuntu juntos.
-            </p>
-        </section>
-        <hr>
-        <section>
-            <h2>O que é necessário</h2>
-            <p>Um pen drive de pelo menos 8 GB, o arquivo ISO do sistema que se deseja instalar e o Ventoy, que pode
-                ser baixado no site oficial ventoy.net. É importante lembrar que a instalação do Ventoy apaga tudo o
-                que estiver no pen drive, então os arquivos importantes devem ser salvos antes.
-            </p>
+        <section class="secao">
+            <div>
+                <h2>O que é o Ventoy</h2>
+                <p>O Ventoy é um programa livre que transforma o pendrive em um disco de boot capaz de guardar várias
+                    imagens ISO (arquivos que contêm uma cópia completa de um CD ou DVD de instalação) ao mesmo tempo.
+                    Ele não grava a ISO no pendrive: depois de instalado, basta copiar os arquivos .iso para dentro dele, e
+                    ao ligar o computador aparece um menu para escolher qual sistema iniciar. No laboratório, um único
+                    pendrive teve o Windows 7, o Windows 10 e o Ubuntu juntos.</p>
+                <h2>O que é necessário</h2>
+                <p>Um pendrive de pelo menos 8 GB, o arquivo ISO do sistema e o Ventoy, baixado no site oficial
+                    ventoy.net. A instalação do Ventoy apaga tudo o que estiver no pendrive, então salve os arquivos
+                    importantes antes.</p>
+            </div>
+            <figure class="foto">
+                <img src="../IMG/SOFTWARE/pendrive_ventoy.png" alt="Janela do Ventoy2Disk">
+                <figcaption>Imagem: Fedkad, <a href="https://commons.wikimedia.org/wiki/File:Ventoy-1.0.png">GPLv3, via Wikimedia Commons</a></figcaption>
+            </figure>
         </section>
         <hr>
         <section>
             <h2>Passo a passo no Windows</h2>
-            <p>Primeiro, extrai-se o arquivo .zip baixado do site e abre-se o programa "Ventoy2Disk.exe". Na janela
-                do programa, em "Dispositivo", seleciona-se o pen drive, conferindo pelo nome e pelo tamanho para não
-                escolher o disco errado.
-            </p>
-            <p>Antes de instalar, no menu "Opção" &gt; "Estilo de Partição", escolhe-se MBR para computadores antigos,
-                que usam BIOS Legacy, ou GPT para computadores mais novos com UEFI. Depois, clica-se em "Instalar" e
-                confirma-se os dois avisos de que os dados serão apagados. Ao terminar, o pen drive aparece no
-                computador com o nome "Ventoy".
-            </p>
-            <p>Com o Ventoy instalado, basta copiar os arquivos .iso para dentro do pen drive. Não é preciso extrair
-                a ISO, ela deve ser copiada inteira.
-            </p>
+            <p>Extraia o arquivo .zip baixado e abra o "Ventoy2Disk.exe". Em Dispositivo, selecione o pendrive,
+                conferindo pelo nome e pelo tamanho para não escolher o disco errado.</p>
+            <p>No menu Opção &gt; Estilo de Partição, escolha MBR (Master Boot Record) para computadores antigos com BIOS
+                Legacy (o firmware tradicional da placa-mãe) ou GPT (GUID Partition Table) para computadores mais novos
+                com UEFI (o firmware moderno que substituiu a BIOS). Clique em Instalar e confirme os dois avisos. Depois,
+                copie os arquivos .iso inteiros, sem extrair, para dentro do pendrive, que aparece com o nome "Ventoy".</p>
         </section>
         <hr>
         <section>
             <h2>Passo a passo no Linux</h2>
-            <p>No Linux, depois de extrair o arquivo .tar.gz, pode-se usar a interface gráfica "VentoyGUI" ou o
-                terminal. Pelo terminal, primeiro identifica-se o pen drive com o comando "lsblk" e depois, dentro da
-                pasta do Ventoy, executa-se "sudo sh Ventoy2Disk.sh -i /dev/sdX", trocando "sdX" pelo nome do pen
-                drive (por exemplo, sdb). Para usar GPT no lugar de MBR, adiciona-se a opção "-g" ao comando.
-            </p>
+            <p>Extraia o arquivo .tar.gz e use a interface gráfica "VentoyGUI" ou o terminal. Pelo terminal, identifique
+                o pendrive com <code>lsblk</code> e, dentro da pasta do Ventoy, execute <code>sudo sh Ventoy2Disk.sh -i
+                /dev/sdX</code>, trocando sdX pelo nome do pendrive (por exemplo, sdb). Para usar GPT no lugar de MBR,
+                adicione a opção <code>-g</code>.</p>
         </section>
         <hr>
         <section>
-            <h2>Como iniciar pelo pen drive</h2>
-            <p>Com o pen drive conectado, liga-se o computador e aperta-se a tecla do menu de boot, que muda conforme
-                o fabricante da placa-mãe (geralmente F12, F11, F8 ou Esc). Escolhendo o pen drive, aparece o menu do
-                Ventoy com a lista das ISOs copiadas, e basta selecionar o sistema desejado.
-            </p>
-            <p>Durante o nosso trabalho, o Ventoy funcionou bem com sistemas mais novos, mas não conseguiu instalar o
-                Windows XP. Para esse caso, foi utilizado o WinSetupFromUSB, como explicado na página
-                <a href="problema1.html">do problema com o Windows XP</a>.
-            </p>
+            <h2>Como iniciar pelo pendrive</h2>
+            <p>Com o pendrive conectado, ligue o computador e aperte a tecla do menu de boot, que muda conforme o
+                fabricante da placa-mãe (geralmente F12, F11, F8 ou Esc). Escolhendo o pendrive, aparece o menu do Ventoy
+                com a lista das ISOs.</p>
+            <p>No nosso trabalho, o Ventoy funcionou bem com sistemas mais novos, mas não conseguiu instalar o Windows XP.
+                Para esse caso, usamos o WinSetupFromUSB, como explicado na página <a href="problema1.html">Erro de boot do
+                Windows XP no Rufus e no Ventoy</a>.</p>
         </section>
     </main>
 
@@ -107,7 +100,7 @@
             <p>Instagram: <a
                     href="https://www.instagram.com/tinf4ve?utm_source=ig_web_button_share_sheet&stkn=ZDNlZDc0MzIxNw==">Tinf4ve!</a>
             </p>
-            <p>E-mail: <a href="#"></a></p>
+            <p>E-mail: <a href="mailto:tinf4v2026@gmail.com">tinf4v2026@gmail.com</a></p>
         </div>
     </footer>
 

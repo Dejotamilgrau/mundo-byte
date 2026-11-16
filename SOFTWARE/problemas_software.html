@@ -39,11 +39,33 @@
         <h1>Problemas de software</h1>
         <p>Problemas de software que encontramos durante a montagem e manutenção dos computadores, com as causas e como resolvemos cada um.</p>
 
+        <section id="windows-linux">
+            <h2>Windows ou Linux?</h2>
+            <p>Os dois são <strong>sistemas operacionais</strong>: o programa principal do computador, que controla o
+                hardware (as peças físicas) e permite que os outros programas funcionem. Por isso, cada problema desta
+                página traz a solução nos dois sistemas.</p>
+            <div id="sistemas">
+                <div class="sistema">
+                    <h3>Windows</h3>
+                    <p>Sistema da Microsoft, pago (com licença) e de código fechado. É o mais usado em computadores
+                        pessoais. As configurações ficam no aplicativo Configurações e no Painel de Controle, e os
+                        comandos são digitados no Prompt de Comando ou no PowerShell.</p>
+                </div>
+                <div class="sistema">
+                    <h3>Linux</h3>
+                    <p>Sistema livre, gratuito e de código aberto, distribuído em versões chamadas
+                        <strong>distribuições</strong>, como o Ubuntu, usado no laboratório. Os programas são instalados
+                        por um gerenciador de pacotes (como o apt) e muitos ajustes são feitos no terminal, quase
+                        sempre com <code>sudo</code> para ter permissão de administrador.</p>
+                </div>
+            </div>
+        </section>
+
         <section id="lista-problemas">
             <a href="problema1.html" class="problema">
                 <img src="../IMG/rufus-ventoy.png" alt="Tela do WinSetupFromUSB">
                 <div class="texto-problema">
-                    <h2>Erro de Boot do Windows XP no Rufus e Ventoy</h2>
+                    <h2>Erro de boot do Windows XP no Rufus e no Ventoy</h2>
                     <p>O Windows XP não instalava pelo Rufus nem pelo Ventoy. Resolvemos usando o WinSetupFromUSB, que faz o pen drive simular um disco.</p>
                     <span class="ver-solucao">Ver solução &rsaquo;</span>
                 </div>
@@ -86,14 +108,16 @@
             </a>
 
             <a href="windows_sem_som.html" class="problema">
+                <img src="../IMG/SOFTWARE/windows_sem_som.jpg" alt="">
                 <div class="texto-problema">
-                    <h2>Windows sem som</h2>
+                    <h2>Sistema sem som</h2>
                     <p>O som parava de sair, normalmente depois de conectar fone Bluetooth, monitor HDMI ou caixa de som. Resolvemos escolhendo a saída certa, reiniciando o serviço de áudio ou reinstalando o driver.</p>
                     <span class="ver-solucao">Ver solução &rsaquo;</span>
                 </div>
             </a>
 
             <a href="disco_cheio.html" class="problema">
+                <img src="../IMG/SOFTWARE/disco_cheio.png" alt="">
                 <div class="texto-problema">
                     <h2>Espaço em disco ficando cheio sozinho</h2>
                     <p>O disco C: enchia sem motivo por causa de arquivos temporários e pontos de restauração. Resolvemos com a Limpeza de Disco, limpando a pasta %temp% e ativando o Sensor de Armazenamento.</p>
@@ -102,6 +126,7 @@
             </a>
 
             <a href="loop_reparo.html" class="problema">
+                <img src="../IMG/SOFTWARE/loop_reparo.png" alt="">
                 <div class="texto-problema">
                     <h2>Loop de reparo automático</h2>
                     <p>O Windows tentava se reparar sozinho, falhava e reiniciava sem parar. Resolvemos pelas Opções Avançadas, com Reparo de Inicialização, Restauração do Sistema ou os comandos bootrec.</p>
@@ -110,6 +135,7 @@
             </a>
 
             <a href="arquivos_bloqueados.html" class="problema">
+                <img src="../IMG/SOFTWARE/arquivos_bloqueados.png" alt="">
                 <div class="texto-problema">
                     <h2>Arquivos ou pastas que não podem ser excluídos</h2>
                     <p>O arquivo continuava aberto por algum processo em segundo plano. Resolvemos finalizando a tarefa no Gerenciador de Tarefas (Ctrl + Shift + Esc).</p>
@@ -118,6 +144,7 @@
             </a>
 
             <a href="mouse_teclado.html" class="problema">
+                <img src="../IMG/SOFTWARE/mouse_teclado.jpg" alt="">
                 <div class="texto-problema">
                     <h2>Mouse ou teclado não funciona</h2>
                     <p>O dispositivo para de responder por mau contato na porta USB, pilhas fracas ou driver travado. Resolvemos trocando de porta, trocando as pilhas ou reinstalando o driver pelo Gerenciador de Dispositivos.</p>
@@ -126,6 +153,7 @@
             </a>
 
             <a href="impressora.html" class="problema">
+                <img src="../IMG/SOFTWARE/impressora.jpg" alt="">
                 <div class="texto-problema">
                     <h2>Impressora não imprime</h2>
                     <p>A fila de impressão trava ou a impressora aparece como offline. Resolvemos limpando a fila, reiniciando o Spooler de Impressão e reinstalando o driver.</p>
@@ -134,6 +162,7 @@
             </a>
 
             <a href="programa_fecha.html" class="problema">
+                <img src="../IMG/SOFTWARE/programa_fecha.webp" alt="">
                 <div class="texto-problema">
                     <h2>Programa não abre ou fecha sozinho</h2>
                     <p>O aplicativo congela ou fecha logo ao iniciar. Resolvemos finalizando a tarefa, reinstalando o programa e usando o modo de compatibilidade.</p>
@@ -150,6 +179,7 @@
             </a>
 
             <a href="volume_microfone.html" class="problema">
+                <img src="../IMG/SOFTWARE/volume_microfone.jpg" alt="">
                 <div class="texto-problema">
                     <h2>Volume baixo ou microfone sem funcionar</h2>
                     <p>O áudio sai baixo ou o microfone não é detectado em chamadas. Resolvemos pelo Mixer de volume e liberando o acesso ao microfone nas configurações de privacidade.</p>
@@ -166,14 +196,16 @@
             </a>
 
             <a href="inicializacao_lenta.html" class="problema">
+                <img src="../IMG/SOFTWARE/inicializacao_lenta.jpg" alt="">
                 <div class="texto-problema">
-                    <h2>Inicialização lenta do Windows</h2>
+                    <h2>Inicialização lenta do sistema</h2>
                     <p>O computador demora minutos para chegar à área de trabalho. Resolvemos desativando programas que abrem junto com o Windows e liberando espaço no disco.</p>
                     <span class="ver-solucao">Ver solução &rsaquo;</span>
                 </div>
             </a>
 
             <a href="loop_reinicializacao.html" class="problema">
+                <img src="../IMG/SOFTWARE/loop_reinicializacao.png" alt="">
                 <div class="texto-problema">
                     <h2>Loop de reinicialização</h2>
                     <p>O Windows começa a carregar e reinicia sozinho, sem parar. Resolvemos desativando o reinício automático para ler o erro e corrigindo a causa pelas Opções Avançadas.</p>
@@ -182,6 +214,7 @@
             </a>
 
             <a href="ativacao_licenca.html" class="problema">
+                <img src="../IMG/SOFTWARE/ativacao_licenca.jpg" alt="">
                 <div class="texto-problema">
                     <h2>Falha na ativação da licença do sistema</h2>
                     <p>O Windows ou o Office passa a dizer que a licença expirou ou não é original. Resolvemos pela tela de Ativação, conferindo a data do computador e a conta Microsoft do Office.</p>
@@ -190,8 +223,9 @@
             </a>
 
             <a href="aplicativos_padrao.html" class="problema">
+                <img src="../IMG/SOFTWARE/aplicativos_padrao.png" alt="">
                 <div class="texto-problema">
-                    <h2>Aplicativos padrão resetando sozinhos</h2>
+                    <h2>Aplicativos padrão redefinidos automaticamente</h2>
                     <p>Depois de uma atualização, PDFs e links voltam a abrir em outro programa. Resolvemos escolhendo de novo em Aplicativos padrão ou pelo Abrir com.</p>
                     <span class="ver-solucao">Ver solução &rsaquo;</span>
                 </div>
@@ -199,13 +233,14 @@
 
             <a href="dll_ausente.html" class="problema">
                 <div class="texto-problema">
-                    <h2>Erro de DLL ausente ao iniciar um programa</h2>
+                    <h2>Erro de biblioteca ausente (DLL) ao iniciar um programa</h2>
                     <p>Um jogo ou programa não abre por falta de arquivos como MSVCP140.dll. Resolvemos instalando ou reparando o Visual C++ Redistributable pelo site da Microsoft.</p>
                     <span class="ver-solucao">Ver solução &rsaquo;</span>
                 </div>
             </a>
 
             <a href="notificacoes_travadas.html" class="problema">
+                <img src="../IMG/SOFTWARE/notificacoes_travadas.png" alt="">
                 <div class="texto-problema">
                     <h2>Notificações e Central de Ações travadas</h2>
                     <p>O painel de notificações não abre ou os avisos ficam congelados na tela. Resolvemos reiniciando o Windows Explorer e conferindo o modo Não perturbe.</p>
@@ -214,6 +249,7 @@
             </a>
 
             <a href="atalhos_teclado.html" class="problema">
+                <img src="../IMG/SOFTWARE/atalhos_teclado.jpg" alt="">
                 <div class="texto-problema">
                     <h2>Atalhos do teclado não funcionam</h2>
                     <p>Ctrl + C, Alt + Tab e os atalhos com a tecla Windows param de responder. Resolvemos desbloqueando a tecla Windows e desligando as Teclas de Aderência.</p>
@@ -222,6 +258,7 @@
             </a>
 
             <a href="atalhos_area_trabalho.html" class="problema">
+                <img src="../IMG/SOFTWARE/atalhos_area_trabalho.png" alt="">
                 <div class="texto-problema">
                     <h2>Atalhos da área de trabalho não funcionam</h2>
                     <p>O atalho não abre o programa, avisa que o item foi movido ou aparece em branco. Resolvemos conferindo o destino do atalho e criando um novo.</p>
@@ -230,6 +267,7 @@
             </a>
 
             <a href="relogio_incorreto.html" class="problema">
+                <img src="../IMG/SOFTWARE/relogio_incorreto.jpg" alt="">
                 <div class="texto-problema">
                     <h2>Relógio do sistema incorreto</h2>
                     <p>A data ou a hora do Windows ficam erradas, o que causa erro de certificado nos sites. Resolvemos ativando a sincronização automática, corrigindo o fuso e trocando a bateria da placa-mãe.</p>
@@ -238,14 +276,16 @@
             </a>
 
             <a href="windows_update.html" class="problema">
+                <img src="../IMG/SOFTWARE/windows_update.png" alt="">
                 <div class="texto-problema">
-                    <h2>Erro no Windows Update</h2>
+                    <h2>Erro na atualização do sistema</h2>
                     <p>As atualizações ficam paradas ou falham com um código de erro. Resolvemos liberando espaço, limpando os arquivos de atualização baixados e verificando os arquivos do sistema.</p>
                     <span class="ver-solucao">Ver solução &rsaquo;</span>
                 </div>
             </a>
 
             <a href="virus_malware.html" class="problema">
+                <img src="../IMG/SOFTWARE/virus_malware.png" alt="">
                 <div class="texto-problema">
                     <h2>Vírus ou malware</h2>
                     <p>O computador fica lento, abre propagandas ou troca a página inicial do navegador sozinho. Resolvemos com a verificação completa e offline do Microsoft Defender e removendo programas desconhecidos.</p>
@@ -254,6 +294,7 @@
             </a>
 
             <a href="barra_tarefas.html" class="problema">
+                <img src="../IMG/SOFTWARE/barra_tarefas.png" alt="">
                 <div class="texto-problema">
                     <h2>Barra de tarefas travada</h2>
                     <p>A barra de tarefas não responde, o menu Iniciar não abre ou a barra não esconde em tela cheia. Resolvemos reiniciando o Windows Explorer pelo Gerenciador de Tarefas.</p>
@@ -262,6 +303,7 @@
             </a>
 
             <a href="permissao_admin.html" class="problema">
+                <img src="../IMG/SOFTWARE/permissao_admin.png" alt="">
                 <div class="texto-problema">
                     <h2>Erro de permissão de administrador</h2>
                     <p>O Windows avisa que é preciso permissão para instalar, apagar ou alterar algo. Resolvemos executando como administrador e corrigindo o proprietário do arquivo.</p>
@@ -298,7 +340,7 @@
             <p>Instagram: <a
                     href="https://www.instagram.com/tinf4ve?utm_source=ig_web_button_share_sheet&stkn=ZDNlZDc0MzIxNw==">Tinf4ve!</a>
             </p>
-            <p>E-mail: <a href="#"></a></p>
+            <p>E-mail: <a href="mailto:tinf4v2026@gmail.com">tinf4v2026@gmail.com</a></p>
         </div>
     </footer>
 
